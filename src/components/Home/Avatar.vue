@@ -36,21 +36,21 @@ export default {
 </script>
 
 <template>
-  <div class="Avatar">
-    <img ref="Avatar" :src="image_url"/>
+  <div class="Avatar" ref="Avatar" :style="`background-image:url(` + image_url + `)`">
   </div>
 </template>
 
 <style scoped>
-.Avatar img{
+.Avatar {
   background-position: center;
   border: 1px solid black;
   box-shadow: 2px 2px 2px gray;
   border-radius: var(--border-radius);
   transition: border-radius 1s;
+  background-size: 100%;
 }
 
-.Avatar img:hover {
+.Avatar:hover {
   border-radius: 50%;
   box-shadow: 0px 0px 2px 2px gray;
 }

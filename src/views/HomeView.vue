@@ -108,10 +108,10 @@ export default{
   <div class="body" ref="body" :style="`--smallFont:` + this.smallFont + '; --largeFont:' + this.largeFont">
     <div class="AvatarBlock">
       <div class="AvatarPic">
-        <Avatar size="100%" radius="20px"></Avatar>
+        <Avatar size="var(--size)" radius="20px"></Avatar>
       </div>
 
-      <AuthorItem font_size="var(--largeFont)" font_weight="bold">
+      <AuthorItem font_size="var(--largeFont)" font_weight="bold" style="margin-top: 30px">
         <template v-slot:Icon>
           <User/>
         </template>
@@ -196,11 +196,12 @@ export default{
 
 
 .RightBlock {
-  width: 100%;
-  height: 100%;
+  /* width: 100%; */
   min-width: 500px;
   display: flex;
   flex-direction: column;
+  flex: 1;
+  height: 100%;
 }
 
 .RightContent {
@@ -215,8 +216,9 @@ export default{
 
 
 .AvatarPic {
-  width: 18vw;
-  height: 18vw;
+  --size: 18vw;
+  width: var(--size);
+  height: var(--size);
   min-width: 180px;
   min-height: 180px;
   margin: auto;
@@ -286,8 +288,8 @@ export default{
 
   .AvatarBlock {
     width: 100vw;
-    height: 100%;
     min-width: 0;
+    height: auto;
   }
 
   .RightBlock {
@@ -302,8 +304,7 @@ export default{
   }
 
   .AvatarPic {
-    width: 60vw;
-    height: 60vw;
+    --size: 60vw;
     min-width: 0;
     min-height: 0;
   }
@@ -316,7 +317,6 @@ export default{
     color: white;
     background-color: var(--btn_color);
   }
-
 }
 
 
