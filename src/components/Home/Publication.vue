@@ -3,7 +3,7 @@ import authorConfig from '../../config/author.config';
 import Publication from '../icons/Publication.vue';
 
 export default {
-    props: ['largeFont', 'smallFont'],
+    props: ['largeFont', 'smallFont', "screenWidth"],
 
     components:{
         Publication
@@ -28,7 +28,7 @@ export default {
             return Object.keys(this.content).sort((a,b)=>{return b-a;});
         },
         isPC(){
-            return document.documentElement.clientWidth >= 800;
+            return this.screenWidth >= 800;
         }
     },
 

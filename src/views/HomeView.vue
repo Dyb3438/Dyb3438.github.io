@@ -168,7 +168,7 @@ export default{
           <News largeFont="var(--largeFont)" smallFont="var(--smallFont)"/>
         </div>
         <div class="BlockItem" style="margin-top:30px">
-          <Publication largeFont="var(--largeFont)" smallFont="var(--smallFont)"/>
+          <Publication largeFont="var(--largeFont)" smallFont="var(--smallFont)" :screenWidth="screenWidth"/>
         </div>
       </div>
     </div>
