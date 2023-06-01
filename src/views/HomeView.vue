@@ -73,7 +73,7 @@ export default{
       set(list){
         for (let idx in list){
           let name = list[idx]['name'];
-          name.replace('Taiwan', 'Taiwan, China');
+          name = name.replace('Taiwan', 'Taiwan, China');
           this.visitNumbers[name] = list[idx]['v'];
         }
       }
