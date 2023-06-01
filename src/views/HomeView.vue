@@ -222,12 +222,12 @@ export default{
               </marquee>
             </div>
             <div class="VisitGlobe">
-              <div v-is="`script`" type="text/javascript" id="clstr_globe" :src="`https://clustrmaps.com/globe.js?d=` + this.globe_id"></div>
+              <div v-is="`script`" id="clstr_globe" style="width: 100%; height: 100%" type="text/javascript" :src="`https://clustrmaps.com/globe.js?d=` + this.globe_id"></div>
             </div>
           </div>
         </div>
 
-        <footer><small>Updated June 1, 2023</small></footer>
+        <div id="footer"><small>Updated June 1, 2023</small></div>
       </div>
     </div>
   </div>
@@ -354,7 +354,7 @@ export default{
   transform: translateY(0%);
 }
 
-footer {
+#footer {
   text-align: right;
 }
 
@@ -412,7 +412,7 @@ footer {
     margin-right: 0;
   }
 
-  footer{
+  #footer{
     text-align: center;
   }
 }
