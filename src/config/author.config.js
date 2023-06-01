@@ -28,7 +28,7 @@ export default{
                 image: './imgs/2023_SuEtAl_MulPro.png',
                 title: 'Weakly Supervised 3D Point Cloud Segmentation via Multi-Prototype Learning',
                 author: '<b>Yongyi Su</b>, Xun Xu and Kui Jia',
-                publisher: 'IEEE Transactions on Circuits and Systems for Video Technology (<b>TCSVT</b>), 2022',
+                publisher: 'IEEE Transactions on Circuits and Systems for Video Technology (<b>TCSVT</b>), 2023',
                 options: {
                     'PDF': 'https://arxiv.org/abs/2205.03137',
                     'Project Page': '',
