@@ -97,7 +97,7 @@ export default{
     $.ajax({
       dataType: 'jsonp',
       cache: true,
-      url: 'http://clustrmaps.com/globe_call_home.js?w=180&d=' + this.globe_id,
+      url: '//clustrmaps.com/globe_call_home.js?w=180&d=' + this.globe_id,
       success: function(data) {
           $(function() {
               data = data.replace('addPoints(points, flag);', 'that.updateVisitNumbers(points)');
