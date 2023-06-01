@@ -101,6 +101,7 @@ export default{
       success: function(data) {
           $(function() {
               data = data.replace('addPoints(points, flag);', 'that.updateVisitNumbers(points)');
+              console.log(that.visitNumbers == 1);
               eval(data);
           });
       }
