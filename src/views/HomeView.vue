@@ -273,7 +273,7 @@ export default{
 .VisitItem {
   display: flex;
   width: 100%;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
 }
 
 .VisitDesc {
@@ -406,7 +406,7 @@ footer {
   }
 
   .VisitDesc {
-    margin-top: 20px;
+    margin-bottom: 20px;
     height: 150px;
     width: 80vw;
     margin-right: 0;
