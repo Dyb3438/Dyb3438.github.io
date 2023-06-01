@@ -10,6 +10,7 @@ import AuthorItem from '../components/Home/AuthorItem.vue';
 import AboutMe from '../components/Home/AboutMe.vue';
 import News from '../components/Home/News.vue';
 import Publication from '../components/Home/Publication.vue';
+import Visit from '../components/icons/Visit.vue';
 
 export default{
   components: {
@@ -22,7 +23,8 @@ export default{
     AboutMe,
     News,
     Next,
-    Publication
+    Publication,
+    Visit
   },
 
   data(){
@@ -42,6 +44,8 @@ export default{
         "#552222",
       ],
 
+      visitNumbers: {
+      },
 
       // information
       authorName: authorConfig.name,
@@ -50,6 +54,8 @@ export default{
       authorCollege: authorConfig.college,
       authorEmail: authorConfig.email,
       authorOptions: authorConfig.options,
+
+      globe_id: authorConfig.analysis_globe_id,
     }
   },
 
@@ -59,6 +65,16 @@ export default{
     },
     EmailShow(){
       return authorConfig.email.replace("@", " AT ");
+    },
+    visitNumber: {
+      get(){
+        return this.visitNumbers;
+      },
+      set(list){
+        for (let idx in list){
+          this.visitNumbers[list[idx]['name']] = list[idx]['v'];
+        }
+      }
     }
   },
 
@@ -77,6 +93,18 @@ export default{
 
   created() {
     window.addEventListener("resize", this.windowResize);
+    let that = this;
+    $.ajax({
+      dataType: 'jsonp',
+      cache: true,
+      url: 'http://clustrmaps.com/globe_call_home.js?w=180&d=' + this.globe_id,
+      success: function(data) {
+          $(function() {
+              data = data.replace('addPoints(points, flag);', 'that.updateVisitNumbers(points)');
+              eval(data);
+          });
+      }
+    });
   },
   destroyed() {
     window.removeEventListener("resize", this.windowResize);
@@ -98,6 +126,9 @@ export default{
       }else{
         return this.optionColors[index];
       }
+    },
+    updateVisitNumbers(points){
+      this.visitNumber = points;
     }
   }
 }
@@ -170,6 +201,26 @@ export default{
         <div class="BlockItem" style="margin-top:30px">
           <Publication largeFont="var(--largeFont)" smallFont="var(--smallFont)" :screenWidth="screenWidth"/>
         </div>
+        <div class="VisitBlock" style="margin-top: 30px; width: 100%;">
+          <div style="display: flex; align-items: center; margin-bottom: 20px;">
+              <div style="width: var(--largeFont); height: var(--largeFont); display: inline-block; padding-right: 10px; box-sizing: content-box;">
+                  <Visit/>
+              </div>
+              <div style="font-size: var(--largeFont); font-weight: bold; display: inline-block">Visitors</div>
+          </div>
+          <div class="VisitItem">
+            <div class="VisitDesc">
+              <marquee scrollamount="2" direction="up" style="overflow-y: auto; height: 100%; padding-bottom: 10px; padding-right: 10px;">
+                <li v-for="visit,key in visitNumber"><span style="font-size: var(--smallFont)"><b>{{ visit }}</b> views from {{ key }}</span></li>
+              </marquee>
+            </div>
+            <div class="VisitGlobe">
+              <div v-is="`script`" type="text/javascript" id="clstr_globe" :src="`https://clustrmaps.com/globe.js?d=` + this.globe_id"></div>
+            </div>
+          </div>
+        </div>
+
+        <footer><small>Updated June 1, 2023</small></footer>
       </div>
     </div>
   </div>
@@ -212,7 +263,23 @@ export default{
   padding: 30px;
 }
 
+.VisitItem {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap-reverse;
+}
 
+.VisitDesc {
+  height: 217px;
+  margin-right: 50px
+  /* width: 300px; */
+  /* flex: 1 0 auto; */
+}
+
+.VisitGlobe {
+  width: 200px;
+  height: 200px;
+}
 
 
 .AvatarPic {
@@ -280,6 +347,10 @@ export default{
   transform: translateY(0%);
 }
 
+footer {
+  text-align: right;
+}
+
 @media screen and (max-width: 799px) {
   .body {
     overflow-y: auto;
@@ -316,6 +387,26 @@ export default{
   .Options div {
     color: white;
     background-color: var(--btn_color);
+  }
+
+  .VisitGlobe {
+    width: 60vw;
+    height: 60vw;
+  }
+
+  .VisitItem {
+    justify-content: center;
+  }
+
+  .VisitDesc {
+    margin-top: 20px;
+    height: 150px;
+    width: 80vw;
+    margin-right: 0;
+  }
+
+  footer{
+    text-align: center;
   }
 }
 

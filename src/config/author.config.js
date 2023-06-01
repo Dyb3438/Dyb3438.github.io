@@ -76,5 +76,7 @@ export default{
                 }
             }
         ]
-    }
+    },
+
+    analysis_globe_id: 'ZDtaUoW728eYUFp5JX7le2e2P1sZJLUg9RrVZQf7j5g'
 }
