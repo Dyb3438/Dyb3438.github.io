@@ -407,7 +407,7 @@ footer {
 
   .VisitDesc {
     margin-bottom: 20px;
-    height: 150px;
+    height: 200px;
     width: 80vw;
     margin-right: 0;
   }
