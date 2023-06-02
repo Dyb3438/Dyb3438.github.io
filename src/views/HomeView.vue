@@ -102,7 +102,7 @@ export default{
     let that = this;
     $.ajax({
       dataType: 'jsonp',
-      cache: true,
+      cache: false,
       url: '//clustrmaps.com/globe_call_home.js?w=180&d=' + this.globe_id,
       success: function(data) {
           $(function() {
@@ -144,9 +144,9 @@ export default{
 
 <template>
   <div class="body" ref="body" :style="`--smallFont:` + this.smallFont + '; --largeFont:' + this.largeFont">
-    <div class="AvatarBlock">
+    <div class="AvatarBlock" ref="AvatarBlock">
       <div class="AvatarPic">
-        <Avatar size="var(--size)" radius="20px"></Avatar>
+        <Avatar size="max(var(--size), 180px)" radius="20px"></Avatar>
       </div>
 
       <AuthorItem font_size="var(--largeFont)" font_weight="bold" style="margin-top: 30px">
@@ -197,7 +197,7 @@ export default{
       </div>
     </div>
 
-    <div class="RightBlock">
+    <div class="RightBlock" ref="RightBlock">
       <div class="RightContent">
         <div class="BlockItem">
           <AboutMe largeFont="var(--largeFont)" smallFont="var(--smallFont)"/>
@@ -237,16 +237,16 @@ export default{
 .body {
   display: flex;
   width: 100vw;
-  height: 100vh;
 }
 
 .AvatarBlock {
+  position: fixed;
   display: flex;
   flex-direction: column;
   width: 30vw;
   min-width: 300px;
-  height: 100%;
-  padding: 30px;
+  height: 100vh;
+  padding: 2vw;
 
   background-color: lightgray;
   box-shadow: 1px 0 1px gray;
@@ -260,6 +260,7 @@ export default{
   flex-direction: column;
   flex: 1;
   height: 100%;
+  padding-left: max(30vw, 300px);
 }
 
 .RightContent {
@@ -290,6 +291,7 @@ export default{
 
 
 .AvatarPic {
+  flex: 0 0 auto;
   --size: 18vw;
   width: var(--size);
   height: var(--size);
@@ -368,6 +370,9 @@ export default{
     width: 100vw;
     min-width: 0;
     height: auto;
+    position: relative;
+    padding: 30px;
+    padding-top: 50px;
   }
 
   .RightBlock {
@@ -375,6 +380,7 @@ export default{
     min-width: 0;
     flex: 1 0 auto;
     height: auto;
+    padding-left: 0;
   }
   
   .RightContent {
