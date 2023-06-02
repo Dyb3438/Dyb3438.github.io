@@ -11,6 +11,7 @@ import AboutMe from '../components/Home/AboutMe.vue';
 import News from '../components/Home/News.vue';
 import Publication from '../components/Home/Publication.vue';
 import Visit from '../components/icons/Visit.vue';
+import fetchJSONP from 'fetch-jsonp'
 
 export default{
   components: {
@@ -100,18 +101,14 @@ export default{
   created() {
     window.addEventListener("resize", this.windowResize);
     let that = this;
-    $.ajax({
-      dataType: 'jsonp',
-      cache: false,
-      url: '//clustrmaps.com/globe_call_home.js?w=180&d=' + this.globe_id,
-      success: function(data) {
-          $(function() {
-              data = data.replace('addPoints(points, flag);', 'that.updateVisitNumbers(points)');
-              console.log(that.visitNumbers == 1);
-              eval(data);
-          });
-      }
+    fetchJSONP('//clustrmaps.com/globe_call_home.js?w=180&d=' + this.globe_id)
+      .then(response => response.json())
+      .then( data => {
+            data = data.replace('addPoints(points, flag);', 'that.updateVisitNumbers(points)');
+            console.log(that.visitNumbers == 1);
+            eval(data);
     });
+
   },
   destroyed() {
     window.removeEventListener("resize", this.windowResize);
@@ -264,7 +261,6 @@ export default{
 }
 
 .RightContent {
-  overflow-y: auto; 
   display: flex; 
   flex-direction: column; 
   height: 100%;
@@ -362,7 +358,6 @@ export default{
 
 @media screen and (max-width: 799px) {
   .body {
-    overflow-y: auto;
     flex-wrap: wrap;
   }
 
@@ -381,10 +376,6 @@ export default{
     flex: 1 0 auto;
     height: auto;
     padding-left: 0;
-  }
-  
-  .RightContent {
-    overflow-y: hidden !important;
   }
 
   .AvatarPic {
