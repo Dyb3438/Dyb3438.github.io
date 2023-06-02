@@ -48,6 +48,8 @@ export default{
       visitNumbers: {
       },
 
+      remove_href: false,
+
       // information
       authorName: authorConfig.name,
       authorRole: authorConfig.role,
@@ -134,6 +136,14 @@ export default{
     updateVisitNumbers(points){
       this.visitNumber = points;
     }
+  },
+  mounted(){
+    document.addEventListener('scroll', ()=>{
+      if (!this.remove_href && document.getElementById('clstr_a') && document.getElementById('clstr_a').href != 'javascript:void(0)'){
+        document.getElementById('clstr_a').href = 'javascript:void(0)';
+        this.remove_href = true;
+      }
+    })
   }
 }
 
