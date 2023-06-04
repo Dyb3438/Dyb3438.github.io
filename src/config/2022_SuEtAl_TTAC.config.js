@@ -52,5 +52,7 @@ export default{
         Github: 'https://github.com/Gorilla-Lab-SCUT/TTAC',
         Arxiv: 'https://arxiv.org/abs/2206.02721'
         
-    }
+    },
+
+    globe_id: 'R9pDUaPrNqZOTj_o0p9C3C2diQeWzOvemTedSpsUHdQ'
 }

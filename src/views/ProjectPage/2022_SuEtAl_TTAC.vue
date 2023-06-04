@@ -3,6 +3,7 @@ import pageConfig from '../../config/2022_SuEtAl_TTAC.config';
 import Github from '../../components/2022_SuEtAl_TTAC/Github.vue';
 import Article from '../../components/2022_SuEtAl_TTAC/Article.vue';
 import Home from '../../components/2022_SuEtAl_TTAC/Home.vue';
+import fetchJSONP from 'fetch-jsonp'
 
 export default{
     data(){
@@ -13,7 +14,10 @@ export default{
             largeFont: '20px',
             
             pageConfig: pageConfig,
+            
+            globe_id: pageConfig.globe_id,
 
+            visitNumbers: 0,
         }
     },
 
@@ -37,8 +41,30 @@ export default{
         },
     },
 
+    computed: {
+        visitNumber: {
+            get(){
+                return this.visitNumbers;
+            },
+            set(list){
+                for (let idx in list){
+                    this.visitNumbers += list[idx]['v'];
+                }
+            }
+        }
+    },
+
     created() {
         window.addEventListener("resize", this.windowResize);
+        let that = this;
+        fetchJSONP('//clustrmaps.com/globe_call_home.js?w=180&d=' + this.globe_id)
+        .then(response => response.json())
+        .then( data => {
+                data = data.replace('addPoints(points, flag);', 'that.updateVisitNumbers(points)');
+                console.log(that.visitNumbers == 1);
+                eval(data);
+        });
+
     },
 
     beforeMount() {
@@ -50,6 +76,10 @@ export default{
         windowResize(e){
             this.screenHeight = e.target.innerHeight;
             this.screenWidth = e.target.innerWidth;
+        },
+
+        updateVisitNumbers(points){
+            this.visitNumber = points;
         }
     },
 
@@ -160,6 +190,11 @@ export default{
                 <pre style="overflow: auto; background: lightgray; border-radius: 20px; padding: 20px">{{ pageConfig.BibTex }}</pre>
             </div>
 
+            <!--VisitNumber-->
+            <div class="Visit Section">
+                <span>Read Count: {{ this.visitNumber }}</span>
+            </div>
+
         </div>
         <div class="Btns">
             <a :href="pageConfig.Btns.Home" target="_blank">
@@ -180,7 +215,10 @@ export default{
                 </div>
             </a>
         </div>
-
+        
+        <div style="visibility: hidden; height: 0; width: 0">
+            <div v-is="`script`" type="text/javascript" id="clstr_globe" :src="`//clustrmaps.com/globe.js?d=` + this.globe_id" ></div>
+        </div>
     </div>
 </template>
 
@@ -202,7 +240,7 @@ export default{
     background: white;
     box-shadow: 0px 5px 20px #181818;
     min-height: calc(100vh - 40px);
-    padding-bottom: 50px;
+    padding-bottom: 10px;
 }
 
 .Btns {
@@ -337,6 +375,10 @@ export default{
 
 }
 
+.Visit {
+    text-align: center;
+}
+
 
 red {
     color: red;
@@ -361,7 +403,7 @@ orange {
 
     .Content {
         border-radius: 0;
-        padding-bottom: 80px;
+        padding-bottom: 60px;
     }
 
     .Section .img {
