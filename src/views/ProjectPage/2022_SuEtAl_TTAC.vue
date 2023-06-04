@@ -31,7 +31,7 @@ export default{
         screenWidth(new_val, old_val){
             if (new_val < 800){
                 // new_val = new_val / 0.3;
-                new_val = new_val / 0.9;
+                new_val = new_val / 0.5;
             } else if (new_val > 1240){
                 new_val = 1240;
             }
@@ -187,7 +187,7 @@ export default{
             <!--Bibtex-->
             <div class="BibTex Section">
                 <div class="title"><b>BibTex</b></div>
-                <pre style="overflow: auto; background: lightgray; border-radius: 20px; padding: 20px">{{ pageConfig.BibTex }}</pre>
+                <pre style="overflow: auto; background: lightgray; border-radius: 10px; padding: 10px">{{ pageConfig.BibTex }}</pre>
             </div>
 
             <!--VisitNumber-->
