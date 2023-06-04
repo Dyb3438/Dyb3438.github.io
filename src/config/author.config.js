@@ -31,8 +31,8 @@ export default{
                 publisher: 'IEEE Transactions on Circuits and Systems for Video Technology (<b>TCSVT</b>), 2023',
                 options: {
                     'PDF': 'https://arxiv.org/abs/2205.03137',
-                    // 'Project Page': '',
                     'Bibtex': './bibtexs/2023_SuEtAl_MulPro.bib',
+                    // 'Project Page': '',
                     // 'Code': ''
                 }
             },
@@ -43,8 +43,8 @@ export default{
                 publisher: 'Preprint, 2023',
                 options: {
                     'PDF': 'https://arxiv.org/abs/2303.17937',
-                    // 'Project Page': '',
                     'Bibtex': './bibtexs/2023_ChenEtAl_STFAR.bib',
+                    // 'Project Page': '',
                     // 'Code': ''
                 }
             },
@@ -55,8 +55,8 @@ export default{
                 publisher: 'Preprint, 2023',
                 options: {
                     'PDF': 'https://arxiv.org/abs/2303.10856',
-                    // 'Project Page': '',
                     'Bibtex': './bibtexs/2023_SuEtAl_TTAC++.bib',
+                    // 'Project Page': '',
                     // 'Code': ''
                 }
             }
@@ -70,8 +70,8 @@ export default{
                 publisher: 'Advances in Neural Information Processing Systems (<b>NeurIPS</b>), 2022',
                 options: {
                     'PDF': 'https://arxiv.org/abs/2206.02721',
-                    'Project Page': '#/ProjectPage/2022_SuEtAl_TTAC',
                     'Bibtex': './bibtexs/2022_SuEtAl_TTAC.bib',
+                    'Project Page': '#/ProjectPage/2022_SuEtAl_TTAC',
                     'Code': 'https://github.com/Gorilla-Lab-SCUT/TTAC',
                 }
             }
