@@ -92,6 +92,7 @@ export default{
 
 <template>
     <div class="Body" :style="`--smallFont:` + this.smallFont + '; --largeFont:' + this.largeFont">
+        <div style="display:none;"><img :src="pageConfig.Overview" alt=""></div>
         <div class="Content">
             <!--Title-->
             <div class="Title Section">
