@@ -49,6 +49,7 @@ export default{
       },
 
       remove_href: false,
+      load_globe: false,
 
       // information
       authorName: authorConfig.name,
@@ -138,12 +139,23 @@ export default{
     }
   },
   mounted(){
+    // document.documentElement.scrollHeight + document.documentElement.clientHeight
     document.body.scrollTop = document.documentElement.scrollTop = 0;
     document.addEventListener('scroll', ()=>{
       if (!this.remove_href && document.getElementById('clstr_a') && document.getElementById('clstr_a').href != 'javascript:void(0)'){
         document.getElementById('clstr_a').href = 'javascript:void(0)';
         this.remove_href = true;
       }
+
+      if (!this.load_globe){
+        let elem = $('#clstr_a');
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
+        var elemTop = elem.offset() ? $(elem).offset().top : 0;
+        var elemBottom = elemTop + $(elem).height();
+        this.load_globe = (elemBottom <= docViewBottom) && (elemTop >= docViewTop);
+      }
+      
     })
   }
 }
