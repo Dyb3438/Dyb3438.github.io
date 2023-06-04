@@ -23,7 +23,7 @@ export default{
     Overview: "../imgs/2022_SuEtAl_TTAC/Overview.jpg",
 
     Motivation: {
-        'Setting': '../imgs/2022_SuEtAl_TTAC/Setting.png',
+        'Setting': '../imgs/2022_SuEtAl_TTAC/Setting.jpg',
         'NoModification': '../imgs/2022_SuEtAl_TTAC/NoModification.png'
     },
 
