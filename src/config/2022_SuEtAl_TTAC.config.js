@@ -48,7 +48,7 @@ export default{
     }`,
 
     Btns: {
-        Home: '../../',
+        Home: '#/',
         Github: 'https://github.com/Gorilla-Lab-SCUT/TTAC',
         Arxiv: 'https://arxiv.org/abs/2206.02721'
         

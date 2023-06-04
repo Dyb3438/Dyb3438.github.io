@@ -70,7 +70,7 @@ export default{
                 publisher: 'Advances in Neural Information Processing Systems (<b>NeurIPS</b>), 2022',
                 options: {
                     'PDF': 'https://arxiv.org/abs/2206.02721',
-                    'Project Page': './ProjectPage/2022_SuEtAl_TTAC',
+                    'Project Page': '#/ProjectPage/2022_SuEtAl_TTAC',
                     'Bibtex': './bibtexs/2022_SuEtAl_TTAC.bib',
                     'Code': 'https://github.com/Gorilla-Lab-SCUT/TTAC',
                 }
