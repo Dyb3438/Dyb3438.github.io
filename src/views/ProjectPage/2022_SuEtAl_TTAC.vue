@@ -31,7 +31,7 @@ export default{
         screenWidth(new_val, old_val){
             if (new_val < 800){
                 // new_val = new_val / 0.3;
-                new_val = new_val / 0.5;
+                new_val = new_val / 0.6;
             } else if (new_val > 1240){
                 new_val = 1240;
             }
