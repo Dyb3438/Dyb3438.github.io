@@ -83,6 +83,9 @@ export default{
         }
     },
 
+    mounted(){
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+    }
 }
 
 </script>
@@ -197,7 +200,7 @@ export default{
 
         </div>
         <div class="Btns">
-            <a :href="pageConfig.Btns.Home" target="_blank">
+            <a :href="pageConfig.Btns.Home">
                 <div>
                     <Home></Home>
                 </div>

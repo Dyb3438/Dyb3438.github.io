@@ -63,7 +63,7 @@ export default {
             </div>
             <div class="Publication Item" v-for="publication in content[year]" v-if="isPC">
                 <div class="PublicationImage">
-                    <a :href="publication.options['Project Page']" target="_blank">
+                    <a :href="publication.options['Project Page']">
                         <img :src="publication.image" style="width: 100%;">
                     </a>
                 </div>
@@ -73,7 +73,12 @@ export default {
                     <div class="PublicationPublisher" :style="`font-size:` + this.smallFont" v-html="publication.publisher"></div>
                     <div class="PublicationOptions" :style="`font-size:` + this.smallFont">
                         <div style="flex: 0 0 auto; display: inline-block; margin: 5px 10px 5px 0px" v-for="(value, key, index) in publication.options" >
-                            <a  :href="value" target="_blank" style="display:inline-block">
+                            <a  :href="value" style="display:inline-block" v-if="key == `Project Page`">
+                                <div :style="`--btn_color:` + optionColors[index]" class="unselect OptionItem">
+                                    {{ key }}
+                                </div>
+                            </a>
+                            <a  :href="value" target="_blank" style="display:inline-block" v-else>
                                 <div :style="`--btn_color:` + optionColors[index]" class="unselect OptionItem">
                                     {{ key }}
                                 </div>
@@ -85,7 +90,7 @@ export default {
             </div>
             <div class="Publication_Mobile Item" v-for="publication in content[year]" v-else>
                 <div class="PublicationImage">
-                    <a :href="publication.options['Project Page']" target="_blank">
+                    <a :href="publication.options['Project Page']">
                         <img :src="publication.image" style="width: 100%;">
                     </a>
                 </div>
@@ -95,8 +100,14 @@ export default {
                     <div class="PublicationPublisher" :style="`font-size:` + this.smallFont" v-html="publication.publisher"></div>
                     <div class="PublicationOptions" :style="`font-size:` + this.smallFont">
                         <div style="flex: 1 0 auto; display: flex; margin: 5px" v-for="(value, key, index) in publication.options" >
-                            <a  :href="value" target="_blank" style="display:inline-block; flex: 10">
-                                <div :style="`--btn_color:` + optionColor(index)" class="unselect OptionItem">
+
+                            <a  :href="value" style="display:inline-block; flex: 10" v-if="key == `Project Page`">
+                                <div :style="`--btn_color:` + optionColors[index]" class="unselect OptionItem">
+                                    {{ key }}
+                                </div>
+                            </a>
+                            <a  :href="value" target="_blank" style="display:inline-block; flex: 10" v-else>
+                                <div :style="`--btn_color:` + optionColors[index]" class="unselect OptionItem">
                                     {{ key }}
                                 </div>
                             </a>

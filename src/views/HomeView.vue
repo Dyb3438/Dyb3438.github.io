@@ -138,6 +138,7 @@ export default{
     }
   },
   mounted(){
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
     document.addEventListener('scroll', ()=>{
       if (!this.remove_href && document.getElementById('clstr_a') && document.getElementById('clstr_a').href != 'javascript:void(0)'){
         document.getElementById('clstr_a').href = 'javascript:void(0)';
@@ -244,6 +245,7 @@ export default{
 .body {
   display: flex;
   width: 100vw;
+  background: white;
 }
 
 .AvatarBlock {
