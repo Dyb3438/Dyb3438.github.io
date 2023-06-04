@@ -14,8 +14,8 @@ export default {
             content: authorConfig.publications,
             optionColors: [
                 '#5555bb',
-                '#55bb55',
                 "#bb5555",
+                '#55bb55',
                 '#bb55bb',
                 '#55bbbb',
                 '#bbbb55',
