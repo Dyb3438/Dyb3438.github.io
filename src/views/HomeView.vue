@@ -240,7 +240,7 @@ export default{
   </div>
 </template>
 
-<style>
+<style scoped>
 .body {
   display: flex;
   width: 100vw;
