@@ -198,9 +198,9 @@ export default{
             </div>
 
             <!--VisitNumber-->
-            <!-- <div class="Visit Section">
-                <span>Read Count: {{ this.visitNumber }}</span>
-            </div> -->
+            <div class="Visit Section">
+                <!-- <span>Read Count: {{ this.visitNumber }}</span> -->
+            </div>
 
         </div>
         <div class="Btns">
