@@ -233,7 +233,7 @@ export default{
               <div style="width: var(--largeFont); height: var(--largeFont); display: inline-block; padding-right: 10px; box-sizing: content-box;">
                   <Visit/>
               </div>
-              <div style="font-size: var(--largeFont); font-weight: bold; display: inline-block" class="unselect">Visitors</div>
+              <div style="font-size: var(--largeFont); font-weight: bold; display: inline-block" class="unselect">Recent Visitors</div>
           </div>
           <div class="VisitItem">
             <div class="VisitDesc">
