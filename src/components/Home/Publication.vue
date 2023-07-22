@@ -63,7 +63,7 @@ export default {
             </div>
             <div class="Publication Item" v-for="publication in content[year]" v-if="isPC">
                 <div class="PublicationImage">
-                    <a :href="publication.options['Project Page']">
+                    <a :href="publication.image" target="_blank">
                         <img :src="publication.image" style="width: 100%;">
                     </a>
                 </div>
@@ -90,7 +90,7 @@ export default {
             </div>
             <div class="Publication_Mobile Item" v-for="publication in content[year]" v-else>
                 <div class="PublicationImage">
-                    <a :href="publication.options['Project Page']">
+                    <a :href="publication.image" target="_blank">
                         <img :src="publication.image" style="width: 100%;">
                     </a>
                 </div>
