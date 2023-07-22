@@ -18,12 +18,25 @@ export default{
     `,
 
     news: [
+        `Jul 2023: Our work on <b>On the Robustness of Open-World Test-Time Training: Self-Training with Dynamic Prototype Expansion</b> was accepted by ICCV 2023.`,
         `May 2023: Our work on <b>Weakly Supervised 3D Point Cloud Segmentation via Multi-Prototype Learning</b> was accepted by IEEE Transactions on Circuits and Systems for Video Technology (TCSVT).`,
         `Sep 2022: Our work on <b>Revisiting Realistic Test-Time Training: Sequential Inference and Adaptation by Anchored Clustering</b> was accepted by NeurIPS 2022.`,
     ],
 
     publications: {
         2023: [
+            {
+                image: './imgs/2023_LiEtAl_OWTTT.png',
+                title: 'On the Robustness of Open-World Test-Time Training: Self-Training with Dynamic Prototype Expansion',
+                author: 'Yushu Li, Xun Xu, <b>Yongyi Su</b> and Kui Jia',
+                publisher: 'IEEE/CVF International Conference on Computer Vision (<b>ICCV</b>), 2023',
+                options: {
+                    'PDF': '.',
+                    // 'Bibtex': './bibtexs/2023_SuEtAl_MulPro.bib',
+                    // 'Project Page': '',
+                    // 'Code': ''
+                }
+            },
             {
                 image: './imgs/2023_SuEtAl_MulPro.png',
                 title: 'Weakly Supervised 3D Point Cloud Segmentation via Multi-Prototype Learning',

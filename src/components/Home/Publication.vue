@@ -149,7 +149,7 @@ export default {
 
 
 .Item {
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 .YearBlock {
@@ -188,6 +188,14 @@ export default {
     width: 100%;
     display: flex;
     align-items: top;
+    padding: 10px;
+}
+
+.Publication:hover {
+    transition: 0.3s;
+    box-shadow: 3px 3px 10px lightgray;
+    border-radius: 10px;
+    transform: translateY(-3px);
 }
 
 .PublicationImage{
@@ -209,7 +217,7 @@ export default {
 .PublicationOptions {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 10px;
+  margin-top: 5px;
   justify-content: left;
 }
 
