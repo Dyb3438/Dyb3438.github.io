@@ -254,7 +254,7 @@ export default {
 }
 
 .PublicationKeyword {
-    margin: 5px 0;
+    margin-top: 5px;
     display: flex;
 }
 
@@ -269,6 +269,7 @@ export default {
     text-decoration: none;
     color: var(--color-text);
     margin: 0 5px;
+    margin-bottom: 5px;
 }
 
 .KeywordItem {
@@ -362,7 +363,6 @@ export default {
 
 .Publication_Mobile .KeywordItem {
     background-color: lightgoldenrodyellow;
-    margin-bottom: 5px;
 }
 
 .Publication_Mobile .OptionItem {
