@@ -220,9 +220,9 @@ export default {
 
 .Publication:hover {
     transition: 0.3s;
-    box-shadow: 3px 3px 10px lightgray;
+    box-shadow: 0px 0px 20px lightgray;
     border-radius: 10px;
-    transform: translateY(-3px);
+    /* transform: translateY(-3px); */
 }
 
 .PublicationImage{
@@ -319,11 +319,9 @@ export default {
 }
 
 .OptionItem:hover{
-  box-shadow: 2px 2px 2px gray;
   transform: translateY(-5%);
 
-  color: white;
-  background-color: var(--btn_color);
+  background-color: color-mix(in srgb, var(--btn_color) 30%, white);
 }
 
 .OptionItem:active {
