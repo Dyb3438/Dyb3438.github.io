@@ -39,7 +39,10 @@ export default {
             }else{
                 return this.optionColors[index];
             }
-        }
+        },
+        createKeywordUrl(keyword){
+            return 'https://www.google.com/search?q=' + encodeURI(keyword);
+        },
     }
   
 }
@@ -71,6 +74,18 @@ export default {
                     <div class="PublicationTitle" :style="`font-size:` + this.smallFont" v-html="publication.title"></div>
                     <div class="PublicationAuthor" :style="`font-size:` + this.smallFont" v-html="publication.author"></div>
                     <div class="PublicationPublisher" :style="`font-size:` + this.smallFont" v-html="publication.publisher"></div>
+                    <div class="PublicationKeyword" :style="`font-size:` + this.smallFont">
+                        <span style="font-weight: bold">
+                            Keywords: 
+                        </span>
+                        <div class="KeywordList">
+                            <a :href="createKeywordUrl(keyword)" target='_blank' v-for="keyword in publication.keywords">
+                                <div class="unselect KeywordItem">
+                                    {{ keyword }}
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                     <div class="PublicationOptions" :style="`font-size:` + this.smallFont">
                         <div style="flex: 0 0 auto; display: inline-block; margin: 5px 10px 5px 0px" v-for="(value, key, index) in publication.options" >
                             <a  :href="value" style="display:inline-block" v-if="key == `Project Page`">
@@ -98,6 +113,18 @@ export default {
                     <div class="PublicationTitle" :style="`font-size:` + this.smallFont" v-html="publication.title"></div>
                     <div class="PublicationAuthor" :style="`font-size:` + this.smallFont" v-html="publication.author"></div>
                     <div class="PublicationPublisher" :style="`font-size:` + this.smallFont" v-html="publication.publisher"></div>
+                    <div class="PublicationKeyword" :style="`font-size:` + this.smallFont">
+                        <span style="font-weight: bold">
+                            Keywords: 
+                        </span>
+                        <div class="KeywordList">
+                            <a :href="createKeywordUrl(keyword)" target='_blank' v-for="keyword in publication.keywords">
+                                <div class="unselect KeywordItem">
+                                    {{ keyword }}
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                     <div class="PublicationOptions" :style="`font-size:` + this.smallFont">
                         <div style="flex: 1 0 auto; display: flex; margin: 5px" v-for="(value, key, index) in publication.options" >
 
@@ -202,7 +229,10 @@ export default {
     width: 20vw;
     height: auto;
     flex: 0 0 auto;
+    display: flex;
+    align-items: center;
 }
+
 .PublicationDesc {
     display: flex;
     flex-direction: column;
@@ -212,6 +242,53 @@ export default {
 
 .PublicationTitle {
     font-weight: bold;
+    color: black;
+}
+
+.PublicationAuthor {
+    color: rgb(100, 100, 100);
+}
+
+.PublicationPublisher {
+    font-weight: 500;
+}
+
+.PublicationKeyword {
+    margin: 5px 0;
+    display: flex;
+}
+
+.KeywordList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.PublicationKeyword a {
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-text);
+    margin: 0 5px;
+}
+
+.KeywordItem {
+    flex: 0 0 auto;
+    font-size: calc(var(--smallFont) * 0.8);
+    padding: calc(var(--smallFont) * 0.1) calc(var(--smallFont) * 0.3);
+    border-radius: calc(var(--smallFont)  * 0.3);
+    border: 1px solid black;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.KeywordItem:hover {
+    background-color: lightgoldenrodyellow;
+    transform: translateY(-5%);
+}
+
+.KeywordItem:active {
+    background-color: white;
+    transform: translateY(0%);
 }
 
 .PublicationOptions {
@@ -283,6 +360,11 @@ export default {
 
 .Publication_Mobile .PublicationImage{
     width: 80%;
+}
+
+.Publication_Mobile .KeywordItem {
+    background-color: lightgoldenrodyellow;
+    margin-bottom: 5px;
 }
 
 .Publication_Mobile .OptionItem {
