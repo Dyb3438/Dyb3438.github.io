@@ -47,7 +47,7 @@ export default {
         <div style="overflow-y: auto; display: flex; flex-direction: column; height: 100%;">
             <ul style="padding-left: 20px">
                 <li v-for="newsItem, key in content" style="margin-bottom: 5px">
-                    <Firework v-if="(newsItem.search('Congratulations') > 0) && isPC" :style="`font-size:` + this.smallFont" :Content="newsItem">
+                    <Firework v-if="(newsItem.search('Congratulation') > 0) && isPC" :style="`font-size:` + this.smallFont" :Content="newsItem">
                     </Firework>
                     <div :style="`font-size:` + this.smallFont" v-html="newsItem" v-else></div>
                 </li>

@@ -95,9 +95,9 @@ export default {
 </script>
 <template>
     <div class="FireworkComponent">
-        <span v-html="Content.substr(0, Content.search('Congratulations'))">
+        <span v-html="Content.substr(0, Content.search('Congratulation'))">
         </span>
-        <span class="FireworkPart"  @mouseenter="mouseenter(e)" @mouseleave="mouseleave(e)" @mousemove="mousemove(e)" v-html="Content.substr(Content.search('Congratulations'))">
+        <span class="FireworkPart"  @mouseenter="mouseenter(e)" @mouseleave="mouseleave(e)" @mousemove="mousemove(e)" v-html="Content.substr(Content.search('Congratulation'))">
         </span>
     </div>
 </template>
