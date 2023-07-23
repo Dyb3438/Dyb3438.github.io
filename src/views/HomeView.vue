@@ -25,7 +25,7 @@ export default{
     News,
     Next,
     Publication,
-    Visit
+    Visit,
   },
 
   data(){
@@ -223,7 +223,7 @@ export default{
           <AboutMe largeFont="var(--largeFont)" smallFont="var(--smallFont)"/>
         </div>
         <div class="BlockItem" style="margin-top:30px; max-height: 400px">
-          <News largeFont="var(--largeFont)" smallFont="var(--smallFont)"/>
+          <News largeFont="var(--largeFont)" smallFont="var(--smallFont)" :screenWidth="screenWidth"/>
         </div>
         <div class="BlockItem" style="margin-top:30px">
           <Publication largeFont="var(--largeFont)" smallFont="var(--smallFont)" :screenWidth="screenWidth"/>

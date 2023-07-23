@@ -1,12 +1,14 @@
 <script>
 import authorConfig from '../../config/author.config';
 import News from '../icons/News.vue';
+import Firework from '../Firework.vue';
 
 export default {
-    props: ['largeFont', 'smallFont'],
+    props: ['largeFont', 'smallFont', "screenWidth"],
 
     components:{
-        News
+        News,
+        Firework
     },
 
     data(){
@@ -23,6 +25,12 @@ export default {
             this.content_height
         );
     },
+
+    computed:{
+        isPC(){
+            return this.screenWidth >= 800;
+        }
+    }
 }
 </script>
 
@@ -39,7 +47,9 @@ export default {
         <div style="overflow-y: auto; display: flex; flex-direction: column; height: 100%;">
             <ul style="padding-left: 20px">
                 <li v-for="newsItem, key in content" style="margin-bottom: 5px">
-                    <div :style="`font-size:` + this.smallFont" v-html="newsItem"></div>
+                    <Firework v-if="(newsItem.search('Congratulations') > 0) && isPC" :style="`font-size:` + this.smallFont" :Content="newsItem">
+                    </Firework>
+                    <div :style="`font-size:` + this.smallFont" v-html="newsItem" v-else></div>
                 </li>
             </ul>
         </div>
@@ -82,6 +92,7 @@ export default {
     flex: 1 0 auto;
     display: flex;
     flex-flow: column;
+    cursor: default;
 }
 
 </style>
