@@ -19,8 +19,8 @@ export default{
         let timer = setInterval(()=>{
             this.second -= 1;
             if (this.second == 0){
-                window.location.href = './';
                 clearInterval(timer);
+                window.location.href = './';
             }
         }, 1000)
     }
