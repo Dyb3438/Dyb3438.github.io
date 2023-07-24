@@ -1,16 +1,16 @@
 {
     "rewrites": [
         {
-            "source": "/imgs",
+            "source": "/imgs/(.*)",
             "destination": "/imgs"
         },
         {
-            "source": "/bibtexs",
+            "source": "/bibtexs/(.*)",
             "destination": "/bibtexs"
         },
         {
             "source": "/(.*)",
-            "destination": "/"
+            "destination": "/index.html"
         }
     ]
 }
