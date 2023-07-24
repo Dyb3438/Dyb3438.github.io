@@ -33,7 +33,6 @@ export default {
 .ghost {
     width: 105px;
     float: right;
-    /* margin: 0 30px; */
 }
 
 .ghost::after {

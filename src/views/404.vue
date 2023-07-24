@@ -24,8 +24,6 @@ export default{
     
     data(){
         return {
-            second: 5,
-
             ghost_eye: {
                 left: false,
                 right: false,
@@ -41,7 +39,6 @@ export default{
 		{
             let ghost_pos = this.$refs.ghost.$el.getBoundingClientRect();
 
-			// console.log(e.clientX, e.clientY);
             if (e.clientX > ghost_pos.x + 80){
                 this.ghost_eye.right = true;
                 this.ghost_eye.left = false;
@@ -70,7 +67,6 @@ export default{
 
 <style scoped>
 .body {
-    /* background: black; */
     width: 100%;
     height: 50vh;
     display: flex;
@@ -80,13 +76,6 @@ export default{
     background: darkslategray;
 }
 
-/* .body span {
-    font-size: max(2.5vw, 35px);
-    font-weight: bolder;
-    color: white;
-    position: absolute;
-    top: 25vh;
-} */
 
 .body::after {
     min-width: 400px;
