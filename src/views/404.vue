@@ -20,6 +20,7 @@ export default{
             this.second -= 1;
             if (this.second == 0){
                 window.location.href = './';
+                clearInterval(timer);
             }
         }, 1000)
     }
