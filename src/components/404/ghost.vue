@@ -123,15 +123,15 @@ i {
 
 @keyframes ghost-blink {
     0% {
-        transform: scale(1, 0);
+        transform: scale(1,0)
     }
 
-    50% {
-        transform: scale(1, 1);
+    5% {
+        transform: scale(1,1)
     }
 
     100% {
-        transform: scale(1, 1);
+        transform: scale(1,1)
     }
 }
 
