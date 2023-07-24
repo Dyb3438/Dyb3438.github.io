@@ -16,6 +16,16 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/ProjectPage/2022_SuEtAl_TTAC.vue')
+    },
+    {
+      path: '/404',
+      name: '404',
+      component: () => import('../views/404.vue')
+    },
+    {
+      path: '/:catchAll(.*)',
+      name: 'error',
+      redirect: '/404',
     }
   ]
 })
