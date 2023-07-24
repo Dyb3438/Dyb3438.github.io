@@ -1,0 +1,16 @@
+{
+    "rewrites": [
+        {
+            "source": "/imgs",
+            "destination": "/imgs"
+        },
+        {
+            "source": "/bibtexs",
+            "destination": "/bibtexs"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/"
+        }
+    ]
+}
