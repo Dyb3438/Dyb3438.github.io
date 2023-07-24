@@ -89,7 +89,7 @@ export default{
                 options: {
                     'PDF': 'https://arxiv.org/abs/2206.02721',
                     'Bibtex': './bibtexs/2022_SuEtAl_TTAC.bib',
-                    'Project Page': '#/ProjectPage/2022_SuEtAl_TTAC',
+                    'Project Page': './ProjectPage/2022_SuEtAl_TTAC',
                     'Code': 'https://github.com/Gorilla-Lab-SCUT/TTAC',
                 }
             }
