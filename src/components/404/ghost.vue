@@ -121,6 +121,20 @@ i {
     transition: all .1s ease;
 }
 
+@keyframes ghost-blink {
+    0% {
+        transform: scale(1, 0);
+    }
+
+    50% {
+        transform: scale(1, 1);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
 i::before {
     font-family: icons;
     content: "\f107";
