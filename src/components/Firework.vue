@@ -60,7 +60,7 @@ export default {
                         var div=document.createElement("div");  
                         this.Fireworks(div,evt.pageX,evt.pageY);                  
                     }
-                }, 1000);
+                }, 2000);
             };
         },
 
