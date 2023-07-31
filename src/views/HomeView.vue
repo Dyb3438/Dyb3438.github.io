@@ -322,9 +322,9 @@ export default{
   cursor:grab
 }
 
-.AvatarPic:hover {
+/* .AvatarPic:hover {
   animation: rotate 2s infinite;
-}
+} */
 
 @keyframes rotate{
   0%{

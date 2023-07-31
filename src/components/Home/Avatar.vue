@@ -50,8 +50,8 @@ export default {
   background-size: 100%;
 }
 
-.Avatar:hover {
+/* .Avatar:hover {
   border-radius: 50%;
   box-shadow: 0px 0px 2px 2px gray;
-}
+} */
 </style>

@@ -1,6 +1,6 @@
 export default{
     name: 'Yongyi Su',
-    avatar_pic: './imgs/YongyiSu.jpg',
+    avatar_pic: './imgs/YongyiSu2.jpeg',
     role: 'PhD Student',
     school: {name: 'South China University of Technology', url: 'https://www.scut.edu.cn/'},
     college: {name: '', url: ''},
