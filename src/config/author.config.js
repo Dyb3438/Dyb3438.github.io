@@ -29,7 +29,7 @@ export default{
                 image: './imgs/2023_LiEtAl_OWTTT.png',
                 title: 'On the Robustness of Open-World Test-Time Training: Self-Training with Dynamic Prototype Expansion',
                 author: 'Yushu Li, Xun Xu, <b>Yongyi Su</b> and Kui Jia',
-                publisher: 'IEEE/CVF International Conference on Computer Vision (<b>ICCV</b>), 2023',
+                publisher: 'IEEE/CVF International Conference on Computer Vision (<b>ICCV</b>), 2023 (Oral presentation)',
                 keywords: ['Test-Time Training', 'Open-World Test-Time Training', 'Domain Adaptation', 'Self Training'],
                 options: {
                     'PDF': '.',
