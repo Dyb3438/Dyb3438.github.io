@@ -32,8 +32,8 @@ export default{
                 publisher: 'IEEE/CVF International Conference on Computer Vision (<b>ICCV</b>), 2023 (Oral presentation)',
                 keywords: ['Test-Time Training', 'Open-World Test-Time Training', 'Domain Adaptation', 'Self Training'],
                 options: {
-                    'PDF': '.',
-                    // 'Bibtex': '',
+                    'PDF': 'https://arxiv.org/abs/2308.09942',
+                    'Bibtex': './bibtexs/2023_LiEtAl_OWTTT.bib',
                     // 'Project Page': '',
                     // 'Code': ''
                 }
