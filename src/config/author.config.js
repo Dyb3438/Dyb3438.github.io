@@ -34,7 +34,7 @@ export default{
                 options: {
                     'PDF': 'https://arxiv.org/abs/2308.09942',
                     'Bibtex': './bibtexs/2023_LiEtAl_OWTTT.bib',
-                    // 'Project Page': '',
+                    'Project Page': 'https://yushu-li.github.io/2023_LiEtAl_OWTTT',
                     'Code': 'https://github.com/Yushu-Li/OWTTT'
                 }
             },
