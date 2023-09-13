@@ -1,4 +1,5 @@
 <script>
+import { onMounted } from 'vue';
 import authorConfig from '../../config/author.config';
 import Publication from '../icons/Publication.vue';
 
@@ -19,7 +20,8 @@ export default {
                 '#bb55bb',
                 '#55bbbb',
                 '#bbbb55',
-            ]
+            ],
+            stars: {}
         }
     },
 
@@ -43,8 +45,34 @@ export default {
         createKeywordUrl(keyword){
             return 'https://www.google.com/search?q=' + encodeURI(keyword);
         },
+    },
+    
+    async mounted(){
+        if (this.isPC){
+            const years = this.getYears;
+            for (let idx in years){
+                const year = years[idx];
+                const publications = this.content[year];
+                for (let publication_idx in publications){
+                    const publication = publications[publication_idx];
+                    if (Object.keys(publication.options).indexOf("Code") >= 0){
+                        let url = publication.options.Code;
+                        if (url.indexOf("github") < 0){
+                            continue;
+                        }
+                        try{
+                            url = url.replace("github.com", "api.github.com/repos");
+                            const response = await fetch(url);
+                            const content = await response.json();
+                            this.stars[publication.options.Code] = content.stargazers_count;
+                        }catch(e){
+                            console.log(e);
+                        }
+                    }
+                }
+            }
+        }
     }
-  
 }
 </script>
 
@@ -91,6 +119,12 @@ export default {
                             <a  :href="value" style="display:inline-block" v-if="key == `Project Page`">
                                 <div :style="`--btn_color:` + optionColors[index]" class="unselect OptionItem">
                                     {{ key }}
+                                </div>
+                            </a>
+                            <a  :href="value" style="display:inline-block; flex: 10" v-else-if="key == `Code`">
+                                <div :style="`--btn_color:` + optionColors[index]" class="unselect OptionItem">
+                                    <span style="font-weight: bold">{{ key }}</span>
+                                    <span style="margin-left:5px; border-left: 2px dotted; padding-left: 5px; font-weight: bold" v-if="value in stars">☆ {{ stars[value] }}</span>
                                 </div>
                             </a>
                             <a  :href="value" target="_blank" style="display:inline-block" v-else>
