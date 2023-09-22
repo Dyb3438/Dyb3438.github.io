@@ -92,87 +92,56 @@ export default {
                 <span :style="`font-size:` + this.smallFont + `; margin: 0 10px;`"><b>{{ year }}</b></span>
                 <div class="RightPart"></div>
             </div>
-            <div class="Publication Item" v-for="publication in content[year]" v-if="isPC">
-                <div class="PublicationImage">
-                    <a :href="publication.image" target="_blank">
-                        <img :src="publication.image" style="width: 100%;">
-                    </a>
-                </div>
-                <div class="PublicationDesc">
-                    <div class="PublicationTitle" :style="`font-size:` + this.smallFont" v-html="publication.title"></div>
-                    <div class="PublicationAuthor" :style="`font-size:` + this.smallFont" v-html="publication.author"></div>
-                    <div class="PublicationPublisher" :style="`font-size:` + this.smallFont" v-html="publication.publisher"></div>
-                    <div class="PublicationKeyword" :style="`font-size:` + this.smallFont">
-                        <span style="font-weight: bold">
-                            Keywords: 
-                        </span>
-                        <div class="KeywordList">
-                            <a :href="createKeywordUrl(keyword)" target='_blank' v-for="keyword in publication.keywords">
-                                <div class="unselect KeywordItem">
-                                    {{ keyword }}
-                                </div>
-                            </a>
+            <div class="Item" v-for="publication in content[year]">
+                <div v-if="Object.keys(publication.options).length > 0" v-bind:class="isPC ? 'Publication': 'Publication_Mobile'">
+                    <div class="PublicationImage">
+                        <a :href="publication.image" target="_blank">
+                            <img :src="publication.image" style="width: 100%;">
+                        </a>
+                    </div>
+                    <div class="PublicationDesc">
+                        <div class="PublicationTitle" :style="`font-size:` + this.smallFont" v-html="publication.title"></div>
+                        <div class="PublicationAuthor" :style="`font-size:` + this.smallFont" v-html="publication.author"></div>
+                        <div class="PublicationPublisher" :style="`font-size:` + this.smallFont" v-html="publication.publisher"></div>
+                        <div class="PublicationKeyword" :style="`font-size:` + this.smallFont">
+                            <span style="font-weight: bold">
+                                Keywords: 
+                            </span>
+                            <div class="KeywordList">
+                                <a :href="createKeywordUrl(keyword)" target='_blank' v-for="keyword in publication.keywords">
+                                    <div class="unselect KeywordItem">
+                                        {{ keyword }}
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="PublicationOptions" :style="`font-size:` + this.smallFont">
+                            <div style="flex: 0 0 auto; display: inline-block; margin: 5px 10px 5px 0px" v-for="(value, key, index) in publication.options" >
+                                <a  :href="value" style="display:inline-block" v-if="key == `Project Page`">
+                                    <div :style="`--btn_color:` + optionColors[index]" class="unselect OptionItem">
+                                        {{ key }}
+                                    </div>
+                                </a>
+                                <a  :href="value" style="display:inline-block; flex: 10" v-else-if="key == `Code`">
+                                    <div :style="`--btn_color:` + optionColors[index]" class="unselect OptionItem">
+                                        <span style="font-weight: bold">{{ key }}</span>
+                                        <span style="margin-left:5px; border-left: 2px dotted; padding-left: 5px; font-weight: bold" v-if="value in stars">☆ {{ stars[value] }}</span>
+                                    </div>
+                                </a>
+                                <a  :href="value" target="_blank" style="display:inline-block" v-else>
+                                    <div :style="`--btn_color:` + optionColors[index]" class="unselect OptionItem">
+                                        {{ key }}
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="PublicationOptions" :style="`font-size:` + this.smallFont">
-                        <div style="flex: 0 0 auto; display: inline-block; margin: 5px 10px 5px 0px" v-for="(value, key, index) in publication.options" >
-                            <a  :href="value" style="display:inline-block" v-if="key == `Project Page`">
-                                <div :style="`--btn_color:` + optionColors[index]" class="unselect OptionItem">
-                                    {{ key }}
-                                </div>
-                            </a>
-                            <a  :href="value" style="display:inline-block; flex: 10" v-else-if="key == `Code`">
-                                <div :style="`--btn_color:` + optionColors[index]" class="unselect OptionItem">
-                                    <span style="font-weight: bold">{{ key }}</span>
-                                    <span style="margin-left:5px; border-left: 2px dotted; padding-left: 5px; font-weight: bold" v-if="value in stars">☆ {{ stars[value] }}</span>
-                                </div>
-                            </a>
-                            <a  :href="value" target="_blank" style="display:inline-block" v-else>
-                                <div :style="`--btn_color:` + optionColors[index]" class="unselect OptionItem">
-                                    {{ key }}
-                                </div>
-                            </a>
-                        </div>
-                        <!-- <div style="flex: 10 1 auto; display: inline-block"></div> -->
-                    </div>
                 </div>
-            </div>
-            <div class="Publication_Mobile Item" v-for="publication in content[year]" v-else>
-                <div class="PublicationImage">
-                    <a :href="publication.image" target="_blank">
-                        <img :src="publication.image" style="width: 100%;">
-                    </a>
-                </div>
-                <div class="PublicationDesc">
-                    <div class="PublicationTitle" :style="`font-size:` + this.smallFont" v-html="publication.title"></div>
-                    <div class="PublicationAuthor" :style="`font-size:` + this.smallFont" v-html="publication.author"></div>
-                    <div class="PublicationPublisher" :style="`font-size:` + this.smallFont" v-html="publication.publisher"></div>
-                    <div class="PublicationKeyword" :style="`font-size:` + this.smallFont">
-                        <span style="font-weight: bold">
-                            Keywords: 
-                        </span>
-                        <div class="KeywordList">
-                            <a :href="createKeywordUrl(keyword)" target='_blank' v-for="keyword in publication.keywords">
-                                <div class="unselect KeywordItem">
-                                    {{ keyword }}
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="PublicationOptions" :style="`font-size:` + this.smallFont">
-                        <div style="flex: 1 0 auto; display: flex; margin: 5px" v-for="(value, key, index) in publication.options" >
-
-                            <a  :href="value" style="display:inline-block; flex: 10" v-if="key == `Project Page`">
-                                <div :style="`--btn_color:` + optionColors[index]" class="unselect OptionItem">
-                                    {{ key }}
-                                </div>
-                            </a>
-                            <a  :href="value" target="_blank" style="display:inline-block; flex: 10" v-else>
-                                <div :style="`--btn_color:` + optionColors[index]" class="unselect OptionItem">
-                                    {{ key }}
-                                </div>
-                            </a>
-                        </div>
+                <div v-else v-bind:class="isPC ? 'Publication': 'Publication_Mobile'">
+                    <div class="PublicationDesc" style="align-items: center;" v-bind:style="isPC ? 'margin-right: 30px' : ''">
+                        <div class="PublicationTitle" :style="`font-size:` + this.smallFont" v-html="publication.title" style="text-align: center; word-break: break-word; word-wrap: break-word;"></div>
+                        <div class="PublicationAuthor" :style="`font-size:` + this.smallFont" v-html="publication.author" style="text-align: center; word-break: break-word; word-wrap: break-word;"></div>
+                        <div class="PublicationComment" :style="`font-size:` + this.largeFont">Coming soon~</div>
                     </div>
                 </div>
             </div>
@@ -290,6 +259,10 @@ export default {
 .PublicationKeyword {
     margin-top: 5px;
     display: flex;
+}
+
+.PublicationComment {
+    font-weight: bold;
 }
 
 .KeywordList {

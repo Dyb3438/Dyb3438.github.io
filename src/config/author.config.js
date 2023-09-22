@@ -26,6 +26,14 @@ export default{
     publications: {
         2023: [
             {
+                image: '',
+                title: 'Towards Real-World Test-Time Adaptation: Tri-Net Self-Training with Balanced Normalization',
+                author: '<b>Yongyi Su</b>, Xun Xu, and Kui Jia',
+                publisher: 'Preprint, 2023',
+                keywords: ['Test-Time Adaptation', 'Real-World Test-Time Adaptation', 'Balanced BN', 'Self Training'],
+                options: {}
+            },
+            {
                 image: './imgs/2023_LiEtAl_OWTTT.png',
                 title: 'On the Robustness of Open-World Test-Time Training: Self-Training with Dynamic Prototype Expansion',
                 author: 'Yushu Li, Xun Xu, <b>Yongyi Su</b> and Kui Jia',
