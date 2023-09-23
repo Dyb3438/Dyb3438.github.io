@@ -116,8 +116,8 @@ export default {
                             </div>
                         </div>
                         <div class="PublicationOptions" :style="`font-size:` + this.smallFont">
-                            <div style="flex: 0 0 auto; display: inline-block; margin: 5px 10px 5px 0px" v-for="(value, key, index) in publication.options" >
-                                <a  :href="value" style="display:inline-block" v-if="key == `Project Page`">
+                            <div style="display: flex;" v-bind:style="isPC ? 'flex: 0 0 auto; margin: 5px 10px 5px 0' : 'flex: 1 0 auto; margin: 5px'" v-for="(value, key, index) in publication.options" >
+                                <a  :href="value" style="display:inline-block; flex: 10" v-if="key == `Project Page`">
                                     <div :style="`--btn_color:` + optionColors[index]" class="unselect OptionItem">
                                         {{ key }}
                                     </div>
@@ -128,7 +128,7 @@ export default {
                                         <span style="margin-left:5px; border-left: 2px dotted; padding-left: 5px; font-weight: bold" v-if="value in stars">☆ {{ stars[value] }}</span>
                                     </div>
                                 </a>
-                                <a  :href="value" target="_blank" style="display:inline-block" v-else>
+                                <a  :href="value" target="_blank" style="display:inline-block; flex: 10" v-else>
                                     <div :style="`--btn_color:` + optionColors[index]" class="unselect OptionItem">
                                         {{ key }}
                                     </div>
