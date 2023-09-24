@@ -1,9 +1,9 @@
 export default{
     
     ICONs: {
-        SCUT: '../imgs/SCUT_small.jpg',
-        I2R: '../imgs/ASTAR_I2R.png',
-        PC: '../imgs/pengcheng.jpeg'
+        SCUT: '../imgs/SCUT_small.webp',
+        I2R: '../imgs/ASTAR_I2R.webp',
+        PC: '../imgs/pengcheng.webp'
     },
 
     Authors: {

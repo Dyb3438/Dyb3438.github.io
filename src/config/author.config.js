@@ -1,6 +1,6 @@
 export default{
     name: 'Yongyi Su',
-    avatar_pic: './imgs/YongyiSu2.jpeg',
+    avatar_pic: './imgs/YongyiSu2.webp',
     role: 'PhD Student',
     school: {name: 'South China University of Technology', url: 'https://www.scut.edu.cn/'},
     college: {name: '', url: ''},
@@ -34,7 +34,7 @@ export default{
                 options: {}
             },
             {
-                image: './imgs/2023_LiEtAl_OWTTT.png',
+                image: './imgs/2023_LiEtAl_OWTTT.webp',
                 title: 'On the Robustness of Open-World Test-Time Training: Self-Training with Dynamic Prototype Expansion',
                 author: 'Yushu Li, Xun Xu, <b>Yongyi Su</b> and Kui Jia',
                 publisher: 'IEEE/CVF International Conference on Computer Vision (<b>ICCV</b>), 2023 (Oral presentation)',
@@ -47,7 +47,7 @@ export default{
                 }
             },
             {
-                image: './imgs/2023_SuEtAl_MulPro.png',
+                image: './imgs/2023_SuEtAl_MulPro.webp',
                 title: 'Weakly Supervised 3D Point Cloud Segmentation via Multi-Prototype Learning',
                 author: '<b>Yongyi Su</b>, Xun Xu and Kui Jia',
                 publisher: 'IEEE Transactions on Circuits and Systems for Video Technology (<b>TCSVT</b>), 2023',
@@ -60,7 +60,7 @@ export default{
                 }
             },
             {
-                image: './imgs/2023_ChenEtAl_STFAR.png',
+                image: './imgs/2023_ChenEtAl_STFAR.webp',
                 title: 'STFAR: Improving Object Detection Robustness at Test-Time by Self-Training with Feature Alignment Regularization',
                 author: 'Yijin Chen, Xun Xu, <b>Yongyi Su</b> and Kui Jia',
                 publisher: 'Preprint, 2023',
@@ -73,7 +73,7 @@ export default{
                 }
             },
             {
-                image: './imgs/2023_SuEtAl_TTAC++.png',
+                image: './imgs/2023_SuEtAl_TTAC-.webp',
                 title: 'Revisiting Realistic Test-Time Training: Sequential Inference and Adaptation by Anchored Clustering Regularized Self-Training',
                 author: '<b>Yongyi Su</b>, Xun Xu, Tianrui Li and Kui Jia',
                 publisher: 'Preprint, 2023',
@@ -89,7 +89,7 @@ export default{
 
         2022: [
             {
-                image: './imgs/2022_SuEtAl_TTAC.png',
+                image: './imgs/2022_SuEtAl_TTAC.webp',
                 title: 'Revisiting Realistic Test-Time Training: Sequential Inference and Adaptation by Anchored Clustering',
                 author: '<b>Yongyi Su</b>, Xun Xu and Kui Jia',
                 publisher: 'Advances in Neural Information Processing Systems (<b>NeurIPS</b>), 2022',
