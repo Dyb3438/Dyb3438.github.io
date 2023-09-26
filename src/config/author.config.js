@@ -26,12 +26,17 @@ export default{
     publications: {
         2023: [
             {
-                image: '',
+                image: './imgs/2023_SuEtAl_TRIBE.webp',
                 title: 'Towards Real-World Test-Time Adaptation: Tri-Net Self-Training with Balanced Normalization',
                 author: '<b>Yongyi Su</b>, Xun Xu, and Kui Jia',
                 publisher: 'Preprint, 2023',
                 keywords: ['Test-Time Adaptation', 'Real-World Test-Time Adaptation', 'Balanced BN', 'Self Training'],
-                options: {}
+                options: {
+                    'PDF': '',
+                    'Bibtex': '',
+                    'Project Page': 'https://github.com/Gorilla-Lab-SCUT/TRIBE',
+                    'Code': 'https://github.com/Gorilla-Lab-SCUT/TRIBE'
+                }
             },
             {
                 image: './imgs/2023_LiEtAl_OWTTT.webp',
