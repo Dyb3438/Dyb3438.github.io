@@ -32,8 +32,8 @@ export default{
                 publisher: 'Preprint, 2023',
                 keywords: ['Test-Time Adaptation', 'Real-World Test-Time Adaptation', 'Balanced BN', 'Self Training'],
                 options: {
-                    'PDF': '',
-                    'Bibtex': '',
+                    'PDF': 'https://arxiv.org/abs/2309.14949',
+                    'Bibtex': './bibtexs/2023_SuEtAl_TRIBE.bib',
                     'Project Page': 'https://github.com/Gorilla-Lab-SCUT/TRIBE',
                     'Code': 'https://github.com/Gorilla-Lab-SCUT/TRIBE'
                 }
