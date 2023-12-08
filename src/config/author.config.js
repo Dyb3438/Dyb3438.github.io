@@ -37,7 +37,8 @@ export default{
                     'Bibtex': './bibtexs/2023_ZhangEtAl_WeSAM.bib',
                     'Project Page': 'https://github.com/Zhang-Haojie/WeSAM',
                     'Code': 'https://github.com/Zhang-Haojie/WeSAM'
-                }
+                },
+                new: true
             },
             {
                 image: './imgs/2023_SuEtAl_TRIBE.webp',
@@ -50,7 +51,8 @@ export default{
                     'Bibtex': './bibtexs/2023_SuEtAl_TRIBE.bib',
                     'Project Page': 'https://github.com/Gorilla-Lab-SCUT/TRIBE',
                     'Code': 'https://github.com/Gorilla-Lab-SCUT/TRIBE'
-                }
+                },
+                new: true
             },
             {
                 image: './imgs/2023_LiEtAl_OWTTT.webp',

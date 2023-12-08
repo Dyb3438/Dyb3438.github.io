@@ -170,29 +170,29 @@ export default{
       </div>
 
       <AuthorItem font_size="var(--largeFont)" font_weight="bold" style="margin-top: 30px">
-        <template v-slot:Icon>
+        <!-- <template v-slot:Icon>
           <User/>
-        </template>
+        </template> -->
         <template v-slot:Text>
-          {{authorName}}
+          👨🏻‍💻 {{authorName}}
         </template>
       </AuthorItem>
 
       <AuthorItem font_size="var(--smallFont)">
-        <template v-slot:Icon>
+        <!-- <template v-slot:Icon>
           <Degree/>
-        </template>
+        </template> -->
         <template v-slot:Text>
-          {{authorRole}}
+          🎓 {{authorRole}}
         </template>
       </AuthorItem>
 
       <AuthorItem font_size="var(--smallFont)">
-        <template v-slot:Icon>
+        <!-- <template v-slot:Icon>
           <Department/>
-        </template>
+        </template> -->
         <template v-slot:Text>
-          <a :href="authorSchool.url" target="_blank">{{authorSchool.name}}</a>
+          🏫 <a :href="authorSchool.url" target="_blank">{{authorSchool.name}}</a>
           <div v-if="authorCollege.name != ``" style="display: inline-block;">
            <span>,&nbsp&nbsp<a :href="authorCollege.url" target="_blank">{{authorCollege.name}}</a></span>
           </div>
@@ -200,11 +200,11 @@ export default{
       </AuthorItem>
 
       <AuthorItem font_size="var(--smallFont)">
-        <template v-slot:Icon>
+        <!-- <template v-slot:Icon>
           <Mail/>
-        </template>
+        </template> -->
         <template v-slot:Text>
-          <a :href="this.EmailHref">{{ this.EmailShow }}</a>
+          📮 <a :href="this.EmailHref">{{ this.EmailShow }}</a>
         </template>
       </AuthorItem>
       

@@ -79,10 +79,10 @@ export default {
 <template>
   <div class="Publications">
     <div class="title unselect">
-        <div class="icon" :style="`width:` + this.largeFont + '; height:' + this.largeFont">
+        <!-- <div class="icon" :style="`width:` + this.largeFont + '; height:' + this.largeFont">
             <Publication/>
-        </div>
-        <span :style="`font-size:` + this.largeFont">Selected Publications</span>
+        </div> -->
+        <span :style="`font-size:` + this.largeFont">🏆 Selected Publications</span>
     </div>
 
     <div class="content" ref="content">
@@ -92,15 +92,15 @@ export default {
                 <span :style="`font-size:` + this.smallFont + `; margin: 0 10px;`"><b>{{ year }}</b></span>
                 <div class="RightPart"></div>
             </div>
-            <div class="Item" v-for="publication in content[year]">
-                <div v-if="Object.keys(publication.options).length > 0" v-bind:class="isPC ? 'Publication': 'Publication_Mobile'">
+            <div class="Item" v-for="publication in content[year]" >
+                <div v-if="Object.keys(publication.options).length > 0" v-bind:class="[isPC ? 'Publication': 'Publication_Mobile']">
                     <div class="PublicationImage">
                         <a :href="publication.image" target="_blank">
                             <img :src="publication.image" style="width: 100%;">
                         </a>
                     </div>
                     <div class="PublicationDesc">
-                        <div class="PublicationTitle" :style="`font-size:` + this.smallFont" v-html="publication.title"></div>
+                        <div class="PublicationTitle" :style="`font-size:` + this.smallFont" v-html="[publication.new ? `<span style='font-size: var(--largeFont)'>💥 </span>` : ``] + publication.title"></div>
                         <div class="PublicationAuthor" :style="`font-size:` + this.smallFont" v-html="publication.author"></div>
                         <div class="PublicationPublisher" :style="`font-size:` + this.smallFont" v-html="publication.publisher"></div>
                         <div class="PublicationKeyword" :style="`font-size:` + this.smallFont">
@@ -180,6 +180,7 @@ export default {
 
 .Item {
     margin: 10px 0;
+    position: relative
 }
 
 .YearBlock {
@@ -219,12 +220,12 @@ export default {
     display: flex;
     align-items: top;
     padding: 10px;
+    border-radius: 10px;
 }
 
 .Publication:hover {
     transition: 0.3s;
     box-shadow: 0px 0px 20px lightgray;
-    border-radius: 10px;
     /* transform: translateY(-3px); */
 }
 

@@ -16,7 +16,7 @@ export default {
 
 <template>
    <div class="Item" ref="Item">
-        <div class="Icon" :style="`width:` + this.font_size + '; height:' + this.font_size">
+        <div class="Icon" :style="`width:` + this.font_size + '; height:' + this.font_size" v-if="$slots.Icon">
           <span>
             <slot name="Icon"></slot>
           </span>

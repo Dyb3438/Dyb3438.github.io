@@ -21,10 +21,10 @@ export default {
 <template>
   <div class="AboutMe">
     <div class="title unselect">
-        <div class="icon" :style="`width:` + this.largeFont + '; height:' + this.largeFont">
+        <!-- <div class="icon" :style="`width:` + this.largeFont + '; height:' + this.largeFont">
             <Me/>
-        </div>
-        <span :style="`font-size:` + this.largeFont">About Me</span>
+        </div> -->
+        <span :style="`font-size:` + this.largeFont">🐣 About Me</span>
     </div>
 
     <div class="content">

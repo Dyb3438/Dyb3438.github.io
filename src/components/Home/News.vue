@@ -37,10 +37,10 @@ export default {
 <template>
   <div class="News">
     <div class="title unselect"  ref="Title">
-        <div class="icon" :style="`width:` + this.largeFont + '; height:' + this.largeFont">
+        <!-- <div class="icon" :style="`width:` + this.largeFont + '; height:' + this.largeFont">
             <News/>
-        </div>
-        <span :style="`font-size:` + this.largeFont">News</span>
+        </div> -->
+        <span :style="`font-size:` + this.largeFont">🔥 News</span>
     </div>
 
     <div class="content" ref="Content">
