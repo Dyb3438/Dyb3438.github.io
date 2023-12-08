@@ -265,6 +265,7 @@ export default{
   display: flex;
   flex-direction: column;
   width: 30vw;
+  --size: 18vw;
   min-width: 300px;
   height: 100vh;
   padding: 2vw;
@@ -312,7 +313,6 @@ export default{
 
 .AvatarPic {
   flex: 0 0 auto;
-  --size: 18vw;
   width: var(--size);
   height: var(--size);
   min-width: 180px;
@@ -358,7 +358,6 @@ export default{
   /* color: white; */
   color: var(--btn_color);
   border: 2px solid var(--btn_color);
-  background-color: white;
 
   cursor: pointer;
 }

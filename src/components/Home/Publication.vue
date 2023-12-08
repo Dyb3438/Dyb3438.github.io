@@ -322,7 +322,6 @@ export default {
   border-radius: calc(var(--smallFont) / 3 * 2);
   color: var(--btn_color);
   border: 2px solid var(--btn_color);
-  background-color: white;
 
   cursor: pointer;
 }
