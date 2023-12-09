@@ -252,7 +252,7 @@ export default{
           </div>
         </div>
 
-        <div id="footer"><small>Updated Dec 8, 2023</small></div>
+        <div id="footer"><small>Updated Dec 9, 2023</small></div>
       </div>
     </div>
   </div>
