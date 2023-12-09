@@ -107,7 +107,7 @@ export default {
 
 .author {
     min-width: 160px;
-    min-height: 260px;
+    min-height: 240px;
     
     width: 12vw;
     height: 18vw;
