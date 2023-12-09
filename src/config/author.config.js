@@ -18,6 +18,7 @@ export default{
     `,
 
     news: [
+        `Dec 2023: Our work on <b>Towards Real-World Test-Time Adaptation: Tri-Net Self-Training with Balanced Normalization</b> was accepted by AAAI 2024.`,
         `Nov 2023: I'm studying at <a href='https://www.a-star.edu.sg/i2r'>I<sup>2</sup>R, A*STAR</a> as a visit student, funded by <a href='https://csc.edu.cn/'>CSC</a>, due to Nov 2025.`,
         `Jul 2023: Our work on <b>On the Robustness of Open-World Test-Time Training: Self-Training with Dynamic Prototype Expansion</b> was accepted by <b>ICCV 2023 as Oral presentation</b>. Congratulations to Yushu Li!`,
         `May 2023: Our work on <b>Weakly Supervised 3D Point Cloud Segmentation via Multi-Prototype Learning</b> was accepted by IEEE Transactions on Circuits and Systems for Video Technology (TCSVT).`,
@@ -25,6 +26,22 @@ export default{
     ],
 
     publications: {
+        2024: [
+            {
+                image: './imgs/2023_SuEtAl_TRIBE.webp',
+                title: 'Towards Real-World Test-Time Adaptation: Tri-Net Self-Training with Balanced Normalization',
+                author: '<b>Yongyi Su</b>, Xun Xu and Kui Jia',
+                publisher: 'Proceedings of the AAAI conference on artificial intelligence (<b>AAAI</b>), 2024',
+                keywords: ['Test-Time Adaptation', 'Real-World Test-Time Adaptation', 'Balanced BN', 'Self Training'],
+                options: {
+                    'PDF': 'https://arxiv.org/abs/2309.14949',
+                    'Bibtex': './bibtexs/2023_SuEtAl_TRIBE.bib',
+                    'Project Page': 'https://github.com/Gorilla-Lab-SCUT/TRIBE',
+                    'Code': 'https://github.com/Gorilla-Lab-SCUT/TRIBE'
+                },
+                new: true
+            },
+        ],
         2023: [
             {
                 image: './imgs/2023_ZhangEtAl_WeSAM.webp',
@@ -37,20 +54,6 @@ export default{
                     'Bibtex': './bibtexs/2023_ZhangEtAl_WeSAM.bib',
                     'Project Page': 'https://github.com/Zhang-Haojie/WeSAM',
                     'Code': 'https://github.com/Zhang-Haojie/WeSAM'
-                },
-                new: true
-            },
-            {
-                image: './imgs/2023_SuEtAl_TRIBE.webp',
-                title: 'Towards Real-World Test-Time Adaptation: Tri-Net Self-Training with Balanced Normalization',
-                author: '<b>Yongyi Su</b>, Xun Xu and Kui Jia',
-                publisher: 'Preprint, 2023',
-                keywords: ['Test-Time Adaptation', 'Real-World Test-Time Adaptation', 'Balanced BN', 'Self Training'],
-                options: {
-                    'PDF': 'https://arxiv.org/abs/2309.14949',
-                    'Bibtex': './bibtexs/2023_SuEtAl_TRIBE.bib',
-                    'Project Page': 'https://github.com/Gorilla-Lab-SCUT/TRIBE',
-                    'Code': 'https://github.com/Gorilla-Lab-SCUT/TRIBE'
                 },
                 new: true
             },
@@ -123,6 +126,41 @@ export default{
                 }
             }
         ]
+    },
+
+    co_authors: {
+        'Kui Jia': {
+            image: './imgs/co-authors/JiaKui.jpeg',
+            institute: 'The Chinese University of Hong Kong, Shenzhen',
+            position: 'Professor',
+            url: 'http://kuijia.site/',
+            relationship: 'Teacher'
+        },
+        'Xun Xu': {
+            image: './imgs/co-authors/XuXun.jpeg',
+            institute: 'Institute for Infocomm Research, A*STAR',
+            position: 'Scientist',
+            url: 'https://alex-xun-xu.github.io/',
+            relationship: 'Teacher'
+        },
+        'Yushu Li': {
+            image: './imgs/co-authors/yushu.jpeg',
+            institute: 'South China University of Technology, Guangzhou',
+            position: 'Student',
+            url: 'https://yushu-li.github.io/'
+        },
+        'Yijin Chen': {
+            image: '',
+            institute: 'South China University of Technology, Guangzhou',
+            position: 'Student',
+        },
+        'Haojie Zhang': {
+            image: './imgs/co-authors/HaojieZhang.jpeg',
+            institute: 'South China University of Technology, Guangzhou',
+            position: 'Student',
+            url: 'https://scholar.google.com/citations?user=waixiQgAAAAJ'
+        },
+
     },
 
     analysis_globe_id: 'ZDtaUoW728eYUFp5JX7le2e2P1sZJLUg9RrVZQf7j5g'
