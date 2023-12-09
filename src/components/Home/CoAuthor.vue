@@ -138,8 +138,8 @@ export default {
 
 .head img{
     border-radius: 5px;
-    width: calc(max(12vw, 180px) - 20px); 
-    height: calc(max(12vw, 180px) - 20px); 
+    width: calc(max(12vw, 160px) - 20px); 
+    height: calc(max(12vw, 160px) - 20px); 
     overflow: hidden; 
     object-fit: contain;
     /* object-position: top; */
