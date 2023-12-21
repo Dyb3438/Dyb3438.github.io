@@ -252,7 +252,7 @@ export default{
           </div>
         </div>
 
-        <div id="footer"><small>Updated Dec 9, 2023</small></div>
+        <div id="footer"><small>Updated Dec 22, 2023</small></div>
       </div>
     </div>
   </div>
@@ -263,15 +263,15 @@ export default{
   display: flex;
   width: 100vw;
   background: white;
+  --left: max(280px, 28vw);
 }
 
 .AvatarBlock {
   position: fixed;
   display: flex;
   flex-direction: column;
-  width: 30vw;
+  width: var(--left);
   --size: 18vw;
-  min-width: 300px;
   height: 100vh;
   padding: 2vw;
 
@@ -287,7 +287,7 @@ export default{
   flex-direction: column;
   flex: 1;
   height: 100%;
-  padding-left: max(30vw, 300px);
+  padding-left: var(--left);
 }
 
 .RightContent {
