@@ -37,7 +37,6 @@ export default {
                     pubs.forEach((pub) => {
                         if (pub.title == bold_text){
                             let showDiv = (e) => {
-                                console.log(e);
                                 this.new_description_div.style=" \
                                     display: block;              \
                                     position: absolute;          \
