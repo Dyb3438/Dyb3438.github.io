@@ -45,6 +45,9 @@ export default {
         createKeywordUrl(keyword){
             return 'https://www.google.com/search?q=' + encodeURI(keyword);
         },
+        getPubId(image_url){
+            return image_url.split('/')[image_url.split('/').length - 1].split('.')[0];
+        }
     },
     
     async mounted(){
@@ -92,7 +95,7 @@ export default {
                 <span :style="`font-size:` + this.smallFont + `; margin: 0 10px;`"><b>{{ year }}</b></span>
                 <div class="RightPart"></div>
             </div>
-            <div class="Item" v-for="publication in content[year]" >
+            <div class="Item" v-for="publication in content[year]" :id="getPubId(publication.image)">
                 <div v-if="Object.keys(publication.options).length > 0" v-bind:class="[isPC ? 'Publication': 'Publication_Mobile']">
                     <div class="PublicationImage">
                         <a :href="publication.image" target="_blank">

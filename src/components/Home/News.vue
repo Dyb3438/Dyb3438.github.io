@@ -48,14 +48,22 @@ export default {
                                     <img src="+ pub.image +" style='width: 100%; height: auto; box-shadow: 0px 0px 10px lightgray'\> \
                                 ";
                             };
-                            bold_elem.addEventListener('mouseover', showDiv);
-                            bold_elem.addEventListener('mousemove', showDiv);
-                            bold_elem.addEventListener('mouseout', (e) => {
+
+                            let hideDiv = (e) => {
                                 this.new_description_div.style=" \
                                     display: none;              \
                                 ";
                                 this.new_description_div.innerHTML="";
+                            };
+
+                            bold_elem.addEventListener('mouseover', showDiv);
+                            bold_elem.addEventListener('mousemove', showDiv);
+                            bold_elem.addEventListener('mouseout', hideDiv);
+                            bold_elem.addEventListener('click', (e) => {
+                                window.location.href="#" + this.getPubId(pub.image);
+                                hideDiv(e);
                             });
+
                             bold_elem.style.cursor = "pointer";
                         }
                     })
@@ -68,7 +76,13 @@ export default {
         isPC(){
             return this.screenWidth >= 800;
         },
-    }
+    },
+
+    methods: {
+        getPubId(image_url){
+            return image_url.split('/')[image_url.split('/').length - 1].split('.')[0];
+        }
+    },
 }
 </script>
 
