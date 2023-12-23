@@ -26,9 +26,9 @@ export default {
             this.content_height
         );
         if (this.isPC){
-            this.new_description_div = document.createElement('div');
-            this.new_description_div.style='display: none';
-            document.body.appendChild(this.new_description_div);
+            // this.new_description_div = document.createElement('div');
+            // this.new_description_div.style='display: none';
+            // document.body.appendChild(this.new_description_div);
 
             for (let idx=0; idx < this.$refs.NewsList.getElementsByTagName('b').length; idx++){
                 const bold_elem = this.$refs.NewsList.getElementsByTagName('b')[idx];
@@ -36,32 +36,32 @@ export default {
                 Object.values(authorConfig.publications).forEach((pubs) => {
                     pubs.forEach((pub) => {
                         if (pub.title == bold_text){
-                            let showDiv = (e) => {
-                                this.new_description_div.style=" \
-                                    display: block;              \
-                                    position: absolute;          \
-                                    top: " + (e.pageY + 20) + "px;    \
-                                    left: " + (e.pageX + 10) + "px;   \
-                                    width: 20vw;                \
-                                ";
-                                this.new_description_div.innerHTML = " \
-                                    <img src="+ pub.image +" style='width: 100%; height: auto; box-shadow: 0px 0px 10px lightgray'\> \
-                                ";
-                            };
+                            // let showDiv = (e) => {
+                            //     this.new_description_div.style=" \
+                            //         display: block;              \
+                            //         position: absolute;          \
+                            //         top: " + (e.pageY + 20) + "px;    \
+                            //         left: " + (e.pageX + 10) + "px;   \
+                            //         width: 20vw;                \
+                            //     ";
+                            //     this.new_description_div.innerHTML = " \
+                            //         <img src="+ pub.image +" style='width: 100%; height: auto; box-shadow: 0px 0px 10px lightgray'\> \
+                            //     ";
+                            // };
 
-                            let hideDiv = (e) => {
-                                this.new_description_div.style=" \
-                                    display: none;              \
-                                ";
-                                this.new_description_div.innerHTML="";
-                            };
+                            // let hideDiv = (e) => {
+                            //     this.new_description_div.style=" \
+                            //         display: none;              \
+                            //     ";
+                            //     this.new_description_div.innerHTML="";
+                            // };
 
-                            bold_elem.addEventListener('mouseover', showDiv);
-                            bold_elem.addEventListener('mousemove', showDiv);
-                            bold_elem.addEventListener('mouseout', hideDiv);
+                            // bold_elem.addEventListener('mouseover', showDiv);
+                            // bold_elem.addEventListener('mousemove', showDiv);
+                            // bold_elem.addEventListener('mouseout', hideDiv);
                             bold_elem.addEventListener('click', (e) => {
                                 window.location.href="#" + this.getPubId(pub.image);
-                                hideDiv(e);
+                                // hideDiv(e);
                             });
 
                             bold_elem.style.cursor = "pointer";
