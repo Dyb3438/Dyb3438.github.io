@@ -6,6 +6,13 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      name: 'root',
+      redirect: to => {
+        return { path: '/HappyNewYear'}
+      },
+    },
+    {
+      path: '/home',
       name: 'home',
       component: HomeView
     },
@@ -22,6 +29,11 @@ const router = createRouter({
       name: '404',
       component: () => import('../views/404.vue')
       // component: () => import('../components/404/ghost.vue')
+    },
+    {
+      path: '/HappyNewYear',
+      name: 'NewYear',
+      component: () => import('../views/NewYear.vue')
     },
     {
       path: '/:catchAll(.*)',
