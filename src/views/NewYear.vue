@@ -61,7 +61,7 @@ export default{
             home_avatar_pic: authorConfig.avatar_pic,
 
 
-            counter: 5,
+            counter: 3,
             images: [
                 'https://images.pexels.com/photos/777059/pexels-photo-777059.jpeg',
                 'https://images.pexels.com/photos/1842332/pexels-photo-1842332.jpeg',
