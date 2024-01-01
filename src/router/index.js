@@ -8,7 +8,7 @@ const router = createRouter({
       path: '/',
       name: 'root',
       redirect: to => {
-        return { path: '/HappyNewYear'}
+        return { path: '/home'}
       },
     },
     {
