@@ -28,6 +28,20 @@ export default{
     publications: {
         2024: [
             {
+                image: './imgs/2024_LiuEtAl_SFOD.webp',
+                title: 'CLIP-guided Source-free Object Detection in Aerial Images',
+                author: 'Nanqing Liu, Xun Xu, <b>Yongyi Su</b>, Chengxin Liu, Peiliang Gong and Heng-Chao Li',
+                publisher: 'Preprint, 2024',
+                keywords: ['CLIP', 'Object Detection', 'Source-Free Domain Adaptation', 'Aerial Images'],
+                options: {
+                    'PDF': 'https://arxiv.org/abs/2401.05168',
+                    'Bibtex': './bibtexs/2024_LiuEtAl_SFOD.bib',
+                    // 'Project Page': 'https://github.com/Gorilla-Lab-SCUT/TRIBE',
+                    // 'Code': 'https://github.com/Gorilla-Lab-SCUT/TRIBE'
+                },
+                new: true
+            },
+            {
                 image: './imgs/2023_SuEtAl_TRIBE.webp',
                 title: 'Towards Real-World Test-Time Adaptation: Tri-Net Self-Training with Balanced Normalization',
                 author: '<b>Yongyi Su</b>, Xun Xu and Kui Jia',
@@ -139,28 +153,51 @@ export default{
         'Xun Xu': {
             image: './imgs/co-authors/XuXun.jpeg',
             institute: 'Institute for Infocomm Research, A*STAR',
-            position: 'Scientist',
+            position: 'Senior Scientist',
             url: 'https://alex-xun-xu.github.io/',
             relationship: 'Teacher'
         },
+
+        'Nanqing Liu': {
+            image: './imgs/co-authors/NanqingLiu.png',
+            institute: 'Southwest Jiaotong University, Chengdu',
+            position: 'PhD Student',
+            url: 'https://scholar.google.com/citations?user=x3dCJrAAAAAJ'
+        },
+
+        'Chengxin Liu': {
+            image: '',
+            institute: 'Huazhong University of Science and Technology, Wuhan',
+            position: 'PhD Student',
+            url: 'https://cxliu0.github.io/'
+        },
+
+        'Peiliang Gong': {
+            image: './imgs/co-authors/PeiliangGong.jpg',
+            institute: 'Nanjing University of Aeronautics and Astronautics, Nanjing',
+            position: 'PhD Student',
+            url: 'https://scholar.google.com/citations?user=0AQhhVQAAAAJ'
+        },
+
         'Yushu Li': {
             image: './imgs/co-authors/yushu.jpeg',
             institute: 'South China University of Technology, Guangzhou',
-            position: 'Student',
+            position: 'Master Student',
             url: 'https://yushu-li.github.io/'
         },
+
         'Yijin Chen': {
             image: '',
             institute: 'South China University of Technology, Guangzhou',
-            position: 'Student',
+            position: 'Master Student',
         },
+
         'Haojie Zhang': {
             image: './imgs/co-authors/HaojieZhang.jpeg',
             institute: 'South China University of Technology, Guangzhou',
-            position: 'Student',
+            position: 'Master Student',
             url: 'https://scholar.google.com/citations?user=waixiQgAAAAJ'
         },
-
     },
 
     analysis_globe_id: 'ZDtaUoW728eYUFp5JX7le2e2P1sZJLUg9RrVZQf7j5g'
