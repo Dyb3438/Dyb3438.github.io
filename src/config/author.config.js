@@ -166,7 +166,7 @@ export default{
         },
 
         'Chengxin Liu': {
-            image: '',
+            image: './imgs/co-authors/ChengxinLiu.jpg',
             institute: 'Huazhong University of Science and Technology, Wuhan',
             position: 'PhD Student',
             url: 'https://cxliu0.github.io/'
