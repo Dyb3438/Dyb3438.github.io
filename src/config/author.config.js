@@ -25,6 +25,30 @@ export default{
         `Sep 2022: Our work on <b>Revisiting Realistic Test-Time Training: Sequential Inference and Adaptation by Anchored Clustering</b> was accepted by NeurIPS 2022.`,
     ],
 
+    academicFootprints: {
+        'Education Background':[
+            [
+                'Master-Doctor program in South China Univeristy of Technology',
+                '2021.09-Now',
+                'Supervisor: Prof. Kui Jia and Dr. Xun Xu'
+            ],
+            [
+                'B.Eng in South China Univeristy of Technology',
+                '2017.09-2021.06'
+            ]
+        ],
+        'Academic Services':[
+            [
+                '<b>Journal Reviewer</b>',
+                'TIP, TCSVT',
+            ],
+            [
+                '<b>Conference Reviewer</b>',
+                'ICML, ICLR, NeurIPS, CVPR, ECCV, ACCV, etc.'
+            ]
+        ],
+    },
+
     publications: {
         2024: [
             {

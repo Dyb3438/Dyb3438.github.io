@@ -10,6 +10,7 @@ import AuthorItem from '../components/Home/AuthorItem.vue';
 import AboutMe from '../components/Home/AboutMe.vue';
 import CoAuthor from '../components/Home/CoAuthor.vue';
 import News from '../components/Home/News.vue';
+import AcademicFootprint from '../components/Home/AcademicFootprint.vue';
 import Publication from '../components/Home/Publication.vue';
 import Visit from '../components/icons/Visit.vue';
 import fetchJSONP from 'fetch-jsonp'
@@ -25,6 +26,7 @@ export default{
     AboutMe,
     CoAuthor,
     News,
+    AcademicFootprint,
     Next,
     Publication,
     Visit,
@@ -227,6 +229,9 @@ export default{
         <div class="BlockItem" style="margin-top:30px; max-height: 400px">
           <News largeFont="var(--largeFont)" smallFont="var(--smallFont)" :screenWidth="screenWidth"/>
         </div>
+        <div class="BlockItem" style="margin-top:30px;">
+          <AcademicFootprint largeFont="var(--largeFont)" smallFont="var(--smallFont)" :screenWidth="screenWidth"/>
+        </div>
         <div class="BlockItem" style="margin-top:30px">
           <Publication largeFont="var(--largeFont)" smallFont="var(--smallFont)" :screenWidth="screenWidth"/>
         </div>
@@ -235,10 +240,10 @@ export default{
         </div>
         <div class="VisitBlock" style="margin-top: 30px; width: 100%;">
           <div style="display: flex; align-items: center; margin-bottom: 20px;">
-              <div style="width: var(--largeFont); height: var(--largeFont); display: inline-block; padding-right: 10px; box-sizing: content-box;">
+              <!-- <div style="width: var(--largeFont); height: var(--largeFont); display: inline-block; padding-right: 10px; box-sizing: content-box;">
                   <Visit/>
-              </div>
-              <div style="font-size: var(--largeFont); font-weight: bold; display: inline-block" class="unselect">Recent Visitors</div>
+              </div> -->
+              <div style="font-size: var(--largeFont); font-weight: bold; display: inline-block" class="unselect">👀 Recent Visitors</div>
           </div>
           <div class="VisitItem">
             <div class="VisitDesc">
