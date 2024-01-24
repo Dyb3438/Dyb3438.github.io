@@ -28,12 +28,12 @@ export default{
     academicFootprints: {
         'Education Background':[
             [
-                'Master-Doctor program in South China Univeristy of Technology',
+                '<b>Master-Doctor program in South China Univeristy of Technology</b>',
                 '2021.09-Now',
                 'Supervisor: Prof. Kui Jia and Dr. Xun Xu'
             ],
             [
-                'B.Eng in South China Univeristy of Technology',
+                '<b>B.Eng in South China Univeristy of Technology</b>',
                 '2017.09-2021.06'
             ]
         ],
