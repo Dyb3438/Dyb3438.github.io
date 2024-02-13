@@ -86,6 +86,12 @@ body {
 b {
   font-weight: bolder;
 }
+
+equal:after {
+  content: "\2726";
+  display: inline-block;
+}
+
 /* 
 a {
   color: hsl(200.02deg 95.59% 47.48%);

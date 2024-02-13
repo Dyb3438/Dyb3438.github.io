@@ -18,6 +18,7 @@ export default{
     `,
 
     news: [
+        `Feb 2024: Our work on <b>Revisiting Realistic Test-Time Training: Sequential Inference and Adaptation by Anchored Clustering Regularized Self-Training</b> was accepted by TPAMI 2024. Congratulations!`,
         `Dec 2023: Our work on <b>Towards Real-World Test-Time Adaptation: Tri-Net Self-Training with Balanced Normalization</b> was accepted by AAAI 2024.`,
         `Nov 2023: I'm studying at <a href='https://www.a-star.edu.sg/i2r'>I<sup>2</sup>R, A*STAR</a> as a visit student, funded by <a href='https://www.csc.edu.cn/'>CSC</a>, due to Nov 2025.`,
         `Jul 2023: Our work on <b>On the Robustness of Open-World Test-Time Training: Self-Training with Dynamic Prototype Expansion</b> was accepted by <b>ICCV 2023 as Oral presentation</b>. Congratulations to Yushu Li!`,
@@ -52,6 +53,20 @@ export default{
     publications: {
         2024: [
             {
+                image: './imgs/2023_SuEtAl_TTAC-.webp',
+                title: 'Revisiting Realistic Test-Time Training: Sequential Inference and Adaptation by Anchored Clustering Regularized Self-Training',
+                author: '<b>Yongyi Su<equal></equal></b>, Xun Xu<equal></equal>, Tianrui Li and Kui Jia',
+                publisher: 'IEEE Transactions on Pattern Analysis and Machine Intelligence (<b>TPAMI</b>), 2024',
+                keywords: ['Test-Time Training', 'Self Training', 'Anchored Clustering', 'Feature Alignment'],
+                options: {
+                    'PDF': 'https://arxiv.org/abs/2303.10856',
+                    'Bibtex': './bibtexs/2023_SuEtAl_TTAC++.bib',
+                    // 'Project Page': '',
+                    // 'Code': ''
+                },
+                new: true
+            },
+            {
                 image: './imgs/2024_LiuEtAl_SFOD.webp',
                 title: 'CLIP-guided Source-free Object Detection in Aerial Images',
                 author: 'Nanqing Liu, Xun Xu, <b>Yongyi Su</b>, Chengxin Liu, Peiliang Gong and Heng-Chao Li',
@@ -63,7 +78,7 @@ export default{
                     // 'Project Page': 'https://github.com/Gorilla-Lab-SCUT/TRIBE',
                     // 'Code': 'https://github.com/Gorilla-Lab-SCUT/TRIBE'
                 },
-                new: true
+                // new: true
             },
             {
                 image: './imgs/2023_SuEtAl_TRIBE.webp',
@@ -77,14 +92,14 @@ export default{
                     'Project Page': 'https://github.com/Gorilla-Lab-SCUT/TRIBE',
                     'Code': 'https://github.com/Gorilla-Lab-SCUT/TRIBE'
                 },
-                new: true
+                // new: true
             },
         ],
         2023: [
             {
                 image: './imgs/2023_ZhangEtAl_WeSAM.webp',
                 title: 'Improving the Generalization of Segmentation Foundation Model under Distribution Shift via Weakly Supervised Adaptation',
-                author: 'Haojie Zhang, <b>Yongyi Su</b>, Xun Xu and Kui Jia',
+                author: 'Haojie Zhang<equal></equal>, <b>Yongyi Su<equal></equal></b>, Xun Xu and Kui Jia',
                 publisher: 'Preprint, 2023',
                 keywords: ['Segment Anything', 'Foundation Model', 'Weakly Supervised Learning', 'Domain Adaptation'],
                 options: {
@@ -93,7 +108,7 @@ export default{
                     'Project Page': 'https://github.com/Zhang-Haojie/WeSAM',
                     'Code': 'https://github.com/Zhang-Haojie/WeSAM'
                 },
-                new: true
+                // new: true
             },
             {
                 image: './imgs/2023_LiEtAl_OWTTT.webp',
@@ -134,26 +149,13 @@ export default{
                     // 'Code': ''
                 }
             },
-            {
-                image: './imgs/2023_SuEtAl_TTAC-.webp',
-                title: 'Revisiting Realistic Test-Time Training: Sequential Inference and Adaptation by Anchored Clustering Regularized Self-Training',
-                author: '<b>Yongyi Su</b>, Xun Xu, Tianrui Li and Kui Jia',
-                publisher: 'Preprint, 2023',
-                keywords: ['Test-Time Training', 'Self Training', 'Anchored Clustering', 'Feature Alignment'],
-                options: {
-                    'PDF': 'https://arxiv.org/abs/2303.10856',
-                    'Bibtex': './bibtexs/2023_SuEtAl_TTAC++.bib',
-                    // 'Project Page': '',
-                    // 'Code': ''
-                }
-            }
         ],
 
         2022: [
             {
                 image: './imgs/2022_SuEtAl_TTAC.webp',
                 title: 'Revisiting Realistic Test-Time Training: Sequential Inference and Adaptation by Anchored Clustering',
-                author: '<b>Yongyi Su</b>, Xun Xu and Kui Jia',
+                author: '<b>Yongyi Su<equal></equal></b>, Xun Xu<equal></equal> and Kui Jia',
                 publisher: 'Advances in Neural Information Processing Systems (<b>NeurIPS</b>), 2022',
                 keywords: ['Test-Time Training', 'Anchored Clustering', 'Feature Alignment'],
                 options: {

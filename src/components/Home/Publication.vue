@@ -89,6 +89,9 @@ export default {
     </div>
 
     <div class="content" ref="content">
+        <div :style="`font-size:` + this.smallFont">
+            <equal></equal> denotes `Equal Contribution`.
+        </div>
         <div v-for="year in getYears" class="ListOneYear">
             <div class="YearBlock Item">
                 <div class="LeftPart"></div>
