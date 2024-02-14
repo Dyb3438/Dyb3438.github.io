@@ -31,6 +31,18 @@ export default {
         },
         isPC(){
             return this.screenWidth >= 800;
+        },
+        pub_len(){
+            let num=0;
+            const years = this.getYears;
+            for (let idx in years){
+                const year = years[idx];
+                const publications = this.content[year];
+                for (let _ in publications){
+                    num++;
+                }
+            }
+            return num;
         }
     },
 
@@ -85,7 +97,12 @@ export default {
         <!-- <div class="icon" :style="`width:` + this.largeFont + '; height:' + this.largeFont">
             <Publication/>
         </div> -->
-        <span :style="`font-size:` + this.largeFont">🏆 Selected Publications</span>
+        <span :style="`font-size:` + this.largeFont">
+            🏆 Selected Publications
+            <div :style="`background-color: var(--color-text); border-radius: 100%; padding: calc(0.1 *`+ this.largeFont +`); color: white; width: `+this.largeFont+`; height: `+ this.largeFont +`; text-align: center; line-height: 100%; display: inline-block; box-sizing: content-box;`">
+                {{ pub_len }}
+            </div>
+        </span>
     </div>
 
     <div class="content" ref="content">
@@ -168,7 +185,7 @@ export default {
     align-items: center;
 }
 
-.title span {
+.title * {
     font-weight: bold;
 }
 
