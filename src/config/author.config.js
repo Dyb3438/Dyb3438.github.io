@@ -105,7 +105,8 @@ export default{
                     'PDF': 'https://arxiv.org/abs/2309.14949',
                     'Bibtex': './bibtexs/2023_SuEtAl_TRIBE.bib',
                     'Project Page': 'https://github.com/Gorilla-Lab-SCUT/TRIBE',
-                    'Code': 'https://github.com/Gorilla-Lab-SCUT/TRIBE'
+                    'Code': 'https://github.com/Gorilla-Lab-SCUT/TRIBE',
+                    'Poster': './posters/2024_SuEtAl_TRIBE.pdf'
                 },
                 // new: true
             },
@@ -164,6 +165,7 @@ export default{
                     'Bibtex': './bibtexs/2022_SuEtAl_TTAC.bib',
                     'Project Page': './ProjectPage/2022_SuEtAl_TTAC',
                     'Code': 'https://github.com/Gorilla-Lab-SCUT/TTAC',
+                    'Poster': './posters/2022_SuEtAl_TTAC.pdf'
                 }
             }
         ]
