@@ -63,6 +63,7 @@ export default {
     },
     
     async mounted(){
+        this.hostname = window.location.hostname;
         if (this.isPC){
             const years = this.getYears;
             for (let idx in years){
@@ -140,7 +141,7 @@ export default {
                         </div>
                         <div class="PublicationOptions" :style="`font-size:` + this.smallFont">
                             <div style="display: flex;" v-bind:style="isPC ? 'flex: 0 0 auto; margin: 5px 10px 5px 0' : 'flex: 1 0 auto; margin: 5px'" v-for="(value, key, index) in publication.options" >
-                                <a  :href="value" style="display:inline-block; flex: 10" v-if="key == `Project Page`">
+                                <a  :href="value" style="display:inline-block; flex: 10" v-if="key == `Project Page` && value.indexOf('./') == 0">
                                     <div :style="`--btn_color:` + optionColors[index]" class="unselect OptionItem">
                                         {{ key }}
                                     </div>

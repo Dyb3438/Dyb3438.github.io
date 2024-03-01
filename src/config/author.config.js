@@ -18,8 +18,9 @@ export default{
     `,
 
     news: [
+        `Feb 2024: Our work on <b>Improving the Generalization of Segmentation Foundation Model under Distribution Shift via Weakly Supervised Adaptation</b> was accepted by CVPR 2024. Congratulations to Haojie Zhang!`,
         `Feb 2024: Our work on <b>Revisiting Realistic Test-Time Training: Sequential Inference and Adaptation by Anchored Clustering Regularized Self-Training</b> was accepted by TPAMI 2024. Congratulations!`,
-        `Dec 2023: Our work on <b>Towards Real-World Test-Time Adaptation: Tri-Net Self-Training with Balanced Normalization</b> was accepted by AAAI 2024.`,
+        `Dec 2023: Our work on <b>Towards Real-World Test-Time Adaptation: Tri-net Self-Training with Balanced Normalization</b> was accepted by AAAI 2024.`,
         `Nov 2023: I'm studying at <a href='https://www.a-star.edu.sg/i2r'>I<sup>2</sup>R, A*STAR</a> as a visit student, funded by <a href='https://www.csc.edu.cn/'>CSC</a>, due to Nov 2025.`,
         `Jul 2023: Our work on <b>On the Robustness of Open-World Test-Time Training: Self-Training with Dynamic Prototype Expansion</b> was accepted by <b>ICCV 2023 as Oral presentation</b>. Congratulations to Yushu Li!`,
         `May 2023: Our work on <b>Weakly Supervised 3D Point Cloud Segmentation via Multi-Prototype Learning</b> was accepted by IEEE Transactions on Circuits and Systems for Video Technology (TCSVT).`,
@@ -53,6 +54,20 @@ export default{
     publications: {
         2024: [
             {
+                image: './imgs/2024_ZhangEtAl_WeSAM.webp',
+                title: 'Improving the Generalization of Segmentation Foundation Model under Distribution Shift via Weakly Supervised Adaptation',
+                author: 'Haojie Zhang<equal></equal>, <b>Yongyi Su<equal></equal></b>, Xun Xu and Kui Jia',
+                publisher: 'IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2024',
+                keywords: ['Segment Anything', 'Foundation Model', 'Weakly Supervised Learning', 'Domain Adaptation'],
+                options: {
+                    'PDF': 'https://arxiv.org/abs/2312.03502',
+                    'Bibtex': './bibtexs/2024_ZhangEtAl_WeSAM.bib',
+                    'Project Page': 'https://zhang-haojie.github.io/project-pages/wesam.html',
+                    'Code': 'https://github.com/Zhang-Haojie/WeSAM'
+                },
+                new: true
+            },
+            {
                 image: './imgs/2023_SuEtAl_TTAC-.webp',
                 title: 'Revisiting Realistic Test-Time Training: Sequential Inference and Adaptation by Anchored Clustering Regularized Self-Training',
                 author: '<b>Yongyi Su<equal></equal></b>, Xun Xu<equal></equal>, Tianrui Li and Kui Jia',
@@ -82,7 +97,7 @@ export default{
             },
             {
                 image: './imgs/2023_SuEtAl_TRIBE.webp',
-                title: 'Towards Real-World Test-Time Adaptation: Tri-Net Self-Training with Balanced Normalization',
+                title: 'Towards Real-World Test-Time Adaptation: Tri-net Self-Training with Balanced Normalization',
                 author: '<b>Yongyi Su</b>, Xun Xu and Kui Jia',
                 publisher: 'Proceedings of the AAAI conference on artificial intelligence (<b>AAAI</b>), 2024',
                 keywords: ['Test-Time Adaptation', 'Real-World Test-Time Adaptation', 'Balanced BN', 'Self Training'],
@@ -96,20 +111,6 @@ export default{
             },
         ],
         2023: [
-            {
-                image: './imgs/2023_ZhangEtAl_WeSAM.webp',
-                title: 'Improving the Generalization of Segmentation Foundation Model under Distribution Shift via Weakly Supervised Adaptation',
-                author: 'Haojie Zhang<equal></equal>, <b>Yongyi Su<equal></equal></b>, Xun Xu and Kui Jia',
-                publisher: 'Preprint, 2023',
-                keywords: ['Segment Anything', 'Foundation Model', 'Weakly Supervised Learning', 'Domain Adaptation'],
-                options: {
-                    'PDF': 'https://arxiv.org/abs/2312.03502',
-                    'Bibtex': './bibtexs/2023_ZhangEtAl_WeSAM.bib',
-                    'Project Page': 'https://github.com/Zhang-Haojie/WeSAM',
-                    'Code': 'https://github.com/Zhang-Haojie/WeSAM'
-                },
-                // new: true
-            },
             {
                 image: './imgs/2023_LiEtAl_OWTTT.webp',
                 title: 'On the Robustness of Open-World Test-Time Training: Self-Training with Dynamic Prototype Expansion',
@@ -222,7 +223,7 @@ export default{
             image: './imgs/co-authors/HaojieZhang.jpeg',
             institute: 'South China University of Technology, Guangzhou',
             position: 'Master Student',
-            url: 'https://scholar.google.com/citations?user=waixiQgAAAAJ'
+            url: 'https://zhang-haojie.github.io'
         },
     },
 
