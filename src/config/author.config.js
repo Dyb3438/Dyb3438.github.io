@@ -122,7 +122,8 @@ export default{
                     'PDF': 'https://arxiv.org/abs/2308.09942',
                     'Bibtex': './bibtexs/2023_LiEtAl_OWTTT.bib',
                     'Project Page': 'https://yushu-li.github.io/owttt-site',
-                    'Code': 'https://github.com/Yushu-Li/OWTTT'
+                    'Code': 'https://github.com/Yushu-Li/OWTTT',
+                    'Poster': './posters/2023_LiEtAl_OWTTT.pdf'
                 }
             },
             {
