@@ -4,7 +4,7 @@ import authorConfig from '../../config/author.config';
 import Publication from '../icons/Publication.vue';
 
 export default {
-    props: ['largeFont', 'smallFont', "screenWidth"],
+    props: ['largeFont', 'smallFont', "screenWidth", "discussionCount"],
 
     components:{
         Publication
@@ -20,6 +20,7 @@ export default {
                 '#bb55bb',
                 '#55bbbb',
                 '#bbbb55',
+                "#222255",
             ],
             stars: {}
         }
@@ -59,7 +60,10 @@ export default {
         },
         getPubId(image_url){
             return image_url.split('/')[image_url.split('/').length - 1].split('.')[0];
-        }
+        },
+        showDiscussionRoom(title, paper_url){
+            this.$emit('showDR', title, paper_url);
+        },
     },
     
     async mounted(){
@@ -155,6 +159,14 @@ export default {
                                 <a  :href="value" target="_blank" style="display:inline-block; flex: 10" v-else>
                                     <div :style="`--btn_color:` + optionColors[index]" class="unselect OptionItem">
                                         {{ key }}
+                                    </div>
+                                </a>
+                            </div>
+                            <div style="display: flex; flex: 0 0 auto; margin: 5px 10px 5px 0" v-if="isPC && publication.paper_url != ''" @click="showDiscussionRoom(publication.title, publication.paper_url)">
+                                <a  style="display:inline-block; flex: 10">
+                                    <div :style="`--btn_color:` + optionColors[6]" class="unselect OptionItem">
+                                        Discussion Room
+                                        <span style="margin-left:5px; border-left: 2px dotted; padding-left: 5px; font-weight: bold" v-if="publication.title in discussionCount && discussionCount[publication.title] > 0"> {{ discussionCount[publication.title] }} </span>
                                     </div>
                                 </a>
                             </div>

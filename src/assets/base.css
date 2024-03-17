@@ -60,7 +60,7 @@
 
 body {
   min-height: 100vh;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
   color: var(--color-text);
   background: var(--color-background);
@@ -72,6 +72,12 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media screen and (max-width: 799px) {
+  body {
+    overflow-y: auto;
+  }
 }
 
 .unselect {

@@ -13,6 +13,9 @@ import News from '../components/Home/News.vue';
 import AcademicFootprint from '../components/Home/AcademicFootprint.vue';
 import Publication from '../components/Home/Publication.vue';
 import Visit from '../components/icons/Visit.vue';
+
+import Discussion from '../components/Home/Discussion.vue';
+
 import fetchJSONP from 'fetch-jsonp'
 
 export default{
@@ -30,6 +33,8 @@ export default{
     Next,
     Publication,
     Visit,
+
+    Discussion,
   },
 
   data(){
@@ -55,6 +60,12 @@ export default{
       remove_href: false,
       load_globe: false,
 
+      show_discussion: false,
+      discussion_channel: 'Global',
+      discussion_url: '',
+
+      discussions: {},
+
       // information
       authorName: authorConfig.name,
       authorRole: authorConfig.role,
@@ -64,6 +75,8 @@ export default{
       authorOptions: authorConfig.options,
 
       globe_id: authorConfig.analysis_globe_id,
+
+      t1: null,
     }
   },
 
@@ -89,7 +102,10 @@ export default{
           }
         }
       }
-    }
+    },
+    isPC(){
+      return this.screenWidth >= 800;
+    },
   },
 
   watch: {
@@ -140,10 +156,49 @@ export default{
     },
     updateVisitNumbers(points){
       this.visitNumber = points;
-    }
+    },
+
+    openDiscussionRoom(title, url=''){
+      this.discussion_channel = title;
+      this.discussion_url = url;
+      this.show_discussion = true;
+    },
+
+    closeDiscussion(){
+      this.show_discussion = false;
+    },
+
+    getDiscussionCounts(){
+      const response = fetch('https://47.120.67.162/Discussion/Counts', {
+        method: "GET",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          mode: "cors",
+      });
+
+      response.then(e => e.json())
+              .then(e => {
+                  if (e['success']){
+                      this.discussions = e['counts'];
+                  }
+              })
+              .catch(e => {
+                  console.log('error: ' + e);
+              });
+    },
   },
   mounted(){
     // document.documentElement.scrollHeight + document.documentElement.clientHeight
+    if (this.isPC){
+      this.getDiscussionCounts();
+      this.t1 = setInterval(() => {
+        if (!this.show_discussion){
+          this.getDiscussionCounts();
+        }
+      }, 1000 * 10);
+    }
+
     document.body.scrollTop = document.documentElement.scrollTop = 0;
     document.addEventListener('scroll', ()=>{
       if (!this.remove_href && document.getElementById('clstr_a') && document.getElementById('clstr_a').href != 'javascript:void(0)'){
@@ -161,7 +216,13 @@ export default{
       }
       
     })
-  }
+  },
+
+  beforeUnmount(){
+    if(this.t1 != null){
+      clearInterval(this.t1);
+    }
+  },
 }
 
 </script>
@@ -218,6 +279,16 @@ export default{
             {{ key }}
           </div>
         </a>
+        <a style="flex: 1;" class="discussion_num_a" @click="openDiscussionRoom('Global')" v-if="isPC">
+          <div :style="`--btn_color:` + optionColor(3)" class="unselect" style="position: relative">
+            <span class="discussion_text">
+              Discussion Room
+            </span>
+            <span class="discussion_num" v-if="'Global' in this.discussions && this.discussions['Global'] > 0">
+              {{ this.discussions.Global }}
+            </span>
+          </div>
+        </a>
       </div>
     </div>
 
@@ -233,7 +304,7 @@ export default{
           <AcademicFootprint largeFont="var(--largeFont)" smallFont="var(--smallFont)" :screenWidth="screenWidth"/>
         </div>
         <div class="BlockItem" style="margin-top:30px">
-          <Publication largeFont="var(--largeFont)" smallFont="var(--smallFont)" :screenWidth="screenWidth"/>
+          <Publication largeFont="var(--largeFont)" smallFont="var(--smallFont)" :screenWidth="screenWidth" @showDR="openDiscussionRoom" :discussionCount="discussions"/>
         </div>
         <div class="BlockItem" style="margin-top:30px">
           <CoAuthor largeFont="var(--largeFont)" smallFont="var(--smallFont)" :screenWidth="screenWidth"/>
@@ -257,9 +328,12 @@ export default{
           </div>
         </div>
 
-        <div id="footer"><small>Updated March 3, 2024</small></div>
+        <div id="footer"><small>Updated March 18, 2024</small></div>
       </div>
     </div>
+
+    <Discussion :largeFont="largeFont" :smallFont="smallFont" :screenWidth="screenWidth" :channel="discussion_channel" :discussion_url="discussion_url" v-if="show_discussion && isPC" @close="closeDiscussion"/>
+
   </div>
 </template>
 
@@ -291,8 +365,9 @@ export default{
   display: flex;
   flex-direction: column;
   flex: 1;
-  height: 100%;
+  height: 100vh;
   padding-left: var(--left);
+  overflow-y: auto;
 }
 
 .RightContent {
@@ -349,7 +424,7 @@ export default{
   display: flex;
   flex-wrap: wrap;
   margin-top: 10px;
-  justify-content: left;
+  justify-content: space-between;
 }
 
 .Options a {
@@ -362,14 +437,13 @@ export default{
 
   font-size: calc(var(--smallFont) * 0.8);
   font-weight: bold;
-  /* padding: 5px 10px; */
   padding: calc(var(--smallFont) / 3) calc(var(--smallFont) / 3 * 2);
   border-radius: calc(var(--smallFont) / 3 * 2);
-  /* color: white; */
   color: var(--btn_color);
   border: 2px solid var(--btn_color);
 
   cursor: pointer;
+  text-align: center;
 }
 
 .Options div:hover{
@@ -384,6 +458,79 @@ export default{
   box-shadow: none;
   transform: translateY(0%);
 }
+
+.Options .discussion_text {
+  font-size: calc(var(--smallFont) * 0.8);
+  font-weight: bold;
+}
+
+.Options .discussion_text::after {
+  content: '······';
+  font-size: calc(var(--smallFont) * 0.8);
+  font-weight: bold;
+  animation: spin 2s infinite;
+}
+
+@keyframes spin {
+  0% {
+    content: '';
+  }
+
+  10% {
+    content: '·';
+  }
+
+  20% {
+    content: '··';
+  }
+
+  30% {
+    content: '···';
+  }
+
+  40% {
+    content: '····';
+  }
+
+  50% {
+    content: '·····';
+  }
+
+  60% {
+    content: '······';
+  }
+
+  70% {
+    content: '·······';
+  }
+
+  80% {
+    content: '········';
+  }
+
+  90% {
+    content: '·········';
+  }
+
+  100% {
+    content: ''
+  }
+}
+
+.Options .discussion_num {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  font-size: calc(var(--smallFont) * 0.8);
+  font-weight: bold;
+  background: var(--btn_color);
+  color: white;
+  border-top-right-radius: calc(var(--smallFont) / 3 * 2);
+  border-bottom-right-radius: calc(var(--smallFont) / 3 * 2);
+  padding: calc(var(--smallFont) / 3 + 2px);
+}
+
+
 
 #footer {
   text-align: right;
@@ -409,6 +556,7 @@ export default{
     flex: 1 0 auto;
     height: auto;
     padding-left: 0;
+    overflow-y: none;
   }
 
   .AvatarPic {
@@ -417,9 +565,9 @@ export default{
     min-height: 0;
   }
 
-  .Options {
+  /* .Options {
     justify-content: center;
-  }
+  } */
 
   .Options div {
     color: white;

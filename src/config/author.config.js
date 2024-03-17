@@ -65,7 +65,8 @@ export default{
                     'Project Page': 'https://zhang-haojie.github.io/project-pages/wesam.html',
                     'Code': 'https://github.com/Zhang-Haojie/WeSAM'
                 },
-                new: true
+                new: true,
+                paper_url: 'https://arxiv.org/pdf/2312.03502.pdf',
             },
             {
                 image: './imgs/2023_SuEtAl_TTAC-.webp',
@@ -79,7 +80,8 @@ export default{
                     // 'Project Page': '',
                     // 'Code': ''
                 },
-                new: true
+                new: true,
+                paper_url: 'https://arxiv.org/pdf/2303.10856.pdf',
             },
             {
                 image: './imgs/2024_LiuEtAl_SFOD.webp',
@@ -93,6 +95,7 @@ export default{
                     // 'Project Page': 'https://github.com/Gorilla-Lab-SCUT/TRIBE',
                     // 'Code': 'https://github.com/Gorilla-Lab-SCUT/TRIBE'
                 },
+                paper_url: 'https://arxiv.org/pdf/2401.05168.pdf',
                 // new: true
             },
             {
@@ -108,6 +111,7 @@ export default{
                     'Code': 'https://github.com/Gorilla-Lab-SCUT/TRIBE',
                     'Poster': './posters/2024_SuEtAl_TRIBE.pdf'
                 },
+                paper_url: 'https://arxiv.org/pdf/2309.14949.pdf',
                 // new: true
             },
         ],
@@ -124,7 +128,8 @@ export default{
                     'Project Page': 'https://yushu-li.github.io/owttt-site',
                     'Code': 'https://github.com/Yushu-Li/OWTTT',
                     'Poster': './posters/2023_LiEtAl_OWTTT.pdf'
-                }
+                },
+                paper_url: 'https://arxiv.org/pdf/2308.09942.pdf',
             },
             {
                 image: './imgs/2023_SuEtAl_MulPro.webp',
@@ -137,7 +142,8 @@ export default{
                     'Bibtex': './bibtexs/2023_SuEtAl_MulPro.bib',
                     // 'Project Page': '',
                     // 'Code': ''
-                }
+                },
+                paper_url: 'https://arxiv.org/pdf/2205.03137.pdf',                
             },
             {
                 image: './imgs/2023_ChenEtAl_STFAR.webp',
@@ -150,7 +156,8 @@ export default{
                     'Bibtex': './bibtexs/2023_ChenEtAl_STFAR.bib',
                     // 'Project Page': '',
                     // 'Code': ''
-                }
+                },
+                paper_url: 'https://arxiv.org/pdf/2303.17937.pdf',                
             },
         ],
 
@@ -167,7 +174,8 @@ export default{
                     'Project Page': './ProjectPage/2022_SuEtAl_TTAC',
                     'Code': 'https://github.com/Gorilla-Lab-SCUT/TTAC',
                     'Poster': './posters/2022_SuEtAl_TTAC.pdf'
-                }
+                },
+                paper_url: 'https://arxiv.org/pdf/2206.02721.pdf',                
             }
         ]
     },
