@@ -113,7 +113,7 @@ export default {
                 alert('Empty content can not be posted.');
                 return;
             }
-            const response = fetch('https://47.120.67.162/Discussion/Post', {
+            const response = fetch('http://47.120.67.162/Discussion/Post', {
                 method: "POST",
                 mode: "cors",
                 headers: {
@@ -162,7 +162,7 @@ export default {
         },
 
         getComments(callback=null){
-            const response = fetch('https://47.120.67.162/Discussion/GetComment?cite='+this.local_channel + '&order=' + this.order + '&token=' + localStorage.getItem('token'), {
+            const response = fetch('http://47.120.67.162/Discussion/GetComment?cite='+this.local_channel + '&order=' + this.order + '&token=' + localStorage.getItem('token'), {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -196,7 +196,7 @@ export default {
         },
 
         getLikes(callback=null){
-            const response = fetch('https://47.120.67.162/Discussion/GetAllLike?cite='+this.local_channel + '&order=' + this.order, {
+            const response = fetch('http://47.120.67.162/Discussion/GetAllLike?cite='+this.local_channel + '&order=' + this.order, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -238,7 +238,7 @@ export default {
             }
             comment['LIKE'] = "+1";
 
-            const response = fetch('https://47.120.67.162/Discussion/Like', {
+            const response = fetch('http://47.120.67.162/Discussion/Like', {
                 method: "POST",
                 mode: "cors",
                 headers: {
@@ -264,7 +264,7 @@ export default {
                 return
             }
             this.hiding = true;
-            const response = fetch('https://47.120.67.162/Discussion/Hide', {
+            const response = fetch('http://47.120.67.162/Discussion/Hide', {
                 method: "POST",
                 mode: "cors",
                 headers: {

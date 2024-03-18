@@ -169,7 +169,7 @@ export default{
     },
 
     getDiscussionCounts(){
-      const response = fetch('https://47.120.67.162/Discussion/Counts', {
+      const response = fetch('http://47.120.67.162/Discussion/Counts', {
         method: "GET",
           headers: {
               "Content-Type": "application/json",
