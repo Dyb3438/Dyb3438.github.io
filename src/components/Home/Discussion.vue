@@ -29,7 +29,7 @@ export default {
             authorEmail: authorConfig.email,
 
             comments: [],
-            page_src: this.discussion_url,
+            page_src: this.discussion_url + '?t=0',
             t: 1,
             order: 'Time',
             title_offset: 0,
