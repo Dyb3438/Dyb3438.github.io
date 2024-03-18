@@ -116,7 +116,7 @@ export default {
             }
             const response = fetch(apiConfig.baseURL + '/Discussion/Post', {
                 method: "POST",
-                mode: "cors",
+                // mode: "cors",
                 headers: {
                     "Content-Type": "application/json",
                 },
@@ -168,7 +168,7 @@ export default {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                mode: "cors",
+                // mode: "cors",
             });
 
             response.then(e => e.json())
@@ -202,7 +202,7 @@ export default {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                mode: "cors",
+                // mode: "cors",
             });
 
             response.then(e => e.json())
@@ -241,7 +241,7 @@ export default {
 
             const response = fetch(apiConfig.baseURL + '/Discussion/Like', {
                 method: "POST",
-                mode: "cors",
+                // mode: "cors",
                 headers: {
                     "Content-Type": "application/json",
                 },
@@ -267,7 +267,7 @@ export default {
             this.hiding = true;
             const response = fetch(apiConfig.baseURL + '/Discussion/Hide', {
                 method: "POST",
-                mode: "cors",
+                // mode: "cors",
                 headers: {
                     "Content-Type": "application/json",
                 },
