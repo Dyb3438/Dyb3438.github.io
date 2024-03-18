@@ -18,6 +18,7 @@ export default{
     `,
 
     news: [
+        `March 2024: Our work on <b>CLIP-guided Source-free Object Detection in Aerial Images</b> was accepted by IGARSS 2024 as <b>Oral presentation</b>. Congratulations to Nanqing Liu!`,
         `Feb 2024: Our work on <b>Improving the Generalization of Segmentation Foundation Model under Distribution Shift via Weakly Supervised Adaptation</b> was accepted by CVPR 2024. Congratulations to Haojie Zhang!`,
         `Feb 2024: Our work on <b>Revisiting Realistic Test-Time Training: Sequential Inference and Adaptation by Anchored Clustering Regularized Self-Training</b> was accepted by TPAMI 2024. Congratulations!`,
         `Dec 2023: Our work on <b>Towards Real-World Test-Time Adaptation: Tri-net Self-Training with Balanced Normalization</b> was accepted by AAAI 2024.`,
@@ -54,6 +55,21 @@ export default{
     publications: {
         2024: [
             {
+                image: './imgs/2024_LiuEtAl_SFOD.webp',
+                title: 'CLIP-guided Source-free Object Detection in Aerial Images',
+                author: 'Nanqing Liu, Xun Xu, <b>Yongyi Su</b>, Chengxin Liu, Peiliang Gong and Heng-Chao Li',
+                publisher: 'International Geoscience and Remote Sensing Symposium (<b>IGARSS</b>), 2024 (Oral presentation)',
+                keywords: ['CLIP', 'Object Detection', 'Source-Free Domain Adaptation', 'Aerial Images'],
+                options: {
+                    'PDF': 'https://arxiv.org/abs/2401.05168',
+                    'Bibtex': './bibtexs/2024_LiuEtAl_SFOD.bib',
+                    // 'Project Page': 'https://github.com/Gorilla-Lab-SCUT/TRIBE',
+                    // 'Code': 'https://github.com/Gorilla-Lab-SCUT/TRIBE'
+                },
+                paper_url: 'https://arxiv.org/pdf/2401.05168.pdf',
+                new: true
+            },
+            {
                 image: './imgs/2024_ZhangEtAl_WeSAM.webp',
                 title: 'Improving the Generalization of Segmentation Foundation Model under Distribution Shift via Weakly Supervised Adaptation',
                 author: 'Haojie Zhang<equal></equal>, <b>Yongyi Su<equal></equal></b>, Xun Xu and Kui Jia',
@@ -82,21 +98,6 @@ export default{
                 },
                 new: true,
                 paper_url: 'https://arxiv.org/pdf/2303.10856.pdf',
-            },
-            {
-                image: './imgs/2024_LiuEtAl_SFOD.webp',
-                title: 'CLIP-guided Source-free Object Detection in Aerial Images',
-                author: 'Nanqing Liu, Xun Xu, <b>Yongyi Su</b>, Chengxin Liu, Peiliang Gong and Heng-Chao Li',
-                publisher: 'Preprint, 2024',
-                keywords: ['CLIP', 'Object Detection', 'Source-Free Domain Adaptation', 'Aerial Images'],
-                options: {
-                    'PDF': 'https://arxiv.org/abs/2401.05168',
-                    'Bibtex': './bibtexs/2024_LiuEtAl_SFOD.bib',
-                    // 'Project Page': 'https://github.com/Gorilla-Lab-SCUT/TRIBE',
-                    // 'Code': 'https://github.com/Gorilla-Lab-SCUT/TRIBE'
-                },
-                paper_url: 'https://arxiv.org/pdf/2401.05168.pdf',
-                // new: true
             },
             {
                 image: './imgs/2023_SuEtAl_TRIBE.webp',
