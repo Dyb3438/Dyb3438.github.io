@@ -1,6 +1,7 @@
 <script>
 import Avatar from '../components/Home/Avatar.vue';
 import authorConfig from '../config/author.config';
+import apiConfig from '../config/api.config';
 import User from '../components/icons/User.vue';
 import Degree from '../components/icons/Degree.vue';
 import Department from '../components/icons/Department.vue';
@@ -169,7 +170,7 @@ export default{
     },
 
     getDiscussionCounts(){
-      const response = fetch('http://47.120.67.162/Discussion/Counts', {
+      const response = fetch(apiConfig.baseURL + '/Discussion/Counts', {
         method: "GET",
           headers: {
               "Content-Type": "application/json",
