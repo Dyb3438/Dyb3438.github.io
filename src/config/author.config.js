@@ -85,14 +85,14 @@ export default{
                 paper_url: 'https://arxiv.org/pdf/2312.03502.pdf',
             },
             {
-                image: './imgs/2023_SuEtAl_TTAC-.webp',
+                image: './imgs/2024_SuEtAl_TTAC-.webp',
                 title: 'Revisiting Realistic Test-Time Training: Sequential Inference and Adaptation by Anchored Clustering Regularized Self-Training',
                 author: '<b>Yongyi Su<equal></equal></b>, Xun Xu<equal></equal>, Tianrui Li and Kui Jia',
                 publisher: 'IEEE Transactions on Pattern Analysis and Machine Intelligence (<b>TPAMI</b>), 2024',
                 keywords: ['Test-Time Training', 'Self Training', 'Anchored Clustering', 'Feature Alignment'],
                 options: {
                     'PDF': 'https://arxiv.org/abs/2303.10856',
-                    'Bibtex': './bibtexs/2023_SuEtAl_TTAC++.bib',
+                    'Bibtex': './bibtexs/2024_SuEtAl_TTAC++.bib',
                     'Project Page': 'https://github.com/Gorilla-Lab-SCUT/TTAC2',
                     'Code': 'https://github.com/Gorilla-Lab-SCUT/TTAC2'
                 },
