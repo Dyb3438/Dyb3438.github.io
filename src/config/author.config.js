@@ -93,8 +93,8 @@ export default{
                 options: {
                     'PDF': 'https://arxiv.org/abs/2303.10856',
                     'Bibtex': './bibtexs/2023_SuEtAl_TTAC++.bib',
-                    // 'Project Page': '',
-                    // 'Code': ''
+                    'Project Page': 'https://github.com/Gorilla-Lab-SCUT/TTAC2',
+                    'Code': 'https://github.com/Gorilla-Lab-SCUT/TTAC2'
                 },
                 new: true,
                 paper_url: 'https://arxiv.org/pdf/2303.10856.pdf',
