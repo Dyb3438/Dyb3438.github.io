@@ -1,7 +1,11 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router'
+import { inject } from "@vercel/analytics"
 
 export default {
+  mounted() {
+    inject()
+  }
  
 }
 
