@@ -104,7 +104,7 @@ export default {
         </div> -->
         <span :style="`font-size:` + this.largeFont">
             🏆 Selected Publications
-            <div :style="`background-color: var(--color-text); border-radius: 100%; padding: calc(0.1 *`+ this.largeFont +`); color: white; width: `+this.largeFont+`; height: `+ this.largeFont +`; text-align: center; line-height: 100%; display: inline-block; box-sizing: content-box;`">
+            <div :style="`background-color: var(--color-text); border-radius: 100%; padding: calc(0.1 *`+ this.largeFont +`) calc(0.2 *`+ this.largeFont +`); color: white; height: `+ this.largeFont +`; text-align: center; line-height: 100%; display: inline-block; box-sizing: content-box;`">
                 {{ pub_len }}
             </div>
         </span>
@@ -176,7 +176,7 @@ export default {
                 <div v-else v-bind:class="isPC ? 'Publication': 'Publication_Mobile'">
                     <div class="PublicationDesc" style="align-items: center;" v-bind:style="isPC ? 'margin-right: 30px' : ''">
                         <div class="PublicationTitle" :style="`font-size:` + this.smallFont" v-html="publication.title" style="text-align: center; word-break: break-word; word-wrap: break-word;"></div>
-                        <div class="PublicationAuthor" :style="`font-size:` + this.smallFont" v-html="publication.author" style="text-align: center; word-break: break-word; word-wrap: break-word;"></div>
+                        <div class="PublicationAuthor" :style="`font-size:` + this.smallFont" v-html="'Anonymous Authors'" style="text-align: center; word-break: break-word; word-wrap: break-word;"></div>
                         <div class="PublicationComment" :style="`font-size:` + this.largeFont">Coming soon~</div>
                     </div>
                 </div>

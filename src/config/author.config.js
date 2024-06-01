@@ -55,34 +55,28 @@ export default{
     publications: {
         2024: [
             {
-                image: './imgs/2024_LiuEtAl_SFOD.webp',
-                title: 'CLIP-guided Source-free Object Detection in Aerial Images',
-                author: 'Nanqing Liu, Xun Xu, <b>Yongyi Su</b>, Chengxin Liu, Peiliang Gong and Heng-Chao Li',
-                publisher: 'International Geoscience and Remote Sensing Symposium (<b>IGARSS</b>), 2024 (Oral presentation)',
-                keywords: ['CLIP', 'Object Detection', 'Source-Free Domain Adaptation', 'Aerial Images'],
+                image: '',
+                title: 'On the Adversarial Risk of Test Time Adaptation: An Investigation into Realistic Test-Time Data Poisoning',
+                author: '<b>Yongyi Su</b>, Yushu Li, Kui Jia, Chuan-Sheng Foo, Xun Xu',
+                publisher: '',
+                keywords: [],
                 options: {
-                    'PDF': 'https://arxiv.org/abs/2401.05168',
-                    'Bibtex': './bibtexs/2024_LiuEtAl_SFOD.bib',
-                    // 'Project Page': 'https://github.com/Gorilla-Lab-SCUT/TRIBE',
-                    // 'Code': 'https://github.com/Gorilla-Lab-SCUT/TRIBE'
                 },
-                paper_url: 'https://arxiv.org/pdf/2401.05168',
-                new: true
+                paper_url: '',
+                // new: true
             },
             {
-                image: './imgs/2024_ZhangEtAl_WeSAM.webp',
-                title: 'Improving the Generalization of Segmentation Foundation Model under Distribution Shift via Weakly Supervised Adaptation',
-                author: 'Haojie Zhang<equal></equal>, <b>Yongyi Su<equal></equal></b>, Xun Xu and Kui Jia',
-                publisher: 'IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2024',
-                keywords: ['Segment Anything', 'Foundation Model', 'Weakly Supervised Learning', 'Domain Adaptation'],
+                image: './imgs/2024_LiEtAl_HILTTA.webp',
+                title: 'Exploring Human-in-the-Loop Test-Time Adaptation by Synergizing Active Learning and Model Selection',
+                author: 'Yushu Li<equal></equal>, <b>Yongyi Su<equal></equal></b>, Xulei Yang, Kui Jia, Xun Xu',
+                publisher: 'Preprint, 2024',
+                keywords: ['Test-Time Adaptation', 'Human-in-the-Loop', 'Model Selection', 'Active Learning'],
                 options: {
-                    'PDF': 'https://arxiv.org/abs/2312.03502',
-                    'Bibtex': './bibtexs/2024_ZhangEtAl_WeSAM.bib',
-                    'Project Page': 'https://zhang-haojie.github.io/project-pages/wesam.html',
-                    'Code': 'https://github.com/Zhang-Haojie/WeSAM'
+                    'PDF': 'https://arxiv.org/abs/2405.18911',
+                    'Bibtex': './bibtexs/2024_LiEtAl_HILTTA.bib',
                 },
-                new: true,
-                paper_url: 'https://arxiv.org/pdf/2312.03502',
+                paper_url: 'https://arxiv.org/pdf/2405.18911',
+                new: true
             },
             {
                 image: './imgs/2024_SuEtAl_TTAC-.webp',
@@ -96,8 +90,23 @@ export default{
                     'Project Page': 'https://github.com/Gorilla-Lab-SCUT/TTAC2',
                     'Code': 'https://github.com/Gorilla-Lab-SCUT/TTAC2'
                 },
-                new: true,
+                // new: true,
                 paper_url: 'https://arxiv.org/pdf/2303.10856',
+            },
+            {
+                image: './imgs/2024_ZhangEtAl_WeSAM.webp',
+                title: 'Improving the Generalization of Segmentation Foundation Model under Distribution Shift via Weakly Supervised Adaptation',
+                author: 'Haojie Zhang<equal></equal>, <b>Yongyi Su<equal></equal></b>, Xun Xu and Kui Jia',
+                publisher: 'IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2024',
+                keywords: ['Segment Anything', 'Foundation Model', 'Weakly Supervised Learning', 'Domain Adaptation'],
+                options: {
+                    'PDF': 'https://arxiv.org/abs/2312.03502',
+                    'Bibtex': './bibtexs/2024_ZhangEtAl_WeSAM.bib',
+                    'Project Page': 'https://zhang-haojie.github.io/project-pages/wesam.html',
+                    'Code': 'https://github.com/Zhang-Haojie/WeSAM'
+                },
+                // new: true,
+                paper_url: 'https://arxiv.org/pdf/2312.03502',
             },
             {
                 image: './imgs/2023_SuEtAl_TRIBE.webp',
@@ -113,6 +122,19 @@ export default{
                     'Poster': './posters/2024_SuEtAl_TRIBE.pdf'
                 },
                 paper_url: 'https://arxiv.org/pdf/2309.14949',
+                // new: true
+            },
+            {
+                image: './imgs/2024_LiuEtAl_SFOD.webp',
+                title: 'CLIP-guided Source-free Object Detection in Aerial Images',
+                author: 'Nanqing Liu, Xun Xu, <b>Yongyi Su</b>, Chengxin Liu, Peiliang Gong and Heng-Chao Li',
+                publisher: 'International Geoscience and Remote Sensing Symposium (<b>IGARSS</b>), 2024 (Oral presentation)',
+                keywords: ['CLIP', 'Object Detection', 'Source-Free Domain Adaptation', 'Aerial Images'],
+                options: {
+                    'PDF': 'https://arxiv.org/abs/2401.05168',
+                    'Bibtex': './bibtexs/2024_LiuEtAl_SFOD.bib',
+                },
+                paper_url: 'https://arxiv.org/pdf/2401.05168',
                 // new: true
             },
         ],
