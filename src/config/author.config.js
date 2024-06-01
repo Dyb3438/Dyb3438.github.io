@@ -57,7 +57,7 @@ export default{
             {
                 image: '',
                 title: 'On the Adversarial Risk of Test Time Adaptation: An Investigation into Realistic Test-Time Data Poisoning',
-                author: '<b>Yongyi Su</b>, Yushu Li, Kui Jia, Chuan-Sheng Foo, Xun Xu',
+                author: '<b>Yongyi Su</b>, Yushu Li, Kui Jia, Chuan-Sheng Foo and Xun Xu',
                 publisher: '',
                 keywords: [],
                 options: {
@@ -68,7 +68,7 @@ export default{
             {
                 image: './imgs/2024_LiEtAl_HILTTA.webp',
                 title: 'Exploring Human-in-the-Loop Test-Time Adaptation by Synergizing Active Learning and Model Selection',
-                author: 'Yushu Li<equal></equal>, <b>Yongyi Su<equal></equal></b>, Xulei Yang, Kui Jia, Xun Xu',
+                author: 'Yushu Li<equal></equal>, <b>Yongyi Su<equal></equal></b>, Xulei Yang, Kui Jia and Xun Xu',
                 publisher: 'Preprint, 2024',
                 keywords: ['Test-Time Adaptation', 'Human-in-the-Loop', 'Model Selection', 'Active Learning'],
                 options: {
