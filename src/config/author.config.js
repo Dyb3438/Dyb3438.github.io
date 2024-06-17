@@ -134,6 +134,8 @@ export default{
                 options: {
                     'PDF': 'https://arxiv.org/abs/2401.05168',
                     'Bibtex': './bibtexs/2024_LiuEtAl_SFOD.bib',
+                    'Project Page': 'https://github.com/Lans1ng/SFOD-RS',
+                    'Code': 'https://github.com/Lans1ng/SFOD-RS'
                 },
                 paper_url: 'https://arxiv.org/pdf/2401.05168',
                 // new: true
