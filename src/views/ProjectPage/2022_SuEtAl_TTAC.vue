@@ -237,6 +237,8 @@ export default{
     padding: 20px;
     flex-direction: column;
     background: #333333;
+    height: 100vh;
+    overflow-y: auto;
 }
 
 .Content{
