@@ -17,6 +17,8 @@ import Visit from '../components/icons/Visit.vue';
 
 import Discussion from '../components/Home/Discussion.vue';
 
+import Name from '../components/icons/Name.vue'
+
 import fetchJSONP from 'fetch-jsonp'
 
 export default{
@@ -36,6 +38,7 @@ export default{
     Visit,
 
     Discussion,
+    Name,
   },
 
   data(){
@@ -216,6 +219,12 @@ export default{
         this.load_globe = (elemBottom <= docViewBottom) && (elemTop >= docViewTop);
       }
       
+    });
+
+    const svg_paths = document.getElementById('name').querySelectorAll('path');
+    svg_paths.forEach(path=>{
+      const len = path.getTotalLength();
+      path.style.setProperty('--len', len+1);
     })
   },
 
@@ -240,7 +249,8 @@ export default{
           <User/>
         </template> -->
         <template v-slot:Text>
-          👨🏻‍💻 {{authorName}}
+          👨🏻‍💻 <Name style="height: calc(var(--largeFont) * 1.5); width: auto; vertical-align:bottom" id="name"/>
+          <!-- {{authorName}} -->
         </template>
       </AuthorItem>
 
