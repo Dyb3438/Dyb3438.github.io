@@ -251,7 +251,7 @@ export default{
         },
 
         'Yijin Chen': {
-            image: '',
+            image: './imgs/co-authors/YijinChen.jpg',
             institute: 'South China University of Technology, Guangzhou',
             position: 'Master Student',
         },
