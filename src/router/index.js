@@ -30,11 +30,11 @@ const router = createRouter({
       component: () => import('../views/404.vue')
       // component: () => import('../components/404/ghost.vue')
     },
-    {
-      path: '/HappyNewYear',
-      name: 'NewYear',
-      component: () => import('../views/NewYear.vue')
-    },
+    // {
+    //   path: '/HappyNewYear',
+    //   name: 'NewYear',
+    //   component: () => import('../views/NewYear.vue')
+    // },
     {
       path: '/:catchAll(.*)',
       name: 'error',
