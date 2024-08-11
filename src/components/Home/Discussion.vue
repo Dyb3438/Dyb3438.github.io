@@ -325,8 +325,10 @@ export default {
         },
 
         loadPage(page){
-            this.page_src = this.discussion_url + '?t=' + this.t + '#page=' + page;
-            this.t = 1 - this.t;
+            // this.page_src = this.discussion_url + '?t=' + this.t + '#page=' + page;
+            this.page_src = this.discussion_url + "#page=" + page;
+            // this.t = 1 - this.t;
+            this.key += 1;
         },
         
         close(){
@@ -386,7 +388,7 @@ export default {
                 </div>
 
                 <div v-else class="left_area" style="width: max(32vw, 320px)">
-                    <iframe :src="page_src" style="width: 100%; height: 100%; border-radius: 10px" frameborder='0' ref="paper_frame"></iframe>
+                    <iframe :src="page_src" style="width: 100%; height: 100%; border-radius: 10px" frameborder='0' ref="paper_frame" :key="key" allow="fullscreen"></iframe>
                 </div>
 
                 <div class="right_area" :style="this.local_channel != 'Global' ? `--left: max(32vw, 320px)`: `--left: max(20vw, 200px)`">
