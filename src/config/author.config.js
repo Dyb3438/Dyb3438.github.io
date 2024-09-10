@@ -44,7 +44,7 @@ export default{
         'Academic Services':[
             [
                 '<b>Journal Reviewer</b>',
-                'TIP, TCSVT, TMLR',
+                'TPAMI, TIP, TCSVT, TMLR',
             ],
             [
                 '<b>Conference Reviewer</b>',
