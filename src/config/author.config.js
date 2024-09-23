@@ -53,6 +53,7 @@ export default{
         ],
     },
 
+    publication_category: ['Segment Anything / Foundation Model', 'Test-Time Adaptation / Test-Time Training', 'Weakly Supervised Learning'],
     publications: {
         2024: [
             {
@@ -60,7 +61,7 @@ export default{
                 title: 'On the Adversarial Risk of Test Time Adaptation: An Investigation into Realistic Test-Time Data Poisoning',
                 author: '<b>Yongyi Su</b>, Yushu Li, Kui Jia, Chuan-Sheng Foo and Xun Xu',
                 publisher: '',
-                keywords: [],
+                keywords: ['Test-Time Adaptation', 'Data Poisoning'],
                 options: {
                 },
                 paper_url: '',

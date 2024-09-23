@@ -12,6 +12,8 @@ export default {
 
     data(){
         return {
+            config_publications: authorConfig.publications,
+            config_publication_category: authorConfig.publication_category,
             content: authorConfig.publications,
             optionColors: [
                 '#5555bb',
@@ -22,13 +24,104 @@ export default {
                 '#bbbb55',
                 "#222255",
             ],
-            stars: {}
+            stars: {},
+            show_by_year: true,
         }
     },
 
     computed:{
+        getSecTitle(){
+            if (this.show_by_year){
+                return this.getYears;
+            } else {
+                return Object.keys(this.getSecContent);
+            }
+        },
+        getSecContent(){
+            if (this.show_by_year){
+                return this.config_publications;
+            } else {
+                let content = {};
+                for (let secTitleId in this.config_publication_category){
+                    const secTitle = this.config_publication_category[secTitleId];
+                    content[secTitle] = [];
+                }
+                content['Others'] = [];
+
+                const years = this.getYears;
+                for (let idx in years){
+                    const year = years[idx];
+                    const publications = this.config_publications[year];
+                    for (let publication_idx in publications){
+                        const publication = publications[publication_idx];
+                        let pushed = false;
+
+                        for (let secTitleId in this.config_publication_category){
+                            const secTitle = this.config_publication_category[secTitleId];
+                            let secTitles = [];
+
+                            if (secTitle.search("/") > 0){
+                                let secSubTitles = secTitle.split("/");
+                                for (let secSubTitleId in secSubTitles){
+                                    secTitles.push(secSubTitles[secSubTitleId].trim());
+                                }
+                            } else {
+                                secTitles.push(secTitle.trim());
+                            }
+
+                            for (let secTitleId in secTitles){
+                                const secTitle_ = secTitles[secTitleId];
+                                if (publication.keywords.includes(secTitle_)){
+                                    content[secTitle].push(publication);
+                                    pushed=true;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (!pushed){
+                            content['Others'].push(publication);
+                        }
+                    }
+                }
+
+
+                for (let secTitleId in this.config_publication_category){
+                    const secTitle = this.config_publication_category[secTitleId];
+                    content[secTitle] = [];
+
+                    let secTitles = [];
+
+                    if (secTitle.search("/") > 0){
+                        let secSubTitles = secTitle.split("/");
+                        for (let secSubTitleId in secSubTitles){
+                            secTitles.push(secSubTitles[secSubTitleId].trim());
+                        }
+                    } else {
+                        secTitles.push(secTitle.trim());
+                    }
+
+                    const years = this.getYears;
+                    for (let idx in years){
+                        const year = years[idx];
+                        const publications = this.config_publications[year];
+                        for (let publication_idx in publications){
+                            const publication = publications[publication_idx];
+                            for (let secTitleId in secTitles){
+                                const secTitle_ = secTitles[secTitleId];
+                                if (publication.keywords.includes(secTitle_) && !content[secTitle].includes(publication)){
+                                    content[secTitle].push(publication);
+                                }
+                            }
+                        }
+                    }
+
+                }
+                return content;
+            }
+        },
         getYears(){
-            return Object.keys(this.content).sort((a,b)=>{return b-a;});
+            return Object.keys(this.config_publications).sort((a,b)=>{return b-a;});
         },
         isPC(){
             return this.screenWidth >= 800;
@@ -38,7 +131,7 @@ export default {
             const years = this.getYears;
             for (let idx in years){
                 const year = years[idx];
-                const publications = this.content[year];
+                const publications = this.config_publications[year];
                 for (let _ in publications){
                     num++;
                 }
@@ -64,6 +157,13 @@ export default {
         showDiscussionRoom(title, paper_url){
             this.$emit('showDR', title, paper_url);
         },
+        switch_list(listby){
+            if (listby == 'year'){
+                this.show_by_year=true;
+            }else{
+                this.show_by_year=false;
+            }
+        }
     },
     
     async mounted(){
@@ -72,7 +172,7 @@ export default {
             const years = this.getYears;
             for (let idx in years){
                 const year = years[idx];
-                const publications = this.content[year];
+                const publications = this.config_publications[year];
                 for (let publication_idx in publications){
                     const publication = publications[publication_idx];
                     if (Object.keys(publication.options).indexOf("Code") >= 0){
@@ -114,13 +214,31 @@ export default {
         <div :style="`font-size:` + this.smallFont">
             <equal></equal> denotes `Equal Contribution`.
         </div>
-        <div v-for="year in getYears" class="ListOneYear">
+        <div class="YearBlock Item">
+            <div class="Switcher" v-bind:style="isPC ? 'flex-direction: row' : 'flex-direction: column'">
+                <span :style="`font-size:` + this.largeFont + `; margin: 0 10px;`" class="unselect" v-if="isPC">[</span>
+                <span :style="`font-size:` + this.largeFont + `; margin: 0 10px;`" class="unselect" style="cursor: pointer;" @click="switch_list('year')">
+                    <span v-if="!isPC">[&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span v-if="show_by_year" style="text-decoration: underline;">➤ By Year</span>
+                    <span v-else>By Year</span>
+                </span>
+                <span :style="`font-size:` + this.largeFont + `; margin: 0 10px;`" class="unselect">/</span>
+                <span :style="`font-size:` + this.largeFont + `; margin: 0 10px;`" class="unselect" style="cursor: pointer;" @click="switch_list('category')">
+                    <span v-if="!show_by_year" style="text-decoration: underline;">➤ By Category</span>
+                    <span v-else>By Category</span>
+                    <span v-if="!isPC">&nbsp;&nbsp;&nbsp;&nbsp;]</span>
+                </span>
+                <span :style="`font-size:` + this.largeFont + `; margin: 0 10px;`" class="unselect" v-if="isPC">]</span>
+            </div>
+        </div>
+
+        <div v-for="secTitle in getSecTitle" class="ListOneYear">
             <div class="YearBlock Item">
                 <div class="LeftPart"></div>
-                <span :style="`font-size:` + this.smallFont + `; margin: 0 10px;`"><b>{{ year }}</b></span>
+                <span :style="`font-size:` + this.smallFont + `; margin: 0 10px;`"><b>{{ secTitle }}</b></span>
                 <div class="RightPart"></div>
             </div>
-            <div class="Item" v-for="publication in content[year]" :id="getPubId(publication.image)">
+            <div class="Item" v-for="publication in getSecContent[secTitle]" :id="getPubId(publication.image)">
                 <div v-if="Object.keys(publication.options).length > 0" v-bind:class="[isPC ? 'Publication': 'Publication_Mobile']">
                     <div class="PublicationImage">
                         <a :href="publication.image" target="_blank">
@@ -217,6 +335,17 @@ export default {
 .Item {
     margin: 10px 0;
     position: relative
+}
+
+.Switcher {
+    width: 100%;
+    text-align: center;
+    display: flex;
+}
+
+.Switcher span {
+    flex: 1;
+    color: hsl(249, 98%, 46%);
 }
 
 .YearBlock {
