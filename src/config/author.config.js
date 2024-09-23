@@ -75,7 +75,9 @@ export default{
                 keywords: ['Segment Anything', 'Foundation Model', 'Remote Sensing'],
                 options: {
                     'PDF': 'https://arxiv.org/abs/2409.13401',
-                    'Bibtex': './bibtexs/2024_LiuEtAl_PointSAM.bib'
+                    'Bibtex': './bibtexs/2024_LiuEtAl_PointSAM.bib',
+                    'Project Page': 'https://github.com/Lans1ng/PointSAM',
+                    'Code': 'https://github.com/Lans1ng/PointSAM'
                 },
                 paper_url: 'https://arxiv.org/pdf/2409.13401',
                 new: true
