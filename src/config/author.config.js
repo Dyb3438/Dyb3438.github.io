@@ -67,6 +67,19 @@ export default{
                 // new: true
             },
             {
+                image: './imgs/2024_LiuEtAl_PointSAM.jpg',
+                title: 'PointSAM: Pointly-Supervised Segment Anything Model for Remote Sensing Images',
+                author: 'Nanqing Liu, Xun Xu, <b>Yongyi Su</b>, Haojie Zhang, Heng-Chao Li',
+                publisher: 'Preprint, 2024',
+                keywords: ['Segment Anything', 'Foundation Model', 'Remote Sensing'],
+                options: {
+                    'PDF': 'https://arxiv.org/abs/2409.13401',
+                    'Bibtex': './bibtexs/2024_LiuEtAl_PointSAM.bib'
+                },
+                paper_url: 'https://arxiv.org/pdf/2409.13401',
+                new: true
+            },
+            {
                 image: './imgs/2024_LiEtAl_HILTTA.webp',
                 title: 'Exploring Human-in-the-Loop Test-Time Adaptation by Synergizing Active Learning and Model Selection',
                 author: 'Yushu Li<equal></equal>, <b>Yongyi Su<equal></equal></b>, Xulei Yang, Kui Jia and Xun Xu',
@@ -77,7 +90,7 @@ export default{
                     'Bibtex': './bibtexs/2024_LiEtAl_HILTTA.bib',
                 },
                 paper_url: 'https://arxiv.org/pdf/2405.18911',
-                new: true
+                // new: true
             },
             {
                 image: './imgs/2024_SuEtAl_TTAC-.webp',
@@ -249,18 +262,16 @@ export default{
             position: 'Master Student',
             url: 'https://yushu-li.github.io/'
         },
-
-        'Yijin Chen': {
-            image: './imgs/co-authors/YijinChen.jpg',
-            institute: 'South China University of Technology, Guangzhou',
-            position: 'Master Student',
-        },
-
         'Haojie Zhang': {
             image: './imgs/co-authors/HaojieZhang.jpeg',
             institute: 'South China University of Technology, Guangzhou',
             position: 'Master Student',
             url: 'https://zhang-haojie.github.io'
+        },
+        'Yijin Chen': {
+            image: './imgs/co-authors/YijinChen.jpg',
+            institute: 'South China University of Technology, Guangzhou',
+            position: 'Master Student',
         },
     },
 
