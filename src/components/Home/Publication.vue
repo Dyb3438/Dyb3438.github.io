@@ -118,8 +118,8 @@ export default {
 
                 }
 
-                if (content['others'].length == 0){
-                    delete content['others'];
+                if (content['Others'].length == 0){
+                    delete content['Others'];
                 }
                 return content;
             }
