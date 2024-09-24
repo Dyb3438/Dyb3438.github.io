@@ -146,7 +146,7 @@ export default{
                 title: 'CLIP-guided Source-free Object Detection in Aerial Images',
                 author: 'Nanqing Liu, Xun Xu, <b>Yongyi Su</b>, Chengxin Liu, Peiliang Gong and Heng-Chao Li',
                 publisher: 'International Geoscience and Remote Sensing Symposium (<b>IGARSS</b>), 2024 (Oral presentation)',
-                keywords: ['CLIP', 'Object Detection', 'Source-Free Domain Adaptation', 'Aerial Images'],
+                keywords: ['CLIP', 'Foundation Model', 'Object Detection', 'Source-Free Domain Adaptation'],
                 options: {
                     'PDF': 'https://arxiv.org/abs/2401.05168',
                     'Bibtex': './bibtexs/2024_LiuEtAl_SFOD.bib',
