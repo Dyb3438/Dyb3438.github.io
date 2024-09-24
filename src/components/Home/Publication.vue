@@ -117,6 +117,10 @@ export default {
                     }
 
                 }
+
+                if (content['others'].length == 0){
+                    delete content['others'];
+                }
                 return content;
             }
         },
