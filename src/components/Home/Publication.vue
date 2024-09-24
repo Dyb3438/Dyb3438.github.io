@@ -167,11 +167,23 @@ export default {
             }else{
                 this.show_by_year=false;
             }
+        },
+        handleHashChange() {
+            let hash = unescape(window.location.hash.replace("#",""));
+            if (this.config_publication_category.includes(hash)){
+                if (this.show_by_year){
+                    this.switch_list("category");
+                    this.$nextTick(()=>{
+                        this.$refs[hash][0].scrollIntoView();
+                    });
+                }
+                // event.preventDefault();
+            }
         }
     },
     
     async mounted(){
-        this.hostname = window.location.hostname;
+        this.handleHashChange();
         if (this.isPC){
             const years = this.getYears;
             for (let idx in years){
@@ -196,6 +208,22 @@ export default {
                 }
             }
         }
+
+        window.addEventListener('popstate',(event) => {
+            let state = history.state||event.state;
+            let hash = unescape(state.current.split('#')[1]);
+            if (this.config_publication_category.includes(hash)){
+                if (this.show_by_year){
+                    this.switch_list("category");
+                    this.$nextTick(()=>{
+                        this.$refs[hash][0].scrollIntoView();
+                    });
+                } else {
+                    this.$refs[hash][0].scrollIntoView();
+                }
+                event.preventDefault();
+            }
+        })
     }
 }
 </script>
@@ -237,7 +265,7 @@ export default {
         </div>
 
         <div v-for="secTitle in getSecTitle" class="ListOneYear">
-            <div class="YearBlock Item">
+            <div class="YearBlock Item" :ref="secTitle" :id="secTitle">
                 <div class="LeftPart"></div>
                 <span :style="`font-size:` + this.smallFont + `; margin: 0 10px;`"><b>{{ secTitle }}</b></span>
                 <div class="RightPart"></div>
