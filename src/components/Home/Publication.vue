@@ -177,11 +177,10 @@ export default {
                         this.$refs[hash][0].scrollIntoView();
                     });
                 }
-                // event.preventDefault();
             }
         }
     },
-    
+
     async mounted(){
         this.handleHashChange();
         if (this.isPC){

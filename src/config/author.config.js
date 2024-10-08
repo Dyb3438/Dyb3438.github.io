@@ -57,20 +57,22 @@ export default{
     publications: {
         2024: [
             {
-                image: '',
+                image: './imgs/2024_SuEtAl_TTDP.png',
                 title: 'On the Adversarial Risk of Test Time Adaptation: An Investigation into Realistic Test-Time Data Poisoning',
-                author: '<b>Yongyi Su</b>, Yushu Li, Kui Jia, Chuan-Sheng Foo and Xun Xu',
-                publisher: '',
-                keywords: ['Test-Time Adaptation', 'Data Poisoning'],
+                author: '<b>Yongyi Su</b>, Yushu Li, Nanqing Liu, Kui Jia, Xulei Yang, Chuan-Sheng Foo and Xun Xu',
+                publisher: 'Preprint, 2024',
+                keywords: ['Test-Time Adaptation', 'Data Poisoning', 'Adversarial Attack'],
                 options: {
+                    'PDF': 'https://arxiv.org/abs/2410.04682',
+                    'Bibtex': './bibtexs/2024_SuEtAl_TTDP.bib'
                 },
-                paper_url: '',
-                // new: true
+                paper_url: 'https://arxiv.org/pdf/2410.04682',
+                new: true
             },
             {
                 image: './imgs/2024_LiuEtAl_PointSAM.jpg',
                 title: 'PointSAM: Pointly-Supervised Segment Anything Model for Remote Sensing Images',
-                author: 'Nanqing Liu, Xun Xu, <b>Yongyi Su</b>, Haojie Zhang, Heng-Chao Li',
+                author: 'Nanqing Liu, Xun Xu, <b>Yongyi Su</b>, Haojie Zhang and Heng-Chao Li',
                 publisher: 'Preprint, 2024',
                 keywords: ['Segment Anything', 'Foundation Model', 'Remote Sensing'],
                 options: {
