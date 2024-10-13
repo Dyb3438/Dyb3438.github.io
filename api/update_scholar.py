@@ -8,7 +8,8 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type','text/plain')
         self.end_headers()
-        self.wfile.write(b"hello world")
+        self.wfile.write(b"hello world" + b'\n')
+        self.wfile.write((os.path.join(os.path.dirname(__file__))).encode('utf-8') + b'\n')
         with open("./scholar/scholar_results.json", 'rb') as f:
             for line in f.readlines():
                 self.wfile.write(line)
