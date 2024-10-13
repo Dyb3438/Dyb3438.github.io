@@ -249,7 +249,7 @@ export default{
           <User/>
         </template> -->
         <template v-slot:Text>
-          👨🏻‍💻 <Name style="height: calc(var(--largeFont) * 1.5); width: auto; vertical-align:bottom" id="name"/>
+          👨🏻‍💻 <a href="./"><Name style="height: calc(var(--largeFont) * 1.5); width: auto; vertical-align:bottom" id="name"/></a>
           <!-- {{authorName}} -->
         </template>
       </AuthorItem>
