@@ -1,10 +1,6 @@
 {
     "rewrites": [
         {
-            "source": "/backend/scholar_results",
-            "destination": "/api/scholar_results.json"
-        },
-        {
             "source": "/backend/(.*)",
             "destination": "/api/proxy"
         },
