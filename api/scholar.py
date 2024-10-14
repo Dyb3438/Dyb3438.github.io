@@ -1,6 +1,7 @@
 from http.server import BaseHTTPRequestHandler
 import os
 import json
+import requests
 from .vercel_blob import blob_store
 
 class handler(BaseHTTPRequestHandler):
@@ -12,11 +13,12 @@ class handler(BaseHTTPRequestHandler):
 
         blobs = blob_store.list({'prefix': 'scholar_info.json'})
 
-        self.wfile.write(json.dumps(blobs).encode('utf-8'))
-
-        blobs = blob_store.list({'prefix': 'scholar_info2.json'})
-
-        self.wfile.write(json.dumps(blobs).encode('utf-8'))
+        if len(blobs['blobs']) == 0:
+            self.wfile.write(json.dumps({'result': 0}).encode('utf-8'))
+        else:
+            content_url = blobs['blobs'][0]['url']
+            content = requests.get(content_url).json()
+            self.wfile.write(json.dumps({'result': 1, 'data': content}).encode('utf-8'))
         return
     
 
