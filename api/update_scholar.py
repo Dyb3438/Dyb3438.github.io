@@ -11,7 +11,7 @@ class handler(BaseHTTPRequestHandler):
         self.send_header('Content-type','text/plain')
         self.end_headers()
 
-        scholar_id = os.environ.get(['GOOGLE_SCHOLAR_ID'])
+        scholar_id = os.environ.get('GOOGLE_SCHOLAR_ID')
         if scholar_id is None:
             raise Exception('GOOGLE_SCHOLAR_ID environment variable not set')
         
