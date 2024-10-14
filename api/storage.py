@@ -16,5 +16,5 @@ class handler(BaseHTTPRequestHandler):
             'limit': '5',
         })
 
-        self.wfile.write(json.dump(blobs))
+        self.wfile.write(json.dumps(blobs))
         return
