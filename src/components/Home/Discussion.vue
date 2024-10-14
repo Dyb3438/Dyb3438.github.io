@@ -69,7 +69,7 @@ export default {
 
         this.t1 = setInterval(()=>{
             this.getLikes(this.getComments);
-        }, 1000 * 10);
+        }, 1000 * 30);
         const title_width = this.$refs.title.clientWidth ? this.$refs.title.clientWidth : this.$refs.title.offsetWidth;
 
         if (this.$refs.title.scrollWidth > title_width){
