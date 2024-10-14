@@ -87,41 +87,15 @@ export default {
                     }
                 }
 
-
                 for (let secTitleId in this.config_publication_category){
                     const secTitle = this.config_publication_category[secTitleId];
-                    content[secTitle] = [];
-
-                    let secTitles = [];
-
-                    if (secTitle.search("/") > 0){
-                        let secSubTitles = secTitle.split("/");
-                        for (let secSubTitleId in secSubTitles){
-                            secTitles.push(secSubTitles[secSubTitleId].trim());
-                        }
-                    } else {
-                        secTitles.push(secTitle.trim());
-                    }
-
-                    const years = this.getYears;
-                    for (let idx in years){
-                        const year = years[idx];
-                        const publications = this.config_publications[year];
-                        for (let publication_idx in publications){
-                            const publication = publications[publication_idx];
-                            for (let secTitleId in secTitles){
-                                const secTitle_ = secTitles[secTitleId];
-                                if (publication.keywords.includes(secTitle_) && !content[secTitle].includes(publication)){
-                                    content[secTitle].push(publication);
-                                }
-                            }
-                        }
-                    }
-
+                    content[secTitle] = content[secTitle].sort(function(a, b){return b.scholarInfo.citation - a.scholarInfo.citation});
                 }
 
                 if (content['Others'].length == 0){
                     delete content['Others'];
+                } else {
+                    content['Others'] = content['Others'].sort(function(a, b){return b.scholarInfo.citation - a.scholarInfo.citation});
                 }
                 return content;
             }
@@ -141,6 +115,9 @@ export default {
                 for (let pub_idx in publications){
                     num++;
                     let pub = publications[pub_idx];
+                    this.config_publications[year][pub_idx]['scholarInfo'] = {
+                        'citation': 0,
+                    };
                     // update pub citation num
                     if ('publications' in this.googleScholarInfo){
                         for (let i in this.googleScholarInfo['publications']){
@@ -303,7 +280,7 @@ export default {
                                 </a>
                             </div>
                         </div>
-                        <div class="PublicationScholar" :style="`font-size:` + this.smallFont" v-if="'scholarInfo' in publication">
+                        <div class="PublicationScholar" :style="`font-size:` + this.smallFont" v-if="'scholarInfo' in publication && publication.scholarInfo.citation > 0">
                             <GoogleScholar :style="`height:  calc(` +this.smallFont + ` * 1.1); vertical-align: text-bottom;`"/>&nbsp;
                             <a :href="publication.scholarInfo['googleScholarUrl']" target="_blank" style="text-decoration-color: #4285f4 !important; color: #4285f4 !important">
                                 <span>Citations: </span>
