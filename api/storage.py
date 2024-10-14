@@ -16,5 +16,5 @@ class handler(BaseHTTPRequestHandler):
             'limit': '5',
         })
 
-        self.wfile.write(json.dumps(blobs))
+        self.wfile.write(json.dumps(blobs).encode('utf-8'))
         return
