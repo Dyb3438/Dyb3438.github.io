@@ -227,11 +227,11 @@ export default{
     // document.documentElement.scrollHeight + document.documentElement.clientHeight
     if (this.isPC){
       this.getDiscussionCounts();
-      this.t1 = setInterval(() => {
-        if (!this.show_discussion){
-          this.getDiscussionCounts();
-        }
-      }, 1000 * 10);
+      // this.t1 = setInterval(() => {
+      //   if (!this.show_discussion){
+      //     this.getDiscussionCounts();
+      //   }
+      // }, 1000 * 10);
     }
 
     document.body.scrollTop = document.documentElement.scrollTop = 0;
