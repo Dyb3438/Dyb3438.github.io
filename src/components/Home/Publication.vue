@@ -291,14 +291,6 @@ export default {
                         <div class="PublicationTitle" :style="`font-size:` + this.smallFont" v-html="[publication.new ? `<span style='font-size: var(--largeFont)'>💥 </span>` : ``] + publication.title"></div>
                         <div class="PublicationAuthor" :style="`font-size:` + this.smallFont" v-html="publication.author"></div>
                         <div class="PublicationPublisher" :style="`font-size:` + this.smallFont" v-html="publication.publisher"></div>
-                        <div class="PublicationScholar" :style="`font-size:` + this.smallFont" v-if="'scholarInfo' in publication">
-                            <!-- <GoogleScholar :style="`height:  calc(` +this.smallFont + ` * 1.2); vertical-align: text-bottom;`"/>&nbsp; -->
-                            <a :href="publication.scholarInfo['googleScholarUrl']" target="_blank" style="text-decoration-color: #4285f4 !important;">
-                                <span>Google Citations: </span>
-                                <span style="color: #4285f4 !important;">{{ publication.scholarInfo.citation }}</span>
-                            </a>
-                            <!-- {{ publication.scholarInfo }} -->
-                        </div>
                         <div class="PublicationKeyword" :style="`font-size:` + this.smallFont">
                             <span style="font-weight: bold">
                                 Keywords: 
@@ -310,6 +302,13 @@ export default {
                                     </div>
                                 </a>
                             </div>
+                        </div>
+                        <div class="PublicationScholar" :style="`font-size:` + this.smallFont" v-if="'scholarInfo' in publication">
+                            <GoogleScholar :style="`height:  calc(` +this.smallFont + ` * 1.1); vertical-align: text-bottom;`"/>&nbsp;
+                            <a :href="publication.scholarInfo['googleScholarUrl']" target="_blank" style="text-decoration-color: #4285f4 !important; color: #4285f4 !important">
+                                <span>Citations: </span>
+                                <span>{{ publication.scholarInfo.citation }}</span>
+                            </a>
                         </div>
                         <div class="PublicationOptions" :style="`font-size:` + this.smallFont">
                             <div style="display: flex;" v-bind:style="isPC ? 'flex: 0 0 auto; margin: 5px 10px 5px 0' : 'flex: 1 0 auto; margin: 5px'" v-for="(value, key, index) in publication.options" >
@@ -507,7 +506,7 @@ export default {
 
 
 .PublicationScholar *{
-    color: var(--color-text) !important;
+    /* color: var(--color-text) !important; */
     font-weight: 500;
 }
 

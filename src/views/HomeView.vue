@@ -318,12 +318,12 @@ export default{
       <div class="Options">
         <a v-for="(value, key, index) in authorOptions"  :href="value" target="_blank">
           <div :style="`--btn_color:` + optionColor(index)" class="unselect" v-if="key.includes('Google Scholar')">
-            <GoogleScholar style="height: var(--smallFont); vertical-align: text-bottom; margin-right: 10px"/>
+            <GoogleScholar style="height: var(--smallFont); vertical-align: text-bottom; margin-right: calc(var(--smallFont) * 0.5)"/>
             <span style="font-weight: bold" v-if="'citedby' in googleScholarInfo && googleScholarInfo['citedby'] > 0">Citations: {{ googleScholarInfo['citedby'] }}</span>
             <span v-else> {{ key }} </span>
           </div>
           <div :style="`--btn_color:` + optionColor(index)" class="unselect" v-else-if="key.includes('GitHub')">
-            <Github style="height: var(--smallFont); vertical-align: text-bottom;  margin-right: 10px;"/>
+            <Github style="height: var(--smallFont); vertical-align: text-bottom;  margin-right: calc(var(--smallFont) * 0.5);"/>
             <span>{{ key }}</span>
           </div>
           <div :style="`--btn_color:` + optionColor(index)" class="unselect" v-else>
@@ -479,7 +479,7 @@ export default{
 }
 
 .Options a {
-  margin: 5px;
+  margin: 5px 3px;
   text-decoration: none
 }
 

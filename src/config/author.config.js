@@ -113,21 +113,6 @@ export default{
                 paper_url: 'https://arxiv.org/pdf/2303.10856',
             },
             {
-                image: './imgs/2024_ZhangEtAl_WeSAM.webp',
-                title: 'Improving the Generalization of Segmentation Foundation Model under Distribution Shift via Weakly Supervised Adaptation',
-                author: 'Haojie Zhang<equal></equal>, <b>Yongyi Su<equal></equal></b>, Xun Xu and Kui Jia',
-                publisher: 'IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2024',
-                keywords: ['Segment Anything', 'Foundation Model', 'Weakly Supervised Learning', 'Domain Adaptation'],
-                options: {
-                    'PDF': 'https://arxiv.org/abs/2312.03502',
-                    'Bibtex': './bibtexs/2024_ZhangEtAl_WeSAM.bib',
-                    'Project Page': 'https://zhang-haojie.github.io/project-pages/wesam.html',
-                    'Code': 'https://github.com/Zhang-Haojie/WeSAM'
-                },
-                // new: true,
-                paper_url: 'https://arxiv.org/pdf/2312.03502',
-            },
-            {
                 image: './imgs/2023_SuEtAl_TRIBE.webp',
                 title: 'Towards Real-World Test-Time Adaptation: Tri-net Self-Training with Balanced Normalization',
                 author: '<b>Yongyi Su</b>, Xun Xu and Kui Jia',
@@ -142,6 +127,21 @@ export default{
                 },
                 paper_url: 'https://arxiv.org/pdf/2309.14949',
                 // new: true
+            },
+            {
+                image: './imgs/2024_ZhangEtAl_WeSAM.webp',
+                title: 'Improving the Generalization of Segmentation Foundation Model under Distribution Shift via Weakly Supervised Adaptation',
+                author: 'Haojie Zhang<equal></equal>, <b>Yongyi Su<equal></equal></b>, Xun Xu and Kui Jia',
+                publisher: 'IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2024',
+                keywords: ['Segment Anything', 'Foundation Model', 'Weakly Supervised Learning', 'Domain Adaptation'],
+                options: {
+                    'PDF': 'https://arxiv.org/abs/2312.03502',
+                    'Bibtex': './bibtexs/2024_ZhangEtAl_WeSAM.bib',
+                    'Project Page': 'https://zhang-haojie.github.io/project-pages/wesam.html',
+                    'Code': 'https://github.com/Zhang-Haojie/WeSAM'
+                },
+                // new: true,
+                paper_url: 'https://arxiv.org/pdf/2312.03502',
             },
             {
                 image: './imgs/2024_LiuEtAl_SFOD.webp',
