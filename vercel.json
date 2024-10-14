@@ -1,8 +1,12 @@
 {
     "rewrites": [
         {
-            "source": "/backend/storage",
-            "destination": "/api/storage"
+            "source": "/backend/scholar",
+            "destination": "/api/scholar"
+        },
+        {
+            "source": "/backend/_update_scholar",
+            "destination": "/api/update_scholar"
         },
         {
             "source": "/backend/(.*)",
