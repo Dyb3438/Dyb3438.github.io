@@ -293,8 +293,10 @@ export default {
                         <div class="PublicationPublisher" :style="`font-size:` + this.smallFont" v-html="publication.publisher"></div>
                         <div class="PublicationScholar" :style="`font-size:` + this.smallFont" v-if="'scholarInfo' in publication">
                             <!-- <GoogleScholar :style="`height:  calc(` +this.smallFont + ` * 1.2); vertical-align: text-bottom;`"/>&nbsp; -->
-                            <span>Google Citations: </span>
-                            <a :href="publication.scholarInfo['googleScholarUrl']" target="_blank" style="text-decoration-color: #4285f4 !important;"><span style="color: #4285f4 !important;">{{ publication.scholarInfo.citation }}</span></a>
+                            <a :href="publication.scholarInfo['googleScholarUrl']" target="_blank" style="text-decoration-color: #4285f4 !important;">
+                                <span>Google Citations: </span>
+                                <span style="color: #4285f4 !important;">{{ publication.scholarInfo.citation }}</span>
+                            </a>
                             <!-- {{ publication.scholarInfo }} -->
                         </div>
                         <div class="PublicationKeyword" :style="`font-size:` + this.smallFont">
