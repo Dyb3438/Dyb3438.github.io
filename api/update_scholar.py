@@ -17,10 +17,11 @@ class handler(BaseHTTPRequestHandler):
         
         author: dict = scholarly.search_author_id(scholar_id)
         scholarly.fill(author, sections=['basics', 'indices', 'counts', 'publications'])
-        resp = blob_store.put('scholar_info.json', json.dumps(author, ensure_ascii=False).encode('utf-8'), {
+        _ = blob_store.put('scholar_info.json', json.dumps(author, ensure_ascii=False).encode('utf-8'), {
             "addRandomSuffix": "false",
         })
 
-        self.wfile.write(json.dumps(resp).encode('utf-8'))
+        # self.wfile.write(json.dumps(resp).encode('utf-8'))
+        self.wfile.write(json.dumps({'success': 1}).encode('utf-8'))
         return
     
