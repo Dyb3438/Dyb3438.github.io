@@ -1,7 +1,7 @@
 from http.server import BaseHTTPRequestHandler
 import os
 import json
-import vercel_blob
+from .vercel_blob import blob_store
 
 class handler(BaseHTTPRequestHandler):
 
@@ -12,7 +12,7 @@ class handler(BaseHTTPRequestHandler):
         self.wfile.write(b"hello world" + b'\n')
         self.wfile.write((os.path.join(os.path.dirname(__file__))).encode('utf-8') + b'\n')
 
-        blobs = vercel_blob.list({
+        blobs = blob_store.list({
             'limit': '5',
         })
 
