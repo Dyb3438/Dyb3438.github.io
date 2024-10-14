@@ -19,6 +19,10 @@ import Discussion from '../components/Home/Discussion.vue';
 
 import Name from '../components/icons/Name.vue'
 
+import GoogleScholar from '../components/icons/GoogleScholar.vue'
+import Github from '../components/icons/Github.vue'
+
+
 import fetchJSONP from 'fetch-jsonp'
 
 export default{
@@ -39,6 +43,8 @@ export default{
 
     Discussion,
     Name,
+    GoogleScholar,
+    Github
   },
 
   data(){
@@ -50,8 +56,8 @@ export default{
       largeFont: '20px',
 
       optionColors: [
-        '#80a4f3',
-        '#25292e',
+        '#4285f4',
+        '#1B1F23',
         '#80261b',
         "#222255",
         "#222222",
@@ -69,6 +75,8 @@ export default{
       discussion_url: '',
 
       discussions: {},
+
+      googleScholarInfo: {},
 
       // information
       authorName: authorConfig.name,
@@ -175,10 +183,10 @@ export default{
     getDiscussionCounts(){
       const response = fetch(apiConfig.baseURL + '/Discussion/Counts', {
         method: "GET",
-          headers: {
-              "Content-Type": "application/json",
-          },
-          mode: "cors",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        mode: "cors",
       });
 
       response.then(e => e.json())
@@ -191,8 +199,31 @@ export default{
                   console.log('error: ' + e);
               });
     },
+
+    getScholarInfo(){
+      const response = fetch(apiConfig.baseURL + '/scholar', {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        mode: "cors",
+      });
+
+      response.then(e => e.json())
+              .then(e => {
+                  if (e['result']){
+                      this.google_scholar_info = e['data'];
+                  }
+              })
+              .catch(e => {
+                  console.log('error: ' + e);
+              });
+    }
   },
   mounted(){
+    // get google scholar citation
+    this.getScholarInfo();
+
     // document.documentElement.scrollHeight + document.documentElement.clientHeight
     if (this.isPC){
       this.getDiscussionCounts();
@@ -286,8 +317,17 @@ export default{
       
       <div class="Options">
         <a v-for="(value, key, index) in authorOptions"  :href="value" target="_blank">
-          <div :style="`--btn_color:` + optionColor(index)" class="unselect">
-            {{ key }}
+          <div :style="`--btn_color:` + optionColor(index)" class="unselect" v-if="key.includes('Google Scholar')">
+            <GoogleScholar style="height: var(--smallFont); vertical-align: text-bottom; margin-right: 10px"/>
+            <span style="font-weight: bold" v-if="'citedby' in googleScholarInfo && googleScholarInfo['citedby'] > 0">Citations: {{ googleScholarInfo['citedby'] }}</span>
+            <span v-else> {{ key }} </span>
+          </div>
+          <div :style="`--btn_color:` + optionColor(index)" class="unselect" v-else-if="key.includes('GitHub')">
+            <Github style="height: var(--smallFont); vertical-align: text-bottom;  margin-right: 10px;"/>
+            <span>{{ key }}</span>
+          </div>
+          <div :style="`--btn_color:` + optionColor(index)" class="unselect" v-else>
+            <span>{{ key }}</span>
           </div>
         </a>
         <a style="flex: 1;" class="discussion_num_a" @click="openDiscussionRoom('Global')" v-if="isPC">
@@ -315,7 +355,7 @@ export default{
           <AcademicFootprint largeFont="var(--largeFont)" smallFont="var(--smallFont)" :screenWidth="screenWidth"/>
         </div>
         <div class="BlockItem" style="margin-top:30px">
-          <Publication largeFont="var(--largeFont)" smallFont="var(--smallFont)" :screenWidth="screenWidth" @showDR="openDiscussionRoom" :discussionCount="discussions"/>
+          <Publication largeFont="var(--largeFont)" smallFont="var(--smallFont)" :screenWidth="screenWidth" @showDR="openDiscussionRoom" :discussionCount="discussions" :googleScholarInfo="googleScholarInfo"/>
         </div>
         <div class="BlockItem" style="margin-top:30px">
           <CoAuthor largeFont="var(--largeFont)" smallFont="var(--smallFont)" :screenWidth="screenWidth"/>
@@ -339,7 +379,7 @@ export default{
           </div>
         </div>
 
-        <div id="footer"><small>Updated Oct 8, 2024</small></div>
+        <div id="footer"><small>Updated Oct 14, 2024</small></div>
       </div>
     </div>
 
@@ -445,7 +485,6 @@ export default{
 
 .Options div {
   flex: 0 0 auto;
-
   font-size: calc(var(--smallFont) * 0.8);
   font-weight: bold;
   padding: calc(var(--smallFont) / 3) calc(var(--smallFont) / 3 * 2);
@@ -455,6 +494,13 @@ export default{
 
   cursor: pointer;
   text-align: center;
+
+  --fill_color: var(--btn_color);
+}
+
+.Options div span {
+  font-size: calc(var(--smallFont) * 0.8);
+  font-weight: bold;
 }
 
 .Options div:hover{
@@ -463,6 +509,8 @@ export default{
 
   color: white;
   background-color: var(--btn_color);
+
+  --fill_color: white; 
 }
 
 .Options div:active {
@@ -580,10 +628,10 @@ export default{
     justify-content: center;
   } */
 
-  .Options div {
+  /* .Options div {
     color: white;
     background-color: var(--btn_color);
-  }
+  } */
 
   .VisitGlobe {
     width: 60vw;

@@ -2,12 +2,14 @@
 import { onMounted } from 'vue';
 import authorConfig from '../../config/author.config';
 import Publication from '../icons/Publication.vue';
+import GoogleScholar from '../icons/GoogleScholar.vue';
 
 export default {
-    props: ['largeFont', 'smallFont', "screenWidth", "discussionCount"],
+    props: ['largeFont', 'smallFont', "screenWidth", "discussionCount", "googleScholarInfo"],
 
     components:{
-        Publication
+        Publication,
+        GoogleScholar
     },
 
     data(){
@@ -136,8 +138,22 @@ export default {
             for (let idx in years){
                 const year = years[idx];
                 const publications = this.config_publications[year];
-                for (let _ in publications){
+                for (let pub_idx in publications){
                     num++;
+                    let pub = publications[pub_idx];
+                    // update pub citation num
+                    if ('publications' in this.googleScholarInfo){
+                        for (let i in this.googleScholarInfo['publications']){
+                            const scholarInfo = this.googleScholarInfo['publications'][i];
+                            if (pub['title'].toLowerCase().trim() == scholarInfo['bib']['title'].toLowerCase().trim() && scholarInfo['num_citations'] > 0){
+                                this.config_publications[year][pub_idx]['scholarInfo'] = {
+                                    'citation': scholarInfo['num_citations'],
+                                    'googleScholarUrl': scholarInfo['citedby_url']
+                                }
+                            }
+                        }
+                    }
+                    
                 }
             }
             return num;
@@ -246,24 +262,19 @@ export default {
             <equal></equal> denotes `Equal Contribution`.
         </div>
         <div class="YearBlock Item">
-            <div class="Switcher" v-bind:style="isPC ? 'flex-direction: row' : 'flex-direction: column'">
-                <span :style="`font-size:` + this.largeFont + `; margin: 0 10px;`" class="unselect" v-if="isPC">[</span>
-                <span :style="`font-size:` + this.largeFont + `; margin: 0 10px;`" class="unselect" style="cursor: pointer;" @click="switch_list('year')">
-                    <span v-if="!isPC">[&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <span v-if="show_by_year" style="text-decoration: underline;">➤ By Year</span>
-                    <span v-else>By Year</span>
-                </span>
-                <span :style="`font-size:` + this.largeFont + `; margin: 0 10px;`" class="unselect">/</span>
-                <span :style="`font-size:` + this.largeFont + `; margin: 0 10px;`" class="unselect" style="cursor: pointer;" @click="switch_list('category')">
-                    <span v-if="!show_by_year" style="text-decoration: underline;">➤ By Category</span>
-                    <span v-else>By Category</span>
-                    <span v-if="!isPC">&nbsp;&nbsp;&nbsp;&nbsp;]</span>
-                </span>
-                <span :style="`font-size:` + this.largeFont + `; margin: 0 10px;`" class="unselect" v-if="isPC">]</span>
+            <div class="Switcher" >
+                <div class="SwitcherForeground" :style="show_by_year ? `--offset_x: 0%` : `--offset_x: 100%`">
+                </div>
+                <div class="SwitcherBlock"  :class="show_by_year? `SwitcherActive` : ``"   @click="switch_list('year')">
+                    <span>By Year</span>
+                </div>
+                <div class="SwitcherBlock" :class="!show_by_year? `SwitcherActive` : ``"  @click="switch_list('category')">
+                    <span>By Category</span>
+                </div>
             </div>
         </div>
 
-        <div v-for="secTitle in getSecTitle" class="ListOneYear">
+        <div v-for="secTitle in getSecTitle" class="ListOneYear" style="margin-top: 30px">
             <div class="YearBlock Item" :ref="secTitle" :id="secTitle">
                 <div class="LeftPart"></div>
                 <span :style="`font-size:` + this.smallFont + `; margin: 0 10px;`"><b>{{ secTitle }}</b></span>
@@ -280,6 +291,12 @@ export default {
                         <div class="PublicationTitle" :style="`font-size:` + this.smallFont" v-html="[publication.new ? `<span style='font-size: var(--largeFont)'>💥 </span>` : ``] + publication.title"></div>
                         <div class="PublicationAuthor" :style="`font-size:` + this.smallFont" v-html="publication.author"></div>
                         <div class="PublicationPublisher" :style="`font-size:` + this.smallFont" v-html="publication.publisher"></div>
+                        <div class="PublicationScholar" :style="`font-size:` + this.smallFont" v-if="'scholarInfo' in publication">
+                            <!-- <GoogleScholar :style="`height:  calc(` +this.smallFont + ` * 1.2); vertical-align: text-bottom;`"/>&nbsp; -->
+                            <span>Google Citations: </span>
+                            <a :href="publication.scholarInfo['googleScholarUrl']" target="_blank" style="text-decoration-color: #4285f4 !important;"><span style="color: #4285f4 !important;">{{ publication.scholarInfo.citation }}</span></a>
+                            <!-- {{ publication.scholarInfo }} -->
+                        </div>
                         <div class="PublicationKeyword" :style="`font-size:` + this.smallFont">
                             <span style="font-weight: bold">
                                 Keywords: 
@@ -372,11 +389,44 @@ export default {
     width: 100%;
     text-align: center;
     display: flex;
+    border-bottom: 2px solid black;
+    box-shadow: 0 6px 6px lightgray;
+    border-radius: 10px 10px 0 0;
 }
 
-.Switcher span {
+.SwitcherBlock{
     flex: 1;
-    color: hsl(249, 98%, 46%);
+    z-index: 999;
+    cursor: pointer;
+}
+
+.SwitcherBlock:hover{
+    background: rgb(230, 230, 230);
+    border-radius: 10px 10px 0 0;
+}
+
+.SwitcherActive:hover{
+    background: rgba(0,0,0,0) !important;
+    cursor: default;
+}
+
+.SwitcherBlock span {
+    font-size: var(--largeFont);
+    font-weight: 500;
+    color: black;
+    transition-duration: 0.5s;
+}
+
+.SwitcherForeground{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: lightgray;
+    transform: translateX(var(--offset_x));
+    border-radius: 10px 10px 0 0;
+    transition-duration: 0.5s;
+    border: 1px solid black;
+    border-bottom: 2px solid black;
 }
 
 .YearBlock {
@@ -450,6 +500,12 @@ export default {
 }
 
 .PublicationPublisher {
+    font-weight: 500;
+}
+
+
+.PublicationScholar *{
+    color: var(--color-text) !important;
     font-weight: 500;
 }
 

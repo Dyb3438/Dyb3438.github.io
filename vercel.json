@@ -16,5 +16,12 @@
             "source": "/:path*",
             "destination": "/index.html"
         }
-    ]
+    ],
+
+    "crons": [
+        {
+          "path": "/backend/_update_scholar",
+          "schedule": "0 20 * * *"
+        }
+      ]
 }
