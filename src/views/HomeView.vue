@@ -212,7 +212,7 @@ export default{
       response.then(e => e.json())
               .then(e => {
                   if (e['result']){
-                      this.google_scholar_info = e['data'];
+                      this.googleScholarInfo = e['data'];
                   }
               })
               .catch(e => {
