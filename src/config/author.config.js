@@ -49,7 +49,7 @@ export default{
             ],
             [
                 '<b>Conference Reviewer</b>',
-                'ICML, ICLR, NeurIPS, ACM MM, CVPR, ECCV, ACCV, etc.'
+                'ICML, ICLR, NeurIPS, ACM MM, CVPR, ECCV, ACCV, ICME.'
             ]
         ],
     },

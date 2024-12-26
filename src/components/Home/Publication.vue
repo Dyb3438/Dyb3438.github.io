@@ -595,7 +595,7 @@ export default {
 }
 
 .Publication_Mobile .PublicationImage{
-    width: 80%;
+    width: 95%;
 }
 
 .Publication_Mobile .KeywordItem {
