@@ -25,7 +25,7 @@
         }
     ],
     "functions": {
-        "api/update_scholar": {
+        "api/update_scholar.py": {
             "maxDuration": 60
         }
     }
