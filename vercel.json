@@ -23,5 +23,10 @@
           "path": "/backend/_update_scholar",
           "schedule": "0 20 * * *"
         }
-      ]
+    ],
+    "functions": {
+        "api/update_scholar": {
+            "maxDuration": 60
+        }
+    }
 }
