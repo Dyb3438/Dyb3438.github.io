@@ -89,7 +89,15 @@ export default {
 
                 for (let secTitleId in this.config_publication_category){
                     const secTitle = this.config_publication_category[secTitleId];
-                    content[secTitle] = content[secTitle].sort(function(a, b){return b.scholarInfo.citation - a.scholarInfo.citation});
+                    content[secTitle] = content[secTitle].sort(function(a, b){
+                        if ('new' in a && a.new){
+                            return true;
+                        } else if ('new' in b && b.new){
+                            return false;
+                        } else {
+                            return b.scholarInfo.citation - a.scholarInfo.citation;
+                        }
+                    });
                 }
 
                 if (content['Others'].length == 0){
