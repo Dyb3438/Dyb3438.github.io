@@ -348,7 +348,7 @@ export default{
         <div class="BlockItem">
           <AboutMe largeFont="var(--largeFont)" smallFont="var(--smallFont)"/>
         </div>
-        <div class="BlockItem" style="margin-top:30px; height: 400px">
+        <div class="BlockItem" style="margin-top:30px; height: 500px">
           <News largeFont="var(--largeFont)" smallFont="var(--smallFont)" :screenWidth="screenWidth"/>
         </div>
         <div class="BlockItem" style="margin-top:30px;">

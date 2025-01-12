@@ -19,6 +19,8 @@ export default{
     `,
 
     news: [
+        `Jan 2025: Our work on <b>Exploring Human-in-the-Loop Test-Time Adaptation by Synergizing Active Learning and Model Selection</b> was accepted by Transactions on Machine Learning Research (TMLR). Congratulations to Yushu Li!`,
+        `Jan 2025: Our work on <b>Augmented Contrastive Clustering with Uncertainty-Aware Prototyping for Time Series Test Time Adaptation</b> was accepted by 31st SIGKDD Conference on Knowledge Discovery and Data Mining (KDD). Congratulations to Peiliang Gong!`,
         `Dec 2024: I received the ACM MM 2024 Outstanding Reviewer Award. (<a href='https://2024.acmmm.org/outstanding-ac-reviewer'>Source</a>)`,
         `March 2024: Our work on <b>CLIP-guided Source-free Object Detection in Aerial Images</b> was accepted by IGARSS 2024 as <b>Oral presentation</b>. Congratulations to Nanqing Liu!`,
         `Feb 2024: Our work on <b>Improving the Generalization of Segmentation Foundation Model under Distribution Shift via Weakly Supervised Adaptation</b> was accepted by CVPR 2024. Congratulations to Haojie Zhang!`,
@@ -56,12 +58,51 @@ export default{
 
     publication_category: ['Segment Anything / Foundation Model', 'Test-Time Adaptation / Test-Time Training', 'Weakly Supervised Learning'],
     publications: {
-        2024: [
+        2025: [
             {
-                image: './imgs/2024_SuEtAl_TTDP.png',
+                image: './imgs/2025_LiEtAl_HILTTA.webp',
+                title: 'Exploring Human-in-the-Loop Test-Time Adaptation by Synergizing Active Learning and Model Selection',
+                author: 'Yushu Li<equal></equal>, <b>Yongyi Su<equal></equal></b>, Xulei Yang, Kui Jia and Xun Xu',
+                publisher: 'Transactions on Machine Learning Research (<b>TMLR</b>), 2025',
+                keywords: ['Test-Time Adaptation', 'Human-in-the-Loop', 'Model Selection', 'Active Learning'],
+                options: {
+                    'PDF': 'https://arxiv.org/abs/2405.18911',
+                    'Bibtex': './bibtexs/2025_LiEtAl_HILTTA.bib',
+                },
+                paper_url: 'https://arxiv.org/pdf/2405.18911',
+                new: true
+            },
+            {
+                image: './imgs/2025_GongEtAl_Aug.webp',
+                title: 'Augmented Contrastive Clustering with Uncertainty-Aware Prototyping for Time Series Test Time Adaptation',
+                author: 'Peiliang Gong, Mohamed Ragab, Min Wu, Zhenghua Chen, <b>Yongyi Su</b>, Xiaoli Li and Daoqiang Zhang',
+                publisher: 'SIGKDD Conference on Knowledge Discovery and Data Mining (<b>KDD</b>), 2025',
+                keywords: ['Test-Time Adaptation', 'Time Series Data', 'Prototype Learning', 'Contrastive and Clustering'],
+                options: {
+                    'PDF': 'https://arxiv.org/abs/2501.01472',
+                    'Bibtex': './bibtexs/2025_GongEtAl_Aug.bib',
+                },
+                paper_url: 'https://arxiv.org/pdf/2501.01472',
+                new: true
+            },
+            {
+                image: './imgs/2025_LiEtAl_ECALP.webp',
+                title: 'Efficient and Context-Aware Label Propagation for Zero-/Few-Shot Training-Free Adaptation of Vision-Language Model',
+                author: 'Yushu Li, <b>Yongyi Su</b>, Adam Goodge, Kui Jia and Xun Xu',
+                publisher: 'Preprint, 2025',
+                keywords: ['CLIP', 'Vision Language Model', 'Foundation Model'],
+                options: {
+                    'PDF': 'https://arxiv.org/abs/2412.18303',
+                    'Bibtex': './bibtexs/2025_LiEtAl_ECALP.bib',
+                },
+                paper_url: 'https://arxiv.org/pdf/2412.18303',
+                new: true
+            },
+            {
+                image: './imgs/2025_SuEtAl_TTDP.webp',
                 title: 'On the Adversarial Risk of Test Time Adaptation: An Investigation into Realistic Test-Time Data Poisoning',
                 author: '<b>Yongyi Su</b>, Yushu Li, Nanqing Liu, Kui Jia, Xulei Yang, Chuan-Sheng Foo and Xun Xu',
-                publisher: 'Preprint, 2024',
+                publisher: 'Preprint, 2025',
                 keywords: ['Test-Time Adaptation', 'Data Poisoning', 'Adversarial Attack'],
                 options: {
                     'PDF': 'https://arxiv.org/abs/2410.04682',
@@ -70,6 +111,8 @@ export default{
                 paper_url: 'https://arxiv.org/pdf/2410.04682',
                 new: true
             },
+        ],
+        2024: [
             {
                 image: './imgs/2024_LiuEtAl_PointSAM.jpg',
                 title: 'PointSAM: Pointly-Supervised Segment Anything Model for Remote Sensing Images',
@@ -83,19 +126,6 @@ export default{
                     'Code': 'https://github.com/Lans1ng/PointSAM'
                 },
                 paper_url: 'https://arxiv.org/pdf/2409.13401',
-                new: true
-            },
-            {
-                image: './imgs/2024_LiEtAl_HILTTA.webp',
-                title: 'Exploring Human-in-the-Loop Test-Time Adaptation by Synergizing Active Learning and Model Selection',
-                author: 'Yushu Li<equal></equal>, <b>Yongyi Su<equal></equal></b>, Xulei Yang, Kui Jia and Xun Xu',
-                publisher: 'Preprint, 2024',
-                keywords: ['Test-Time Adaptation', 'Human-in-the-Loop', 'Model Selection', 'Active Learning'],
-                options: {
-                    'PDF': 'https://arxiv.org/abs/2405.18911',
-                    'Bibtex': './bibtexs/2024_LiEtAl_HILTTA.bib',
-                },
-                paper_url: 'https://arxiv.org/pdf/2405.18911',
                 // new: true
             },
             {
@@ -248,18 +278,18 @@ export default{
             url: 'https://scholar.google.com/citations?user=x3dCJrAAAAAJ'
         },
 
-        'Chengxin Liu': {
-            image: './imgs/co-authors/ChengxinLiu.jpg',
-            institute: 'Huazhong University of Science and Technology, Wuhan',
-            position: 'PhD Student',
-            url: 'https://cxliu0.github.io/'
-        },
-
         'Peiliang Gong': {
             image: './imgs/co-authors/PeiliangGong.jpg',
             institute: 'Nanjing University of Aeronautics and Astronautics, Nanjing',
             position: 'PhD Student',
             url: 'https://scholar.google.com/citations?user=0AQhhVQAAAAJ'
+        },
+
+        'Chengxin Liu': {
+            image: './imgs/co-authors/ChengxinLiu.jpg',
+            institute: 'Huazhong University of Science and Technology, Wuhan',
+            position: 'PhD Student',
+            url: 'https://cxliu0.github.io/'
         },
 
         'Yushu Li': {
