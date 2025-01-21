@@ -19,6 +19,7 @@ export default{
     `,
 
     news: [
+        `Jan 2025: Our work on <b>PointSAM: Pointly-Supervised Segment Anything Model for Remote Sensing Images</b> was accepted by IEEE Transactions on Geoscience and Remote Sensing (TGRS). Congratulations to Nanqing Liu!`,
         `Jan 2025: Our work on <b>Exploring Human-in-the-Loop Test-Time Adaptation by Synergizing Active Learning and Model Selection</b> was accepted by Transactions on Machine Learning Research (TMLR). Congratulations to Yushu Li!`,
         `Jan 2025: Our work on <b>Augmented Contrastive Clustering with Uncertainty-Aware Prototyping for Time Series Test Time Adaptation</b> was accepted by 31st SIGKDD Conference on Knowledge Discovery and Data Mining (KDD). Congratulations to Peiliang Gong!`,
         `Dec 2024: I received the ACM MM 2024 Outstanding Reviewer Award. (<a href='https://2024.acmmm.org/outstanding-ac-reviewer'>Source</a>)`,
@@ -76,7 +77,7 @@ export default{
                 image: './imgs/2025_LiuEtAl_PointSAM.jpg',
                 title: 'PointSAM: Pointly-Supervised Segment Anything Model for Remote Sensing Images',
                 author: 'Nanqing Liu, Xun Xu, <b>Yongyi Su</b>, Haojie Zhang and Heng-Chao Li',
-                publisher: 'IEEE Transactions on Geoscience and Remote Sensing, 2025',
+                publisher: 'IEEE Transactions on Geoscience and Remote Sensing (<b>TGRS</b>), 2025',
                 keywords: ['Segment Anything', 'Foundation Model', 'Remote Sensing'],
                 options: {
                     'PDF': 'https://arxiv.org/abs/2409.13401',
