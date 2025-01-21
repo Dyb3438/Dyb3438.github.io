@@ -73,6 +73,21 @@ export default{
                 new: true
             },
             {
+                image: './imgs/2025_LiuEtAl_PointSAM.jpg',
+                title: 'PointSAM: Pointly-Supervised Segment Anything Model for Remote Sensing Images',
+                author: 'Nanqing Liu, Xun Xu, <b>Yongyi Su</b>, Haojie Zhang and Heng-Chao Li',
+                publisher: 'IEEE Transactions on Geoscience and Remote Sensing, 2025',
+                keywords: ['Segment Anything', 'Foundation Model', 'Remote Sensing'],
+                options: {
+                    'PDF': 'https://arxiv.org/abs/2409.13401',
+                    'Bibtex': './bibtexs/2025_LiuEtAl_PointSAM.bib',
+                    'Project Page': 'https://github.com/Lans1ng/PointSAM',
+                    'Code': 'https://github.com/Lans1ng/PointSAM'
+                },
+                paper_url: 'https://arxiv.org/pdf/2409.13401',
+                new: true
+            },
+            {
                 image: './imgs/2025_GongEtAl_Aug.webp',
                 title: 'Augmented Contrastive Clustering with Uncertainty-Aware Prototyping for Time Series Test Time Adaptation',
                 author: 'Peiliang Gong, Mohamed Ragab, Min Wu, Zhenghua Chen, <b>Yongyi Su</b>, Xiaoli Li and Daoqiang Zhang',
@@ -113,21 +128,6 @@ export default{
             },
         ],
         2024: [
-            {
-                image: './imgs/2024_LiuEtAl_PointSAM.jpg',
-                title: 'PointSAM: Pointly-Supervised Segment Anything Model for Remote Sensing Images',
-                author: 'Nanqing Liu, Xun Xu, <b>Yongyi Su</b>, Haojie Zhang and Heng-Chao Li',
-                publisher: 'Preprint, 2024',
-                keywords: ['Segment Anything', 'Foundation Model', 'Remote Sensing'],
-                options: {
-                    'PDF': 'https://arxiv.org/abs/2409.13401',
-                    'Bibtex': './bibtexs/2024_LiuEtAl_PointSAM.bib',
-                    'Project Page': 'https://github.com/Lans1ng/PointSAM',
-                    'Code': 'https://github.com/Lans1ng/PointSAM'
-                },
-                paper_url: 'https://arxiv.org/pdf/2409.13401',
-                // new: true
-            },
             {
                 image: './imgs/2024_SuEtAl_TTAC-.webp',
                 title: 'Revisiting Realistic Test-Time Training: Sequential Inference and Adaptation by Anchored Clustering Regularized Self-Training',

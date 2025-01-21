@@ -27,6 +27,9 @@
     "functions": {
         "api/update_scholar.py": {
             "maxDuration": 60
+        },
+        "api/proxy.js": {
+            "maxDuration": 30
         }
     }
 }
