@@ -19,6 +19,8 @@ export default{
     `,
 
     news: [
+        `Jan 2025: Our work on <b>On the Adversarial Risk of Test Time Adaptation: An Investigation into Realistic Test-Time Data Poisoning</b> was accepted by ICLR 2025.`,
+        `Jan 2025: Our work on <b>Efficient and Context-Aware Label Propagation for Zero-/Few-Shot Training-Free Adaptation of Vision-Language Model</b> was accepted by ICLR 2025. Congratulations to Yushu Li!`,
         `Jan 2025: Our work on <b>PointSAM: Pointly-Supervised Segment Anything Model for Remote Sensing Images</b> was accepted by IEEE Transactions on Geoscience and Remote Sensing (TGRS). Congratulations to Nanqing Liu!`,
         `Jan 2025: Our work on <b>Exploring Human-in-the-Loop Test-Time Adaptation by Synergizing Active Learning and Model Selection</b> was accepted by Transactions on Machine Learning Research (TMLR). Congratulations to Yushu Li!`,
         `Jan 2025: Our work on <b>Augmented Contrastive Clustering with Uncertainty-Aware Prototyping for Time Series Test Time Adaptation</b> was accepted by 31st SIGKDD Conference on Knowledge Discovery and Data Mining (KDD). Congratulations to Peiliang Gong!`,
@@ -61,6 +63,32 @@ export default{
     publications: {
         2025: [
             {
+                image: './imgs/2025_SuEtAl_TTDP.webp',
+                title: 'On the Adversarial Risk of Test Time Adaptation: An Investigation into Realistic Test-Time Data Poisoning',
+                author: '<b>Yongyi Su</b>, Yushu Li, Nanqing Liu, Kui Jia, Xulei Yang, Chuan-Sheng Foo and Xun Xu',
+                publisher: 'International Conference on Learning Representations (<b>ICLR</b>), 2025',
+                keywords: ['Test-Time Adaptation', 'Data Poisoning', 'Adversarial Attack'],
+                options: {
+                    'PDF': 'https://arxiv.org/abs/2410.04682',
+                    'Bibtex': './bibtexs/2024_SuEtAl_TTDP.bib'
+                },
+                paper_url: 'https://arxiv.org/pdf/2410.04682',
+                new: true
+            },
+            {
+                image: './imgs/2025_LiEtAl_ECALP.webp',
+                title: 'Efficient and Context-Aware Label Propagation for Zero-/Few-Shot Training-Free Adaptation of Vision-Language Model',
+                author: 'Yushu Li, <b>Yongyi Su</b>, Adam Goodge, Kui Jia and Xun Xu',
+                publisher: 'International Conference on Learning Representations (<b>ICLR</b>), 2025',
+                keywords: ['CLIP', 'Vision Language Model', 'Foundation Model'],
+                options: {
+                    'PDF': 'https://arxiv.org/abs/2412.18303',
+                    'Bibtex': './bibtexs/2025_LiEtAl_ECALP.bib',
+                },
+                paper_url: 'https://arxiv.org/pdf/2412.18303',
+                new: true
+            },
+            {
                 image: './imgs/2025_LiEtAl_HILTTA.webp',
                 title: 'Exploring Human-in-the-Loop Test-Time Adaptation by Synergizing Active Learning and Model Selection',
                 author: 'Yushu Li<equal></equal>, <b>Yongyi Su<equal></equal></b>, Xulei Yang, Kui Jia and Xun Xu',
@@ -100,33 +128,7 @@ export default{
                 },
                 paper_url: 'https://arxiv.org/pdf/2501.01472',
                 new: true
-            },
-            {
-                image: './imgs/2025_LiEtAl_ECALP.webp',
-                title: 'Efficient and Context-Aware Label Propagation for Zero-/Few-Shot Training-Free Adaptation of Vision-Language Model',
-                author: 'Yushu Li, <b>Yongyi Su</b>, Adam Goodge, Kui Jia and Xun Xu',
-                publisher: 'Preprint, 2025',
-                keywords: ['CLIP', 'Vision Language Model', 'Foundation Model'],
-                options: {
-                    'PDF': 'https://arxiv.org/abs/2412.18303',
-                    'Bibtex': './bibtexs/2025_LiEtAl_ECALP.bib',
-                },
-                paper_url: 'https://arxiv.org/pdf/2412.18303',
-                new: true
-            },
-            {
-                image: './imgs/2025_SuEtAl_TTDP.webp',
-                title: 'On the Adversarial Risk of Test Time Adaptation: An Investigation into Realistic Test-Time Data Poisoning',
-                author: '<b>Yongyi Su</b>, Yushu Li, Nanqing Liu, Kui Jia, Xulei Yang, Chuan-Sheng Foo and Xun Xu',
-                publisher: 'Preprint, 2025',
-                keywords: ['Test-Time Adaptation', 'Data Poisoning', 'Adversarial Attack'],
-                options: {
-                    'PDF': 'https://arxiv.org/abs/2410.04682',
-                    'Bibtex': './bibtexs/2024_SuEtAl_TTDP.bib'
-                },
-                paper_url: 'https://arxiv.org/pdf/2410.04682',
-                new: true
-            },
+            }
         ],
         2024: [
             {
