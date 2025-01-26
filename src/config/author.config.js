@@ -70,7 +70,9 @@ export default{
                 keywords: ['Test-Time Adaptation', 'Data Poisoning', 'Adversarial Attack'],
                 options: {
                     'PDF': 'https://arxiv.org/abs/2410.04682',
-                    'Bibtex': './bibtexs/2024_SuEtAl_TTDP.bib'
+                    'Bibtex': './bibtexs/2024_SuEtAl_TTDP.bib',
+                    'Project Page': 'https://github.com/Gorilla-Lab-SCUT/RTTDP',
+                    'Code': 'https://github.com/Gorilla-Lab-SCUT/RTTDP'
                 },
                 paper_url: 'https://arxiv.org/pdf/2410.04682',
                 new: true
