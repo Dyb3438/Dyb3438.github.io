@@ -379,7 +379,7 @@ export default{
           </div>
         </div>
 
-        <div id="footer"><small>Updated Jan 21, 2025</small></div>
+        <div id="footer"><small>Updated Feb 9, 2025</small></div>
       </div>
     </div>
 
